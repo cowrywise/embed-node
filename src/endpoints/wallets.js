@@ -7,51 +7,47 @@ const request = require('../helper/request');
 const FormData = require('form-data');
 
 
-class wallets {
+class Wallets {
 
     constructor (config = {}) {
         this.config = config;
     }
 
 
+    /**
+    * Create Wallet
+    *
+    * Create a wallet
+    * @param {String} first_name First name of the user
+    * @param {String} last_name Last name of the user
+    * @param {String} email Email address of the user
+    */
     createWallet(account_id, currency_code) {
-        let url = "/wallets"
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify({
-              account_id: account_id,
-              currency_code: currency_code
-          })
-        };
-        return request(this.config, url, options);
+          endpoint: "/wallets",
+          data: {
+            account_id: account_id,
+            currency_code: currency_code
+          }
+        });
     }
     
     
+    /**
+    * Get Wallet
+    *
+    * Get/List all wallets
+    */
     getWallets() {
-        let url = "/wallets"
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/wallets"
+        });
     }
     
-    
-    transferFromWallet(uid, amount, product_code) {
-        let url = "/wallets/" +uid +"/transfer";
-        let body = new FormData();
-        body.append('amount', amount);
-        body.append('product_code', product_code);
-        const options = {
-          method: "POST",
-          data: body
-        };
-        return request(this.config, url, options);
-    }
-    
-    
-
     
 }
 
 
-module.exports = wallets
+module.exports = Wallets

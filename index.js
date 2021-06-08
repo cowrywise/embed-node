@@ -86,18 +86,12 @@ const api = new OpenInvest({
 
 
 
-  // api.wallets.createWallet("a535d0e5587a474d95e444dc6466aad6", "NGN")
+  // api.wallets.createWallet("033f5d3d00354d28961031efe9ae2938", "USD")
   //   .then(data => console.log(data));
 
 
   // api.wallets.getWallets()
-    // .then(data => console.log(data));
-
-
-  // api.wallets.transferFromWallet("9de2be897c2445f197a22ccd89bd46c6", "20000", "PRCDE533281165")
-    // .then(data => console.log(data));
-
-
+  //   .then(data => console.log(data));
 
 
 
