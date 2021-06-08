@@ -60,7 +60,7 @@ const perform = async function(config = Object, options = Object) {
       });
     }
     else {
-      return error;
+      return error.response;
     }
   });
 
@@ -68,7 +68,8 @@ const perform = async function(config = Object, options = Object) {
   // Return the result of the executed request
   return axios(axios_configuration)
     .then(function (response) {
-        return response.data;
+      return response.data;
+      
     })
     .catch(function (error) {
         console.log(error);

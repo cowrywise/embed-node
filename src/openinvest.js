@@ -42,9 +42,7 @@ class OpenInvest {
             .then(function(data) {
                 if(data) {
                     api_key = data.access_token;
-                    return {
-                        token: data
-                    }
+                    return data;
                 }
                 else {
                     return {
