@@ -178,16 +178,6 @@ const api = new OpenInvest({
       // .then(data => console.log(data));
 
 
-    // api.trade.invest("GOOG", 10000)
-      // .then(data => console.log(data));
-
-
-    // api.trade.sell("ABC123", 10000)
-      // .then(data => console.log(data));
-
-
-
-
 
 
 
@@ -208,5 +198,5 @@ const api = new OpenInvest({
 
 
 
-    // api.transactions.getTransactions("ea599ed124844ad4983b6db52aadc097", "2020-01-10", "2021-03-29", 1)
-      // .then(data => console.log(data));
+    // api.transactions.getTransactions("10")
+    //   .then(data => console.log(data));
