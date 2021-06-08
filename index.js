@@ -17,7 +17,7 @@ const api = new OpenInvest({
 // // AUTH
 
 // api.refreshToken()
-//   .then(data => console.log(data));
+  // .then(data => console.log(data));
 
 
 
@@ -130,20 +130,20 @@ const api = new OpenInvest({
 
 
 
-  api.assets.getAssets()
-    .then(result => console.log(result));
+  // api.assets.getAssets()
+  //   .then(result => console.log(result));
 
 
-  api.assets.getAssets("mutual-fund")
-    .then(result => console.log(result));
+  // api.assets.getAssets("mutual-fund")
+  //   .then(result => console.log(result));
 
 
-  api.assets.getIndices()
-    .then(result => console.log(result));
+  // api.assets.getIndices()
+  //   .then(result => console.log(result));
 
 
-  api.assets.getIndexesAsset("ffd13aa3-24c1-40d6-ac1e-ebe71a9aa37f")
-    .then(result => console.log(result));
+  // api.assets.getIndexesAsset("ffd13aa3-24c1-40d6-ac1e-ebe71a9aa37f")
+  //   .then(result => console.log(result));
 
 
 
@@ -156,20 +156,19 @@ const api = new OpenInvest({
 
 
     // api.investments.getInvestments()
-      // .then(data => console.log(data));
+    //   .then(data => console.log(data));
 
 
     // api.investments.getInvestments("tbills")
-      // .then(data => console.log(data));
-
-
-    // api.investments.invest(
-    //   {
-    //     account_id: "dd93d6d4b69e43f6805507285160254f",
-    //     asset_code: "AST-FND-1034675867",
-    //     amount: "2000"
-    // })
     //   .then(data => console.log(data));
+
+
+    // api.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
+    //   .then(data => console.log(data));
+
+
+    api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
+      .then(data => console.log(data));
 
 
 
