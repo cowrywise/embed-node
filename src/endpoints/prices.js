@@ -4,6 +4,7 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
+const querystring = require('querystring');
 
 
 class prices {
@@ -13,18 +14,23 @@ class prices {
     }
 
 
-
-    getPriceHistory(asset_id,from_date, to_date) {
-
-        let qs_asset_id = asset_id ? "?" + querystring.stringify(asset_id) : "";
-        let qs_from_date = from_date ? "?" + querystring.stringify(from_date) : "";
-        let qs_to_date = to_date ? "?" + querystring.stringify(to_date) : "";
-
-        let url = "/prices" + qs_asset_id + qs_from_date + qs_to_date;
-        const options = {
-            method: "GET"
-        };
-        return request(this.config, url, options);
+    /**
+    * Price History
+    * 
+    * Description: Fetch price history
+    * @param {String} asset_id ID of the asset
+    * @param {String} from_date Start date
+    * @param {String} to_date End date
+    */
+    getPriceHistory(asset_id, from_date, to_date) {
+        return request.perform(this.config, {
+            method: "GET",
+            endpoint: "/prices" + '?' + querystring.stringify({
+                asset_id: asset_id,
+                from_date: from_date,
+                to_date: to_date
+            })
+        });
     }
 
 }

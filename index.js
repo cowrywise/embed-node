@@ -167,8 +167,8 @@ const api = new OpenInvest({
     //   .then(data => console.log(data));
 
 
-    api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
-      .then(data => console.log(data));
+    // api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
+      // .then(data => console.log(data));
 
 
 
@@ -201,8 +201,8 @@ const api = new OpenInvest({
 
 
 
-    // api.prices.getPriceHistory("f4f7e0e2-4c75-429e-a1c7-28c156a634ff", "2020-01-10", "2021-03-29")
-      // .then(data => console.log(data));
+    api.prices.getPriceHistory("0db0dd04-832e-4068-82f1-156ad1aef575", "2020-01-10", "2021-03-29")
+      .then(data => console.log(data));
 
 
 
