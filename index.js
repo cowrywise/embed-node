@@ -4,7 +4,7 @@ const OpenInvest = require("./src/openinvest");
 
 // Library initialization
 const api = new OpenInvest({
-  api_key: 'SJXzMfM1TMhJOIoF0OmZXvXthVNbKt',
+  api_key: '02RD5D6UHPen2hghviW8LWXTGbThPoa',
   grant_type: 'client_credentials',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
@@ -17,7 +17,7 @@ const api = new OpenInvest({
 // AUTH
 
 // api.refreshToken()
-//   .then(data => console.log(data));
+  // .then(data => console.log(data));
 
 
 
@@ -28,7 +28,7 @@ const api = new OpenInvest({
   api.accounts.createAccount({
     first_name: "Tas",
     last_name: "Lim",
-    email: "fina@gmail.com"
+    email: "fignhajhgssap@gmail.com"
   })
     .then(data => console.log(data));
 

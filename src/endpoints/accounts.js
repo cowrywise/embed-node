@@ -20,18 +20,11 @@ class Accounts {
     * @param {Object} data [Object: first_name, last_name, email]
     */
     createAccount(data) {
-        let url = "/accounts";
-
-        const formData = new FormData();
-
-        for ( const key in data ) {
-          formData.append(key, data[key]);
-        }
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          data: data
-        };
-        return request(this.config, url, options);
+          endpoint: "/accounts",
+          data: data,
+        })
     }
     
     
