@@ -4,6 +4,7 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
+const FormData = require('form-data');
 
 
 class Accounts {
@@ -19,10 +20,16 @@ class Accounts {
     * @param {Object} data [Object: first_name, last_name, email]
     */
     createAccount(data) {
-        let url = "/accounts"
+        let url = "/accounts";
+
+        const formData = new FormData();
+
+        for ( const key in data ) {
+          formData.append(key, data[key]);
+        }
         const options = {
           method: "POST",
-          body: JSON.stringify(data)
+          data: data
         };
         return request(this.config, url, options);
     }

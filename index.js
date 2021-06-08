@@ -4,10 +4,10 @@ const OpenInvest = require("./src/openinvest");
 
 // Library initialization
 const api = new OpenInvest({
-  api_key: '3IlrqzcBzwANWYKLxHRwgz3VaQ18vH',
+  api_key: 'SJXzMfM1TMhJOIoF0OmZXvXthVNbKt',
   grant_type: 'client_credentials',
-  client_id: 'CWRY-vsXBkBX3NM2X1hJ3QsIWuRXwH2MGCN9sOArTlD8A',
-  client_secret: 'CWRY-SECRET-Vtw37eVA6Be0BrnhcCsmjl8KaVdzkepBeSbLMAhegSndnNWbiXW0FvcYGFtyob9cwwOXkIIC4YFjVMI1WHZMmqFRD8uISFHIWggFlTnuJWPVl8NSp0plVMSjQTSCJO6u'
+  client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
+  client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });
 
 
@@ -16,8 +16,8 @@ const api = new OpenInvest({
 
 // AUTH
 
-api.refreshToken()
-  .then(data => console.log(data));
+// api.refreshToken()
+//   .then(data => console.log(data));
 
 
 
@@ -25,16 +25,16 @@ api.refreshToken()
 // ACCOUNTS
 
 
-  // api.accounts.createAccount({
-  //   first_name: "Tas",
-  //   last_name: "Lim",
-  //   email: "tas@gmail.com"
-  // })
-  //   .then(data => console.log(data));
-
-
-  api.accounts.getAccount()
+  api.accounts.createAccount({
+    first_name: "Tas",
+    last_name: "Lim",
+    email: "fina@gmail.com"
+  })
     .then(data => console.log(data));
+
+
+  // api.accounts.getAccount()
+  //   .then(data => console.log(data));
 
 
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')

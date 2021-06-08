@@ -4,7 +4,7 @@ const request = require('../helper/enc_request');
 
 
 
-module.exports = async function(config, endpoint = "", options = {}) {
+module.exports = async function(config, endpoint = "", options = Object) {
 
   
   // Boolean flag for retrying unauthenticated requests
@@ -14,36 +14,40 @@ module.exports = async function(config, endpoint = "", options = {}) {
   let url = constants.base_url + "/api/v1" + endpoint;
 
   // HEADERS
-  let headers = {
-    "content-type": "application/json",
-    "Authorization": 'Bearer '+ config.api_key
-  };
 
+  let headers = {};
+  headers["Content-Type"] = "application/x-www-form-urlencoded"
+  headers["Authorization"] = 'Bearer '+ config.api_key
+
+  
   // Set up config
   let axios_configuration = {
-    url,
-    options,
-    headers
+    method: options['method'],
+    url: url,
+    data: options['data'],
+    headers: headers,
+    withCredentials: true,
+    transformRequest: getQueryString
   };
 
   // Response interceptor
-  axios.interceptors.response.use((response) => {
-    return response
-  },
-  async function (error) {
-    const originalRequest = error.config;
-    // console.log(error);
-    if (error.response.status === 401 && _retry) {
-      _retry = false;
-      const access_token = (await request(config)).access_token;
-      console.log('New access token: ' +access_token);
-      originalRequest.headers['Authorization'] = 'Bearer ' + access_token;
-      return axios(originalRequest);
-    }
-    else {
-      return error;
-    }
-  });
+  // axios.interceptors.response.use((response) => {
+  //   return response
+  // },
+  // async function (error) {
+  //   const originalRequest = error.config;
+  //   // console.log(error);
+  //   if (error.response.status === 401 && _retry) {
+  //     _retry = false;
+  //     const access_token = (await request(config)).access_token;
+  //     console.log('New access token: ' +access_token);
+  //     originalRequest.headers['Authorization'] = 'Bearer ' + access_token;
+  //     return axios(originalRequest);
+  //   }
+  //   else {
+  //     return error;
+  //   }
+  // });
 
 
   // Return the result of the executed request
@@ -54,4 +58,10 @@ module.exports = async function(config, endpoint = "", options = {}) {
     .catch(function (error) {
         console.log(error);
     });
+}
+
+function getQueryString(data = {}) {
+  return Object.entries(data)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join('&');
 }
