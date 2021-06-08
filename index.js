@@ -17,7 +17,7 @@ const api = new OpenInvest({
 // AUTH
 
 // api.refreshToken()
-  // .then(data => console.log(data));
+//   .then(data => console.log(data));
 
 
 
@@ -25,34 +25,34 @@ const api = new OpenInvest({
 // ACCOUNTS
 
 
-  api.accounts.createAccount({
-    first_name: "Tas",
-    last_name: "Lim",
-    email: "fignhajhgssap@gmail.com"
-  })
-    .then(data => console.log(data));
+  // api.accounts.createAccount({
+  //   first_name: "Tas",
+  //   last_name: "Lim",
+  //   email: "fignhajhgssap@gmail.com"
+  // })
+  //   .then(result => console.log(result.data));
 
 
   // api.accounts.getAccount()
-  //   .then(data => console.log(data));
+  //   .then(result => console.log(result.data));
 
 
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')
-    // .then(data => console.log(data));
+    // .then(result => console.log(result.data));
 
 
-  // api.accounts.updateAddress("4f436440e0e740e68dc2d6fe034c26cf", {
+  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
   //   street: "Broadway",
   //   lga: "Eti-Osa",
   //   area_code: "231",
   //   city: "Lekki",
   //   state: "Lagos",
-  //   country: "Nigeria"
+  //   country: "NG"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result.data));
 
 
-  // api.accounts.updateNextOfKin("4f436440e0e740e68dc2d6fe034c26cf",
+  // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938",
   //   {
   //     first_name: "John",
   //     last_name: "Doe",
@@ -62,26 +62,27 @@ const api = new OpenInvest({
   //     date_of_birth: "1990-10-10",
   //     phone_number: "+2348034031863"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result.data));
 
 
-  // api.accounts.updateProfile("4f436440e0e740e68dc2d6fe034c26cf",
+  // api.accounts.updateProfile("033f5d3d00354d28961031efe9ae2938",
   //   {
   //     first_name: "Taslim",
   //     last_name: "Oseni",
-  //     email: "tas@adf.com",
+  //     email: "tas@gmail.com",
   //     gender: "M",
+  //     phone_number: "+2347061979046",
   //     date_of_birth: "1989-10-10"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result.data));
 
 
-  // api.accounts.updateIdentity("4f436440e0e740e68dc2d6fe034c26cf",
-  //   {
-  //     identity_type: "bvn",
-  //     identity_value: "0123456789"
-  // })
-  // .then(data => console.log(data));
+  api.accounts.updateIdentity("033f5d3d00354d28961031efe9ae2938",
+    {
+      identity_type: "bvn",
+      identity_value: "0123456789"
+  })
+  .then(result => console.log(result.data));
 
 
 

@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const FormData = require('form-data');
 
 
 class Accounts {
@@ -28,66 +27,84 @@ class Accounts {
     }
     
     
+    /**
+    * Get Account
+    *
+    */
     getAccount() {
-        let url = "/accounts"
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/accounts"
+        })
     }
     
     
     /**
     * Get portfolio
     *
-    * @param {String} data
+    * @param {String} uid
     */
     getPortfolio(uid) {
-        let url = "/accounts/" +uid +"/portfolio"
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/accounts/" +uid +"/portfolio"
+        })
     }
     
     
+    /**
+    * Update Address
+    *
+    * @param {String} data
+    */
     updateAddress(uid, data) {
-        let url = "/accounts/" +uid +"/address"
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/accounts/" +uid +"/address",
+          data: data
+        });
     }
     
     
+    /**
+    * Update Next of Kin
+    *
+    * @param {String} data
+    */
     updateNextOfKin(uid, data) {
-        let url = "/accounts/" +uid +"/nok"
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/accounts/" +uid +"/nok",
+          data: data
+        });
     }
     
 
+    /**
+    * Update Profile
+    *
+    * @param {String} data
+    */
     updateProfile(uid, data) {
-        let url = "/accounts/" +uid +"/profile"
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/accounts/" +uid +"/profile",
+          data: data
+        });
     }
     
 
+    /**
+    * Update Identity
+    *
+    * @param {String} data
+    */
     updateIdentity(uid, data) {
-        let url = "/accounts/" +uid +"/identity"
-        const options = {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/accounts/" +uid +"/identity",
+          data: data
+        });
     }
 
     
