@@ -6,32 +6,49 @@
 const request = require('../helper/request');
 
 
-class savings {
+class Savings {
 
     constructor (config = {}) {
         this.config = config;
     }
 
 
-    createSavings(data) {
-        let url = "/savings"
-        const options = {
+    /**
+    * Create Savings
+    * 
+    * Description: Create investment account
+    * @param {String} account_id Account ID of the user
+    * @param {String} currency_code Currency code (e.g NGN)
+    * @param {String} days Duration in days
+    * @param {Boolean} interest_enabled Interest enabled
+    */
+    createSavings(account_id, currency_code, days, interest_enabled) {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/savings",
+          data: {
+            account_id: account_id,
+            currency_code: currency_code,
+            days: days,
+            interest_enabled: (interest_enabled) ? 1 : 0
+          }
+        });
     }
     
     
+    /**
+    * Get Savings
+    *
+    * Get/List all savings plans
+    */
     getSavings() {
-        let url = "/savings"
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/savings"
+        });
     }
     
 }
 
 
-module.exports = savings
+module.exports = Savings

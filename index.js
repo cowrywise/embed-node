@@ -107,18 +107,12 @@ const api = new OpenInvest({
 
 
 
-  // api.savings.createSavings(
-  //   {
-  //     account_id: "a535d0e5587a474d95e444dc6466aad6",
-  //     currency_code: "NGN",
-  //     days: "30",
-  //     interest_free: "1"
-  // })
+  // api.savings.createSavings("6a8f9d8aef16477f866b20161e003e48", "NGN", "30", "1")
   //   .then(data => console.log(data));
 
 
   // api.savings.getSavings()
-    // .then(data => console.log(data));
+  //   .then(data => console.log(data));
 
 
 
@@ -201,8 +195,8 @@ const api = new OpenInvest({
 
 
 
-    api.prices.getPriceHistory("0db0dd04-832e-4068-82f1-156ad1aef575", "2020-01-10", "2021-03-29")
-      .then(data => console.log(data));
+    // api.prices.getPriceHistory("0db0dd04-832e-4068-82f1-156ad1aef575", "2020-01-10", "2021-03-29")
+      // .then(data => console.log(data));
 
 
 
