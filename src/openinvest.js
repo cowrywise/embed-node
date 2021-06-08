@@ -37,6 +37,11 @@ class OpenInvest {
         this.transactions = new Transactions(config)
     }
 
+    /**
+    * Refresh token
+    *
+    * Refresh the api_token being used by the OpenInvest object
+    */
     refreshToken() {
         return new Auth().getAuthToken(this.config)
             .then(function(data) {

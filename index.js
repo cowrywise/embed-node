@@ -16,8 +16,8 @@ const api = new OpenInvest({
 
 // // AUTH
 
-// api.refreshToken()
-//   .then(data => console.log(data));
+api.refreshToken()
+  .then(data => console.log(data));
 
 
 
