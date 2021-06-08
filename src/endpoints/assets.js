@@ -7,35 +7,56 @@ const request = require('../helper/request');
 const querystring = require('querystring');
 
 
-class assets {
+class Assets {
 
     constructor (config = {}) {
         this.config = config;
     }
 
 
-
+    /**
+    * Get Assets
+    * 
+    * Description: Get investment assets
+    * @param {String} [asset_type] Optional: asset_type query field [e.g tbills]
+    */
     getAssets(asset_type) {
-        let qs = asset_type ? "?" + querystring.stringify(asset_type) : "";
-        let url = "/assets" + qs;
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/assets" + (asset_type ? "?" + querystring.stringify(asset_type) : "")
+        });
     }
 
 
-    getIndices(asset_type) {
-        let qs = asset_type ? "?" + querystring.stringify(asset_type) : "";
-        let url = "/indices" + qs;
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+    /**
+    * Get Indices
+    * 
+    * Description: Get investment indices
+    */
+    getIndices() {
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/indexes"
+        });
     }
+
+
+    /**
+    * Get Indices asset
+    * 
+    * Description: Get assets based on index
+    * 
+    * @param {String} index index of asset
+    */
+    getIndexesAsset(index) {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/indexes/" + index + "/assets"
+      });
+  }
 
     
 }
 
 
-module.exports = assets
+module.exports = Assets
