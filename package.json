@@ -1,0 +1,22 @@
+{
+  "name": "EMBED-NODE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Taslim Oseni",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "qs": "^6.10.1",
+    "querystring": "^0.2.1"
+  }
+}
