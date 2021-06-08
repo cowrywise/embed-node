@@ -6,50 +6,27 @@
 const request = require('../helper/request');
 
 
-class trade {
+class Trade {
 
     constructor (config = {}) {
         this.config = config;
     }
 
 
-
+    /**
+    * Get Stocks
+    *
+    * Get/List all stocks
+    */
     getStocks() {
-        let url = "/stocks";
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
-    }
-
-
-    invest(ticker, amount) {
-        let url = "/stocks/buy";
-        const options = {
-          method: "POST",
-          body: {
-              ticker: ticker,
-              amount: amount
-          }
-        };
-        return request(this.config, url, options);
-    }
-
-
-    sell(ticker, qty) {
-        let url = "/stocks/sell";
-        const options = {
-          method: "POST",
-          body: {
-              ticker: ticker,
-              qty: qty
-          }
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+            method: "GET",
+            endpoint: "/stocks/assets"
+        });
     }
 
     
 }
 
 
-module.exports = trade
+module.exports = Trade
