@@ -10,14 +10,23 @@ const Transactions = require('./endpoints/transactions');
 var api_key = "";
 
 
-
+/**
+ *  class OpenInvest
+ *
+ *  
+ *
+ *
+ *  Author: Taslim Oseni <taslim@cowrywise.com>
+ **/
 class OpenInvest {
 
 
     /**
      * Introduce OpenInvest
+     * 
+     * A Node.JS module, which provides an object oriented wrapper for the OpenInvest v1 API.
      * @constructor
-     * @param {Object} [api_key="", client_id="", client_secret="", grant_type=""] The API Key  to use for OpenInvest
+     * @param {Object} [config={}] The Configuration  to use for OpenInvest
      */
     constructor(config) {
 
