@@ -15,14 +15,21 @@ class Accounts {
 
     /**
     * Create Account
-    *
-    * @param {Object} data [Object: first_name, last_name, email]
+    * 
+    * Description: Create investment account
+    * @param {String} first_name First name of the user
+    * @param {String} last_name Last name of the user
+    * @param {String} email Email address of the user
     */
-    createAccount(data) {
+    createAccount(first_name, last_name, email) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts",
-          data: data,
+          data: {
+            first_name: first_name,
+            last_name: last_name,
+            email: email
+          },
         })
     }
     
@@ -30,6 +37,7 @@ class Accounts {
     /**
     * Get Account
     *
+    * Get/List all investment accounts created with this API-Key
     */
     getAccount() {
         return request.perform(this.config, {
@@ -42,7 +50,8 @@ class Accounts {
     /**
     * Get portfolio
     *
-    * @param {String} uid
+    * Get/List the portfolio owned by an investment account
+    * @param {String} uid The UID of the investment account
     */
     getPortfolio(uid) {
         return request.perform(this.config, {
@@ -55,7 +64,9 @@ class Accounts {
     /**
     * Update Address
     *
-    * @param {String} data
+    * Update the address details for an investment account
+    * @param {String} uid The UID of the investment account
+    * @param {Object} data Address details of the owner of the investment account
     */
     updateAddress(uid, data) {
         return request.perform(this.config, {
@@ -69,7 +80,9 @@ class Accounts {
     /**
     * Update Next of Kin
     *
-    * @param {String} data
+    * Update the next-of-kin for an investment account
+    * @param {String} uid The UID of the investment account
+    * @param {Object} data Details of the next of kin
     */
     updateNextOfKin(uid, data) {
         return request.perform(this.config, {
@@ -83,7 +96,9 @@ class Accounts {
     /**
     * Update Profile
     *
-    * @param {String} data
+    * Update the profile of an investment account
+    * @param {String} uid The UID of the investment account
+    * @param {Object} data
     */
     updateProfile(uid, data) {
         return request.perform(this.config, {
@@ -97,13 +112,19 @@ class Accounts {
     /**
     * Update Identity
     *
-    * @param {String} data
+    * Update the identity of an investment account
+    * @param {String} uid The UID of the investment account
+    * @param {String} identity_type The identity type of the user [bvn, etc]
+    * @param {String} identity_value The identity value of the user
     */
-    updateIdentity(uid, data) {
+    updateIdentity(uid, identity_type, identity_value) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts/" +uid +"/identity",
-          data: data
+          data: {
+            identity_type: identity_type,
+            identity_value: identity_value
+        }
         });
     }
 

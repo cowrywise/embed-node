@@ -4,7 +4,7 @@ const OpenInvest = require("./src/openinvest");
 
 // Library initialization
 const api = new OpenInvest({
-  api_key: 'LLzM291gVQX90Qcq8eLJuGAwwASkhf',
+  api_key: 'wpG8bD7bH0VjhbhjReVWKsz',
   grant_type: 'client_credentials',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
@@ -14,22 +14,18 @@ const api = new OpenInvest({
 
 
 
-// AUTH
+// // AUTH
 
-api.refreshToken()
-  .then(data => console.log(data));
-
-
+// api.refreshToken()
+//   .then(data => console.log(data));
 
 
-// ACCOUNTS
 
 
-  api.accounts.createAccount({
-    first_name: "Tas",
-    last_name: "Lim",
-    email: "fignhajhgssap@gmail.com"
-  })
+// // ACCOUNTS
+
+
+  api.accounts.createAccount("Tas", "Lim", "fignhajhgssap@gmail.com")
     .then(result => console.log(result.data));
 
 
@@ -71,17 +67,13 @@ api.refreshToken()
       last_name: "Oseni",
       email: "tas@gmail.com",
       gender: "M",
-      // phone_number: "+2347061979046",
+      phone_number: "+2347061979046",
       date_of_birth: "1989-10-10"
   })
   .then(result => console.log(result));
 
 
-  api.accounts.updateIdentity("033f5d3d00354d28961031efe9ae2938",
-    {
-      identity_type: "bvn",
-      identity_value: "0123456789"
-  })
+  api.accounts.updateIdentity("033f5d3d00354d28961031efe9ae2938", "bvn", "0123456789")
   .then(result => console.log(result));
 
 
