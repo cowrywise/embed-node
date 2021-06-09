@@ -20,7 +20,7 @@ npm i embed-node
 
 
 To get started, signup for developer credentials on [app.cowrywise.com](https://app.cowrywise.com). Once you signup, you can retrieve
-you client_id and client_secret keys from the developer dashboard. Set your credentials in environment variables. 
+you `client_id` and `client_secret` keys from the developer dashboard. Set your credentials in environment variables. 
 
 
 You need the following before getting to use this library:
@@ -49,7 +49,7 @@ All calls are done by Axios, so for the response structure check [Axios document
 #### Get Accounts
 ```js
 // Get account details
-api.accounts.getWallets()
+api.wallets.getWallets()
   .then(result => console.log(result));
 ```
 
