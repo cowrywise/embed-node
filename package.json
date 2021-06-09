@@ -17,6 +17,8 @@
     "form-data": "^4.0.0",
     "node-fetch": "^2.6.1",
     "qs": "^6.10.1",
+    "got": "^8.3.0",
+    "expect.js": "^0.3.1",
     "querystring": "^0.2.1"
   }
 }
