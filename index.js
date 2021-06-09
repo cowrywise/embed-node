@@ -4,55 +4,51 @@ const OpenInvest = require("./src/openinvest");
 
 // Library initialization
 const api = new OpenInvest({
-  api_key: '3IlrqzcBzwANWYKLxHRwgz3VaQ18vH',
+  api_key: 'MFmfSha82ttKYdCNkzNGHdCeRU1L6M',
   grant_type: 'client_credentials',
-  client_id: 'CWRY-vsXBkBX3NM2X1hJ3QsIWuRXwH2MGCN9sOArTlD8A',
-  client_secret: 'CWRY-SECRET-Vtw37eVA6Be0BrnhcCsmjl8KaVdzkepBeSbLMAhegSndnNWbiXW0FvcYGFtyob9cwwOXkIIC4YFjVMI1WHZMmqFRD8uISFHIWggFlTnuJWPVl8NSp0plVMSjQTSCJO6u'
+  client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
+  client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });
 
 
 
 
 
-// AUTH
+// // AUTH
 
-api.refreshToken()
-  .then(data => console.log(data));
-
-
+// api.refreshToken()
+//   .then(data => console.log(data));
 
 
-// ACCOUNTS
 
 
-  // api.accounts.createAccount({
-  //   first_name: "Tas",
-  //   last_name: "Lim",
-  //   email: "tas@gmail.com"
-  // })
-  //   .then(data => console.log(data));
+// // ACCOUNTS
 
 
-  api.accounts.getAccount()
-    .then(data => console.log(data));
+  // api.accounts.createAccount("Tas", "Lim", "fignhajhgssap@gmail.com")
+  //   .then(result => console.log(result));
+
+
+  // api.accounts.getAccount()
+    // .then(result => console.log(result));
 
 
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')
-    // .then(data => console.log(data));
+  //   .then(result => console.log(result));
 
 
-  // api.accounts.updateAddress("4f436440e0e740e68dc2d6fe034c26cf", {
+  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
   //   street: "Broadway",
   //   lga: "Eti-Osa",
   //   area_code: "231",
   //   city: "Lekki",
   //   state: "Lagos",
-  //   country: "Nigeria"
+  //   country: "NG"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result));
 
 
-  // api.accounts.updateNextOfKin("4f436440e0e740e68dc2d6fe034c26cf",
+  // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938",
   //   {
   //     first_name: "John",
   //     last_name: "Doe",
@@ -62,26 +58,23 @@ api.refreshToken()
   //     date_of_birth: "1990-10-10",
   //     phone_number: "+2348034031863"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result));
 
 
-  // api.accounts.updateProfile("4f436440e0e740e68dc2d6fe034c26cf",
+  // api.accounts.updateProfile("033f5d3d00354d28961031efe9ae2938",
   //   {
   //     first_name: "Taslim",
   //     last_name: "Oseni",
-  //     email: "tas@adf.com",
+  //     email: "tas@gmail.com",
   //     gender: "M",
+  //     phone_number: "+2347061979046",
   //     date_of_birth: "1989-10-10"
   // })
-  // .then(data => console.log(data));
+  // .then(result => console.log(result));
 
 
-  // api.accounts.updateIdentity("4f436440e0e740e68dc2d6fe034c26cf",
-  //   {
-  //     identity_type: "bvn",
-  //     identity_value: "0123456789"
-  // })
-  // .then(data => console.log(data));
+  // api.accounts.updateIdentity("033f5d3d00354d28961031efe9ae2938", "bvn", "0123456789")
+  // .then(result => console.log(result));
 
 
 
@@ -93,18 +86,12 @@ api.refreshToken()
 
 
 
-  // api.wallets.createWallet("a535d0e5587a474d95e444dc6466aad6", "NGN")
-  //   .then(data => console.log(data));
+  // api.wallets.createWallet("033f5d3d00354d28961031efe9ae2938", "USD")
+  //   .then(result => console.log(result));
 
 
   // api.wallets.getWallets()
-    // .then(data => console.log(data));
-
-
-  // api.wallets.transferFromWallet("9de2be897c2445f197a22ccd89bd46c6", "20000", "PRCDE533281165")
-    // .then(data => console.log(data));
-
-
+  //   .then(result => console.log(result));
 
 
 
@@ -114,18 +101,12 @@ api.refreshToken()
 
 
 
-  // api.savings.createSavings(
-  //   {
-  //     account_id: "a535d0e5587a474d95e444dc6466aad6",
-  //     currency_code: "NGN",
-  //     days: "30",
-  //     interest_free: "1"
-  // })
-  //   .then(data => console.log(data));
+  // api.savings.createSavings("6a8f9d8aef16477f866b20161e003e48", "NGN", "30", "1")
+  //   .then(result => console.log(result));
 
 
   // api.savings.getSavings()
-    // .then(data => console.log(data));
+  //   .then(result => console.log(result));
 
 
 
@@ -138,19 +119,19 @@ api.refreshToken()
 
 
   // api.assets.getAssets()
-    // .then(data => console.log(data));
+  //   .then(result => console.log(result));
 
 
   // api.assets.getAssets("mutual-fund")
-    // .then(data => console.log(data));
+  //   .then(result => console.log(result));
 
 
   // api.assets.getIndices()
-    // .then(data => console.log(data));
+  //   .then(result => console.log(result));
 
 
-  // api.assets.getIndices("mutual-fund")
-    // .then(data => console.log(data));
+  // api.assets.getIndexesAsset("ffd13aa3-24c1-40d6-ac1e-ebe71a9aa37f")
+  //   .then(result => console.log(result));
 
 
 
@@ -163,20 +144,19 @@ api.refreshToken()
 
 
     // api.investments.getInvestments()
-      // .then(data => console.log(data));
+    //   .then(result => console.log(result));
 
 
     // api.investments.getInvestments("tbills")
-      // .then(data => console.log(data));
+    //   .then(result => console.log(result));
 
 
-    // api.investments.invest(
-    //   {
-    //     account_id: "dd93d6d4b69e43f6805507285160254f",
-    //     asset_code: "AST-FND-1034675867",
-    //     amount: "2000"
-    // })
-    //   .then(data => console.log(data));
+    // api.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
+    //   .then(result => console.log(result));
+
+
+    // api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
+      // .then(result => console.log(result));
 
 
 
@@ -189,17 +169,7 @@ api.refreshToken()
 
 
     // api.trade.getStocks()
-      // .then(data => console.log(data));
-
-
-    // api.trade.invest("GOOG", 10000)
-      // .then(data => console.log(data));
-
-
-    // api.trade.sell("ABC123", 10000)
-      // .then(data => console.log(data));
-
-
+      // .then(result => console.log(result));
 
 
 
@@ -209,8 +179,8 @@ api.refreshToken()
 
 
 
-    // api.prices.getPriceHistory("f4f7e0e2-4c75-429e-a1c7-28c156a634ff", "2020-01-10", "2021-03-29")
-      // .then(data => console.log(data));
+    // api.prices.getPriceHistory("0db0dd04-832e-4068-82f1-156ad1aef575", "2020-01-10", "2021-03-29")
+      // .then(result => console.log(result));
 
 
 
@@ -222,5 +192,5 @@ api.refreshToken()
 
 
 
-    // api.transactions.getTransactions("ea599ed124844ad4983b6db52aadc097", "2020-01-10", "2021-03-29", 1)
-      // .then(data => console.log(data));
+    // api.transactions.getTransactions("10")
+    //   .then(result => console.log(result));

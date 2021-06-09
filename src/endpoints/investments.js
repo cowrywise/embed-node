@@ -14,26 +14,56 @@ class investments {
     }
 
 
-
+    /**
+    * Get Investments
+    *
+    * Get/List of all investments performed by the user
+    */
     getInvestments(asset_type) {
-        let qs = asset_type ? "?" + querystring.stringify(asset_type) : "";
-        let url = "/investments" + qs;
-        const options = {
-          method: "GET"
-        };
-        return request(this.config, url, options);
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/investments" + (asset_type ? "?" + querystring.stringify(asset_type) : "")
+        });
     }
 
 
-    invest(data) {
-        let qs = asset_type ? "?" + querystring.stringify(asset_type) : "";
-        let url = "/investments" + qs;
-        const options = {
+    /**
+    * Create Investment
+    * 
+    * Description: Create investment
+    * @param {String} account_id Account ID of user
+    * @param {String} asset_code Asset code of the asset to invest in
+    * @param {String} amount Amount to invest
+    */
+    createInvestment(account_id, asset_code, amount) {
+        return request.perform(this.config, {
           method: "POST",
-          body: JSON.stringify(data)
-        };
-        return request(this.config, url, options);
+          endpoint: "/investments",
+          data: {
+            account_id: account_id,
+            asset_code: asset_code,
+            amount: amount
+          }
+        });
     }
+
+
+    /**
+    * Liquidate Investment
+    * 
+    * Description: Liquidate investment
+    * @param {String} index Index of the asset
+    * @param {String} units Units to liquidate
+    */
+   liquidateInvestment(index, units) {
+    return request.perform(this.config, {
+      method: "POST",
+      endpoint: "/investments/" + index + "/liquidate",
+      data: {
+        units: units
+      }
+    });
+}
 
     
 }

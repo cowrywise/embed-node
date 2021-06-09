@@ -14,19 +14,17 @@ class transactions {
     }
 
 
-
-    getTransactions(account_id, from_date, to_date, limit) {
-
-        let qs_account_id = account_id ? "?" + querystring.stringify(account_id) : "";
-        let qs_from_date = from_date ? "?" + querystring.stringify(from_date) : "";
-        let qs_to_date = to_date ? "?" + querystring.stringify(to_date) : "";
-        let qs_limit = limit ? "?" + querystring.stringify(limit) : "";
-
-        let url = "/transactions" + qs_account_id + qs_from_date + qs_to_date + qs_limit;
-        const options = {
-            method: "GET"
-        };
-        return request(this.config, url, options);
+    /**
+    * Get Transactions
+    * 
+    * Description: Get all transactions
+    * @param {String} [limit] Optional: limit fetch result
+    */
+    getTransactions(limit) {
+        return request.perform(this.config, {
+            method: "GET",
+            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify(limit)) : "")
+        });
     }
 
 }

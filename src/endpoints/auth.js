@@ -3,7 +3,7 @@
  *
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
-const request = require('../helper/enc_request');
+const request = require('../helper/request');
 
 
 class auth {
@@ -13,7 +13,15 @@ class auth {
     }
 
     getAuthToken(config) {
-      return request(config);
+      return request.perform("", {
+        method: "POST",
+        endpoint: "/o/token/",
+        data: {
+          grant_type: config.grant_type,
+          client_id: config.client_id,
+          client_secret: config.client_secret
+        }
+      });
     }
     
 }
