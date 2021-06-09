@@ -7,14 +7,12 @@ const Investments = require('./endpoints/investments');
 const Trade = require('./endpoints/trade');
 const Prices = require('./endpoints/prices');
 const Transactions = require('./endpoints/transactions');
+const Transfers = require('./endpoints/transfers');
 var api_key = "";
 
 
 /**
  *  class OpenInvest
- *
- *  
- *
  *
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
@@ -23,6 +21,7 @@ class OpenInvest {
 
     /**
      * Introduce OpenInvest
+     * 
      * 
      * A Node.JS module, which provides an object oriented wrapper for the OpenInvest v1 API.
      * @constructor
@@ -44,6 +43,7 @@ class OpenInvest {
         this.trade = new Trade(config)
         this.prices = new Prices(config)
         this.transactions = new Transactions(config)
+        this.transfers = new Transfers(config)
     }
 
     /**

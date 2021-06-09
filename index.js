@@ -26,7 +26,7 @@ const api = new OpenInvest({
 
 
   // api.accounts.createAccount("Tas", "Lim", "fignhajhgssap@gmail.com")
-  //   .then(result => console.log(result));
+    // .then(result => console.log(result));
 
 
   // api.accounts.getAccount()
@@ -194,3 +194,12 @@ const api = new OpenInvest({
 
     // api.transactions.getTransactions("10")
     //   .then(result => console.log(result));
+
+
+
+
+// TRANSFERS
+
+
+    // api.transfers.getTransfers()
+      // .then(result => console.log(result));
