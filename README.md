@@ -28,14 +28,13 @@ You need the following before getting to use this library:
 2. Client Secret
 
 ## Getting Started
-This library is extremely modular, meaning you can create more than one OpenInvest instance
+This library is extremely modular, meaning you can create more than one Client instance
 ````js
 const Client = require('embed-node')
 const api = new Client({ client_id: '****' client_secret: '****' })
 
 api
-    .accounts
-    .getAccount()
+    .accounts.getAccount()
     .then((result) => {
         //do something with result
     })
