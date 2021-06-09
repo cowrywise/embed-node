@@ -1,86 +1,75 @@
-# embed-node
-Official Embed Node Library
+# Embed Node Library
+The Embed Node library provides an easy access to the Embed Investment API by Cowrywise. Embed is an investment-as-a-service API that allows you to integrate investment features in your products and offer financial services to your customers at scale. With Embed, developers can create investment accounts for their customers and expose them to a wide variety of investment products!
+
+
+## Documentation
+See the [Embed API docs](developer.cowrywise.com).
 
 
 ## Prerequisites
 1. Node v6+, 8+ recommended.
 2. NPM
-3. ES6 knowledge
 
 ## Installation
 Use npm:
 ```
-npm i cowrywise-openinvest
+npm i embed-node
 ```
 
-### Pre-Usage
+### Usage
 
-**Please make sure you have read [the documentation](https://cowrywise.com/invesment-api) before continuing.**
+
+To get started, signup for developer credentials on [app.cowrywise.com](https://app.cowrywise.com). Once you signup, you can retrieve
+you `client_id` and `client_secret` keys from the developer dashboard. Set your credentials in environment variables. 
+
 
 You need the following before getting to use this library:
 1. Client ID
 2. Client Secret
 
 ## Getting Started
-This library is extremely modular, meaning you can create more than one OpenInvest instance
+This library is extremely modular, meaning you can create more than one instance
 ````js
-const OpenInvest = require('open-invest')
-const api = new OpenInvest({ client_id: '<your client id>', client_secret: '<your client secret>', grant_type: '<your grant type>' })
-// another instance
-// const instance = new OpenInvest({ client_id: 'randomId', client_secret: 'randomSecret', grant_type: 'client_credentials' })
-api
-    .accounts.
-    .getAccount()
-    .then((result) => {
-        //do something with result
-    })
-    .catch((err) => {
-        // retry or show error
-    })
+const Client = require('embed-node')
+const api = new Client({ client_id: '****', client_secret: '****' })
+
+api.wallets.getWallets()
+  .then((result) => { /* do something with result */ })
+  .catch((err) => { /* retry or show error */})
 ````
 
 
 ## API
-Please note that this library is in active development, use in production with caution.
-
 
 All methods return a `<Promise>`, hence you can use `.then` or `await`.
 All calls are done by Axios, so for the response structure check [Axios documentation](https://axios-http.com/docs/intro).
 
-### Methods
-Kindly check out all methods as well as their request and response structure on the [API documentation](http://cowrywise.com/investment-api)
 
 
-
-## Testing
-You would need to clone this repo to test.
-
-To run separate tests, check `package.json` for the commands.
+#### Get Accounts
+```js
+// Get account details
+api.accounts.getAccount()
+  .then(result => console.log(result));
 ```
-npm test
-````
 
-## Going Live/Production
+#### Create Investments
+```js
+// Create an investment with a given asset code
+client.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
+  .then(result => console.log(result));
+```
 
-Updates would be available on this shortly
+Check the [API reference](developer.cowrywise.com) document for more examples.
 
-## Pending Stuff
 
-Updates would be available on this shortly
+### Methods
+Kindly check out all methods as well as their request and response structure on the [API documentation](developer.cowrywise.com)
+
+
 
 ## Contributing
-1. Create your feature-branch: `git checkout -b my-awesome-feature`
-2. Commit your changes: `git commit -m 'Add this feature'`
-3. Push to the branch: `git push origin my-awesome-feature`
-4. Submit a pull request ;-)
 
-## Credits
-
-| **Contributor** |
-<br/>
-Updates would be available on this shortly
-
-
-## License
-
-Updates would be available on this shortly
+Before submitting a pull request, kindly ensure:
+- [ ] Necessary tests for the code changes requested are added
+- [ ] There are clear commit messages

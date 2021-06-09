@@ -1,11 +1,10 @@
 // import/require library
-const OpenInvest = require("./src/openinvest");
+const Client = require("./src/client");
 
 
 // Library initialization
-const api = new OpenInvest({
-  api_key: 'MFmfSha82ttKYdCNkzNGHdCeRU1L6M',
-  grant_type: 'client_credentials',
+const api = new Client({
+  api_key: 'nCVN9OqtRle7EXViMfIHDlbnXPI2Lo5',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });
@@ -30,46 +29,22 @@ const api = new OpenInvest({
 
 
   // api.accounts.getAccount()
-    // .then(result => console.log(result));
+  //   .then(result => console.log(result));
 
 
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')
   //   .then(result => console.log(result));
 
 
-  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
-  //   street: "Broadway",
-  //   lga: "Eti-Osa",
-  //   area_code: "231",
-  //   city: "Lekki",
-  //   state: "Lagos",
-  //   country: "NG"
-  // })
+  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", "Broadway", "Eti-Osa", "231", "Lekki", "Lagos", "NG")
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938",
-  //   {
-  //     first_name: "John",
-  //     last_name: "Doe",
-  //     email: "jd@gmail.com",
-  //     gender: "M",
-  //     relationship: "Friend",
-  //     date_of_birth: "1990-10-10",
-  //     phone_number: "+2348034031863"
-  // })
+  // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938", "John", "Doe", "jd@gmail.com", "M", "Friend", "1990-10-10", "+2348034031863")
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateProfile("033f5d3d00354d28961031efe9ae2938",
-  //   {
-  //     first_name: "Taslim",
-  //     last_name: "Oseni",
-  //     email: "tas@gmail.com",
-  //     gender: "M",
-  //     phone_number: "+2347061979046",
-  //     date_of_birth: "1989-10-10"
-  // })
+  // api.accounts.updateProfile("033f5d3d00354d28961031efe9ae2938", "Taslim", "Oseni", "tas@gmail.com", "M", "+2347061979046", "1989-10-10")
   // .then(result => console.log(result));
 
 
@@ -194,3 +169,12 @@ const api = new OpenInvest({
 
     // api.transactions.getTransactions("10")
     //   .then(result => console.log(result));
+
+
+
+
+// TRANSFERS
+
+
+    // api.transfers.getTransfers()
+      // .then(result => console.log(result));
