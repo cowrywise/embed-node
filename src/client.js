@@ -12,21 +12,24 @@ var api_key = "";
 
 
 /**
- *  class OpenInvest
- *
- *  Author: Taslim Oseni <taslim@cowrywise.com>
- **/
-class OpenInvest {
+*  class Client
+*
+*  Author: Taslim Oseni <taslim@cowrywise.com>
+**/
+class Client {
 
 
     /**
-     * Introduce OpenInvest
-     * 
-     * 
-     * A Node.JS module, which provides an object oriented wrapper for the OpenInvest v1 API.
-     * @constructor
-     * @param {Object} [config={}] The Configuration  to use for OpenInvest
-     */
+    * This is the main entry point to the Cowrywise Embed API.
+    *
+    * An instance of this class gives direct access to all
+    * the resources exposed by this api.
+    *
+    * Full API docs available at https://developers.cowrywise.com
+    *
+    * @constructor
+    * @param {Object} [config={}] The Configuration  to use for Cowrywise Embed API
+    */
     constructor(config) {
         
         if (!config.client_id) throw new Error('Client ID is Missing');
@@ -70,4 +73,4 @@ class OpenInvest {
 }
 
 
-module.exports = OpenInvest
+module.exports = Client
