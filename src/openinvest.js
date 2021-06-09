@@ -28,8 +28,7 @@ class OpenInvest {
      * @param {Object} [config={}] The Configuration  to use for OpenInvest
      */
     constructor(config) {
-
-        if (!config.grant_type) throw new Error('Grant Type is Missing');
+        
         if (!config.client_id) throw new Error('Client ID is Missing');
         if (!config.client_secret) throw new Error('Client Secret is Missing');
 

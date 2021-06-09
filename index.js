@@ -5,7 +5,6 @@ const OpenInvest = require("./src/openinvest");
 // Library initialization
 const api = new OpenInvest({
   api_key: '5vio4Q1Y40zCEJ4LK5KhuuxdMb4KNF',
-  grant_type: 'client_credentials',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });

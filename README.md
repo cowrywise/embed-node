@@ -1,21 +1,27 @@
-# embed-node
-Official Embed Node Library
+# Embed Node Library
+The Embed Node library provides an easy access to the Embed Investment API by Cowrywise. Embed is an investment-as-a-service API that allows you to integrate investment features in your products and offer financial services to your customers at scale. With Embed, developers can create investment accounts for their customers and expose them to a wide variety of investment products!
+
+
+## Documentation
+See the [Embed API docs](developer.cowrywise.com).
 
 
 ## Prerequisites
 1. Node v6+, 8+ recommended.
 2. NPM
-3. ES6 knowledge
 
 ## Installation
 Use npm:
 ```
-npm i cowrywise-openinvest
+npm i embed-node
 ```
 
-### Pre-Usage
+### Usage
 
-**Please make sure you have read [the documentation](https://cowrywise.com/invesment-api) before continuing.**
+
+To get started, signup for developer credentials on [app.cowrywise.com](https://app.cowrywise.com). Once you signup, you can retrieve
+you client_id and client_secret keys from the developer dashboard. Set your credentials in environment variables. 
+
 
 You need the following before getting to use this library:
 1. Client ID
@@ -29,7 +35,7 @@ const api = new OpenInvest({ client_id: '<your client id>', client_secret: '<you
 // another instance
 // const instance = new OpenInvest({ client_id: 'randomId', client_secret: 'randomSecret', grant_type: 'client_credentials' })
 api
-    .accounts.
+    .accounts
     .getAccount()
     .then((result) => {
         //do something with result
