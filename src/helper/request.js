@@ -42,7 +42,7 @@ const perform = async function(config = Object, options = Object) {
         method: "POST",
         endpoint: "/o/token/",
         data: {
-          grant_type: config.grant_type,
+          grant_type: 'client_credentials',
           client_id: config.client_id,
           client_secret: config.client_secret
         }

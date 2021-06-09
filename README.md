@@ -30,10 +30,9 @@ You need the following before getting to use this library:
 ## Getting Started
 This library is extremely modular, meaning you can create more than one OpenInvest instance
 ````js
-const OpenInvest = require('open-invest')
-const api = new OpenInvest({ client_id: '<your client id>', client_secret: '<your client secret>', grant_type: '<your grant type>' })
-// another instance
-// const instance = new OpenInvest({ client_id: 'randomId', client_secret: 'randomSecret', grant_type: 'client_credentials' })
+const Client = require('embed-node')
+const api = new Client({ client_id: '****' client_secret: '****' })
+
 api
     .accounts
     .getAccount()
@@ -47,46 +46,36 @@ api
 
 
 ## API
-Please note that this library is in active development, use in production with caution.
-
 
 All methods return a `<Promise>`, hence you can use `.then` or `await`.
 All calls are done by Axios, so for the response structure check [Axios documentation](https://axios-http.com/docs/intro).
 
-### Methods
-Kindly check out all methods as well as their request and response structure on the [API documentation](http://cowrywise.com/investment-api)
 
 
-
-## Testing
-You would need to clone this repo to test.
-
-To run separate tests, check `package.json` for the commands.
+#### Get Accounts
+```js
+// Get account details
+api.accounts.getAccount()
+  .then(result => console.log(result));
 ```
-npm test
-````
 
-## Going Live/Production
+#### Create Investments
+```js
+// Create an investment with a given asset code
+client.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
+  .then(result => console.log(result));
+```
 
-Updates would be available on this shortly
+Check the [API reference](developer.cowrywise.com) document for more examples.
 
-## Pending Stuff
 
-Updates would be available on this shortly
+### Methods
+Kindly check out all methods as well as their request and response structure on the [API documentation](developer.cowrywise.com)
+
+
 
 ## Contributing
-1. Create your feature-branch: `git checkout -b my-awesome-feature`
-2. Commit your changes: `git commit -m 'Add this feature'`
-3. Push to the branch: `git push origin my-awesome-feature`
-4. Submit a pull request ;-)
 
-## Credits
-
-| **Contributor** |
-<br/>
-Updates would be available on this shortly
-
-
-## License
-
-Updates would be available on this shortly
+Before submitting a pull request, kindly ensure:
+- [ ] Necessary tests for the code changes requested are added
+- [ ] There are clear commit messages

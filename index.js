@@ -4,7 +4,7 @@ const Client = require("./src/client");
 
 // Library initialization
 const api = new Client({
-  api_key: '5vio4Q1Y40zCEJ4LK5KhuuxdMb4KNF',
+  api_key: 'nCVN9OqtRle7EXViMfIHDlbnXPI2Lo5',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });
@@ -25,11 +25,11 @@ const api = new Client({
 
 
   // api.accounts.createAccount("Tas", "Lim", "fignhajhgssap@gmail.com")
-    // .then(result => console.log(result));
+  //   .then(result => console.log(result));
 
 
-  api.accounts.getAccount()
-    .then(result => console.log(result));
+  // api.accounts.getAccount()
+  //   .then(result => console.log(result));
 
 
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')
