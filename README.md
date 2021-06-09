@@ -31,7 +31,7 @@ You need the following before getting to use this library:
 This library is extremely modular, meaning you can create more than one instance
 ````js
 const Client = require('embed-node')
-const api = new Client({ client_id: '****' client_secret: '****' })
+const api = new Client({ client_id: '****', client_secret: '****' })
 
 api.accounts.getAccount()
   .then((result) => { /* do something with result */ })
