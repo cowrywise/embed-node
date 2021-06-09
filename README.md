@@ -33,7 +33,7 @@ This library is extremely modular, meaning you can create more than one instance
 const Client = require('embed-node')
 const api = new Client({ client_id: '****', client_secret: '****' })
 
-api.accounts.getAccount()
+api.wallets.getWallets()
   .then((result) => { /* do something with result */ })
   .catch((err) => { /* retry or show error */})
 ````
@@ -49,7 +49,7 @@ All calls are done by Axios, so for the response structure check [Axios document
 #### Get Accounts
 ```js
 // Get account details
-api.wallets.getWallets()
+api.accounts.getAccount()
   .then(result => console.log(result));
 ```
 
