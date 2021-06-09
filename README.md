@@ -28,19 +28,14 @@ You need the following before getting to use this library:
 2. Client Secret
 
 ## Getting Started
-This library is extremely modular, meaning you can create more than one Client instance
+This library is extremely modular, meaning you can create more than one instance
 ````js
 const Client = require('embed-node')
 const api = new Client({ client_id: '****' client_secret: '****' })
 
-api
-    .accounts.getAccount()
-    .then((result) => {
-        //do something with result
-    })
-    .catch((err) => {
-        // retry or show error
-    })
+api.accounts.getAccount()
+  .then((result) => { /* do something with result */ })
+  .catch((err) => { /* retry or show error */})
 ````
 
 
@@ -54,7 +49,7 @@ All calls are done by Axios, so for the response structure check [Axios document
 #### Get Accounts
 ```js
 // Get account details
-api.accounts.getAccount()
+api.accounts.getWallets()
   .then(result => console.log(result));
 ```
 
