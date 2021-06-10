@@ -1,0 +1,130 @@
+{
+    "data": {
+        "portfolio_balance": "50076139.7370",
+        "portfolio_returns": 0.0015227948,
+        "assets": {
+            "wallets": [
+                {
+                    "wallet_id": "d13d6b9428e8495b82ac86f958453c8e",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1385752170",
+                    "currency": "USD",
+                    "principal": "49998000.0000",
+                    "returns": "0.0000",
+                    "lifetime_returns": 0.0,
+                    "balance": "49998000.000",
+                    "account_number": "",
+                    "account_name": "",
+                    "bank_name": "",
+                    "created_on": "2021-05-31T14:39:51.388819+00:00"
+                },
+                {
+                    "wallet_id": "a6b5597c79014e74b2d9e91438564770",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1737641344",
+                    "currency": "NGN",
+                    "principal": "41000000.0000",
+                    "returns": "0.0000",
+                    "lifetime_returns": 0.0,
+                    "balance": "41000000.000",
+                    "account_number": "",
+                    "account_name": "",
+                    "bank_name": "",
+                    "created_on": "2021-05-31T12:55:05.659078+00:00"
+                }
+            ],
+            "savings": [
+                {
+                    "savings_id": "22705c7b54d2490e9b49c14b18c1b320",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1573237860",
+                    "currency": "NGN",
+                    "principal": "0.0000",
+                    "returns": "0.0000",
+                    "balance": "0.0000",
+                    "interest_enabled": true,
+                    "interest_rate": 0.03,
+                    "maturity_date": "2022-03-27",
+                    "created_on": "2021-05-31T13:11:08.776231+00:00"
+                },
+                {
+                    "savings_id": "4b628f979c7343c88fc397409db61fd6",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1779896610",
+                    "currency": "NGN",
+                    "principal": "0.0000",
+                    "returns": "0.0000",
+                    "balance": "0.0000",
+                    "interest_enabled": true,
+                    "interest_rate": 0.03,
+                    "maturity_date": "2022-04-03",
+                    "created_on": "2021-06-07T23:51:32.746566+00:00"
+                },
+                {
+                    "savings_id": "8ca469960b7d4b66a26361a7dd19f371",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE336255953",
+                    "currency": "NGN",
+                    "principal": "0.0000",
+                    "returns": "0.0000",
+                    "balance": "0.0000",
+                    "interest_enabled": true,
+                    "interest_rate": 0.025,
+                    "maturity_date": "2021-07-08",
+                    "created_on": "2021-06-08T22:14:20.054691+00:00"
+                },
+                {
+                    "savings_id": "da75200604a1425abd5935955673be98",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1322748642",
+                    "currency": "NGN",
+                    "principal": "0.0000",
+                    "returns": "0.0000",
+                    "balance": "0.0000",
+                    "interest_enabled": true,
+                    "interest_rate": 0.03,
+                    "maturity_date": "2022-04-04",
+                    "created_on": "2021-06-08T22:07:52.886245+00:00"
+                }
+            ],
+            "indexes": [
+                {
+                    "investment_id": "a45eaeb9-30a4-4239-aed8-4401fe44c8a2",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE1920562846",
+                    "asset_type": "index",
+                    "current_units": "0.0000",
+                    "currency": "USD",
+                    "current_value": "0",
+                    "investment_returns": null,
+                    "change_today": "0.0",
+                    "created_on": "2021-05-31T14:23:51.150256+00:00",
+                    "pending_deposits": [],
+                    "pending_sales": []
+                }
+            ],
+            "mutual_funds": [],
+            "treasury_bills": [
+                {
+                    "investment_id": "30e6bad5-f917-4e27-afec-8338eee0d7a1",
+                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
+                    "product_code": "PRCDE325426921",
+                    "asset_type": "tbills",
+                    "asset_in_index": false,
+                    "index_id": null,
+                    "current_units": "966.1945",
+                    "currency": "NGN",
+                    "current_value": "9076139.9511",
+                    "investment_returns": "0.021754030500000000325488969110665493644773960113525390625",
+                    "change_today": "0.0",
+                    "created_on": "2021-05-31T13:32:10.189894+00:00",
+                    "pending_deposits": [],
+                    "pending_sales": []
+                }
+            ]
+        }
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

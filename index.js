@@ -32,6 +32,10 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
+  // api.accounts.getSingleAccount("022ed7ddb248434c8c674ba1956d9202")
+    // .then(result => console.log(result));
+
+
   // api.accounts.getPortfolio('46f4c4c7605142e498cc51a34d25fa1f')
   //   .then(result => console.log(result));
 

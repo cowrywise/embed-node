@@ -59,6 +59,20 @@ class Accounts {
           endpoint: "/accounts/" +uid +"/portfolio"
         })
     }
+
+
+    /**
+    * Get single account
+    *
+    * Get a specific account by account_id
+    * @param {String} account_id The account_id of the requested account
+    */
+    getSingleAccount(account_id) {
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/accounts/" +account_id
+        })
+}
     
     
     /**
