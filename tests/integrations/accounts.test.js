@@ -16,10 +16,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_create_account', async function() {
       nock(url)
-        .post('/accounts')
+        .post('/accounts', {first_name: "test", last_name: "tester", email: "tester@abc.com"})
         .reply(200, createAccountsResponse);
 
-      expect(await api.accounts.createAccount()).to.eql(createAccountsResponse)
+      expect(await api.accounts.createAccount("test", "tester", "tester@abc.com")).to.eql(createAccountsResponse)
     })
 
 
