@@ -7,7 +7,7 @@ const request = require('../helper/request');
 const querystring = require("querystring");
 
 
-class transactions {
+class Transactions {
 
     constructor (config = {}) {
         this.config = config;
@@ -30,4 +30,4 @@ class transactions {
 }
 
 
-module.exports = transactions
+module.exports = Transactions
