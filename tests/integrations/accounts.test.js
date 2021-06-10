@@ -1,13 +1,12 @@
 const expect = require('expect.js')
-const got = require('got')
 const nock = require('nock')
-const Client = require('../../src/client')
+
 const createAccountsResponse = require('../responses/create_account_200.json')
 const getAccountsResponse = require('../responses/get_account_200.json')
 const getSingleAccountsResponse = require('../responses/get_single_account_200.json')
 const getPortfolioResponse = require('../responses/get_portfolio_200.json')
 
-
+const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
 const url = 'https://sandbox.cowrywise.com/api/v1'
 
