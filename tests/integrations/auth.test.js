@@ -6,7 +6,6 @@ const failedRefreshTokenResponse = require('../responses/refresh_token_401.json'
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const notWorkingApi = new Client({client_id: 'INVALID_CLIENT', client_secret: 'INVALID_SECRET'});
 const url = 'https://sandbox.cowrywise.com'
 
 
@@ -25,7 +24,7 @@ describe('Authentication works properly', function () {
           .post('/o/token/')
           .reply(401, failedRefreshTokenResponse);
   
-        expect(await notWorkingApi.refreshToken()).to.eql({error: true})
+        expect(await api.refreshToken()).to.eql({error: true})
       })
 
   })
