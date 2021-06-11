@@ -5,6 +5,7 @@ const createAccountsResponse = require('../responses/create_account_200.json')
 const getAccountsResponse = require('../responses/get_account_200.json')
 const getSingleAccountsResponse = require('../responses/get_single_account_200.json')
 const getPortfolioResponse = require('../responses/get_portfolio_200.json')
+const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
@@ -30,6 +31,16 @@ describe('Account functions work properly', function () {
       expect(await api.accounts.getAccount()).to.eql(getAccountsResponse)
     })
 
+
+    it('test_create_account_with_zero_parameters_returns_error_response', async function() {
+      nock(url)
+        .post('/accounts', {first_name: undefined, last_name: undefined, email: undefined})
+        .reply(400, errorResponse);
+
+      expect(await api.accounts.createAccount()).to.eql(errorResponse)
+    })
+
+
     it('test_can_get_single_account', async function() {
       nock(url)
         .get('/accounts/account_id')
@@ -46,5 +57,6 @@ describe('Account functions work properly', function () {
 
       expect(await api.accounts.getPortfolio("uid")).to.eql(getPortfolioResponse)
     })
+
 
   })

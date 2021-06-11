@@ -4,7 +4,7 @@ const Client = require("./src/client");
 
 // Library initialization
 const api = new Client({
-  api_key: 'pmGRI6kB0V0w8PiIrpKgG0BiIk7wtE',
+  api_key: 'FyVb4jD6uedygiV9XQOguinaAwI4Xx',
   client_id: 'CWRY-NkN1FXCLA76mYXYl4atk1CCAm2Q5l968RTsYjvvT',
   client_secret: 'CWRY-SECRET-wn4MIpondMECHKRCERxVju2ahUxNC5RxgFU9T5YqkclXG53C9TKFm8a0TydeW2ZDIceztf8o4NqJA8RJjQKrdtVpyLot02GUikpjRsy12N8QbWwfCR7plXMESC8pdMmY'
 });
@@ -25,7 +25,7 @@ const api = new Client({
 
 
   // api.accounts.createAccount("Tas", "Lim", "fignhajhgssap@gmail.com")
-  //   .then(result => console.log(result));
+    // .then(result => console.log(result));
 
 
   // api.accounts.getAccount()
@@ -102,7 +102,7 @@ const api = new Client({
 
 
   // api.assets.getAssets("mutual-fund")
-  //   .then(result => console.log(result));
+    // .then(result => console.log(result));
 
 
   // api.assets.getIndices()
