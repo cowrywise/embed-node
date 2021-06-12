@@ -1,0 +1,86 @@
+{
+    "pagination": {
+        "next": null,
+        "previous": null,
+        "count": 11
+    },
+    "data": [
+        {
+            "index_id": "aabbbbbb-aabb-aabb-aabb-aabbbabbbaaa",
+            "account_id": "aabbaabb-aabb-aabb-aabb-aabbbbaabbaa",
+            "is_user_created": true,
+            "asset_code": "AST-INDEX-1160703238",
+            "name": "My Sample Index",
+            "description": "A custom index containing x y z assets",
+            "asset_type": "index",
+            "asset_class": "variable-income",
+            "created_on": "2019-06-08T13:14:14.042501+00:00",
+            "allocations": [
+                {
+                    "asset_id": "c95c50f4-aabb-bbaa-aabb-880057c64f21",
+                    "asset_name": "United Capital Equity Fund",
+                    "asset_code": "AST-FUND-174669468",
+                    "weight": 50.0
+                },
+                {
+                    "asset_id": "bd353632-abab-aabb-bbaa-913ca60d4db2",
+                    "asset_name": "Afrinvest Equity Fund",
+                    "asset_code": "AST-FUND-000020000",
+                    "weight": 50.0
+                }
+            ],
+            "index_type": "unmanaged",
+            "country": "NG"
+        },
+        {
+            "index_id": "bbbcaaa4-aabb-bbaa-aabb-880057c64f21",
+            "account_id": null,
+            "is_user_created": false,
+            "asset_code": "AST-PORTFOLIO-589848232",
+            "name": "US Stock Portfolio PRESERVE/NEUTRAL",
+            "description": "US Stock Portfolio with risk class of PRESERVE and investment preference NEUTRAL",
+            "asset_type": "index",
+            "asset_class": "fixed-income",
+            "created_on": "2019-05-29T18:35:30+00:00",
+            "allocations": [],
+            "index_type": "managed",
+            "country": "US"
+        },
+        {
+            "index_id": "bbbcb8f3-aaaa-bbbb-81e6-ef48964ea6b0",
+            "account_id": "2ce91bff-aaab-aabb-a78a-82a3f4ed086c",
+            "is_user_created": true,
+            "asset_code": "AST-INDEX-1002000000",
+            "name": "Low Performing Index",
+            "description": "A custom index containing x y z assets",
+            "asset_type": "index",
+            "asset_class": "variable-income",
+            "created_on": "2019-05-26T11:58:28.064804+00:00",
+            "allocations": [
+                {
+                    "asset_id": "0db0dd04-aaaa-aaaa-bbbb-156ad1aef575",
+                    "asset_name": "Afrinvest Plutus Fund",
+                    "asset_code": "AST-FUND-1905000079",
+                    "weight": 40.0
+                },
+                {
+                    "asset_id": "bd353632-baba-abab-bc9b-913ca60d4db2",
+                    "asset_name": "Afrinvest Equity Fund",
+                    "asset_code": "AST-FUND-360000200",
+                    "weight": 40.0
+                },
+                {
+                    "asset_id": "c5d29cf1-baba-abab-bbba-e73ac8654ca4",
+                    "asset_name": "United Capital Money Market Fund",
+                    "asset_code": "AST-FUND-1060000000",
+                    "weight": 20.0
+                }
+            ],
+            "index_type": "unmanaged",
+            "country": "NG"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "asset_id": "abb50f4-aaa-abab-bbbb-880057c64f21",
+            "asset_name": "United Capital Equity Fund",
+            "asset_code": "AST-FUND-170000000",
+            "weight": 50.0
+        },
+        {
+            "asset_id": "bd3aba32-bbbb-aaaa-bc9b-913ca60d4db2",
+            "asset_name": "Afrinvest Equity Fund",
+            "asset_code": "AST-FUND-000000063",
+            "weight": 50.0
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

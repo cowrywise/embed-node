@@ -3,6 +3,8 @@ const nock = require('nock')
 
 const getAssetsResponse = require('../responses/get_assets_200.json')
 const mutualFundAssetResponse = require('../responses/mutual_fund_assets.json')
+const getIndicesResponse = require('../responses/get_indexes_200.json')
+const getIndicedAssetResponse = require('../responses/get_indexed_asset_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
@@ -28,6 +30,24 @@ describe('Asset functions work properly', function () {
   
         expect(await api.assets.getAssets("mutual-fund")).to.eql(mutualFundAssetResponse)
       })
+
+
+    it('test_can_get_indices', async function() {
+      nock(url)
+        .get('/indexes')
+        .reply(200, getIndicesResponse);
+
+      expect(await api.assets.getIndices()).to.eql(getIndicesResponse)
+    })
+
+
+    it('test_can_get_indexed_asset', async function() {
+      nock(url)
+        .get('/indexes/bbbcaaa4-aabb-bbaa-aabb-880057c64f21/assets')
+        .reply(200, getIndicedAssetResponse);
+
+      expect(await api.assets.getIndexesAsset('bbbcaaa4-aabb-bbaa-aabb-880057c64f21')).to.eql(getIndicedAssetResponse)
+    })
 
 
   })
