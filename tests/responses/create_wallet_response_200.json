@@ -1,0 +1,19 @@
+{
+    "data": {
+        "wallet_id": "033f5d3d00354d28961031efe9ae2938",
+        "account_id": "6bc21a44b49941d7bf470535f8780ffb",
+        "product_code": "PRCDE1908824271",
+        "currency": "USD",
+        "principal": "0.0",
+        "returns": "0.0",
+        "lifetime_returns": 0.0,
+        "balance": "0.0",
+        "account_number": "",
+        "account_name": "",
+        "bank_name": "",
+        "created_on": "2021-06-13T16:00:40.641695+00:00"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}
