@@ -22,7 +22,7 @@ describe('Price functions work properly', function () {
     })
 
 
-    it('test_get_price_history_with_zero_parameters_returns_error_response', async function() {
+    it('test_get_price_history_with_zero_params_returns_error_response', async function() {
         nock(url)
           .get('/prices?asset_id=&from_date=&to_date=')
           .reply(400, errorResponse);

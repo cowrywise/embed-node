@@ -32,7 +32,7 @@ describe('Wallet functions work properly', function () {
     })
 
 
-    it('test_create_wallet_with_no_parameters_returns_error_response', async function() {
+    it('test_create_wallet_with_no_params_returns_error_response', async function() {
         nock(url)
           .post('/wallets')
           .reply(400, errorResponse);

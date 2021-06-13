@@ -23,7 +23,7 @@ describe('Savings functions work properly', function () {
     })
 
 
-    it('test_create_savings_with_no_parameters_returns_error_response', async function() {
+    it('test_create_savings_with_no_params_returns_error_response', async function() {
         nock(url)
           .post('/savings')
           .reply(400, errorResponse);

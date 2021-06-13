@@ -43,7 +43,7 @@ describe('Investment functions work properly', function () {
     })
 
 
-    it('test_create_investment_with_zero_parameters_returns_error_response', async function() {
+    it('test_create_investment_with_zero_params_returns_error_response', async function() {
         nock(url)
           .post('/investments')
           .reply(400, errorResponse);

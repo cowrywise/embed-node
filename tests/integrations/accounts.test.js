@@ -32,7 +32,7 @@ describe('Account functions work properly', function () {
     })
 
 
-    it('test_create_account_with_zero_parameters_returns_error_response', async function() {
+    it('test_create_account_with_zero_params_returns_error_response', async function() {
       nock(url)
         .post('/accounts', {first_name: undefined, last_name: undefined, email: undefined})
         .reply(400, errorResponse);
