@@ -23,7 +23,7 @@ class Transactions {
     getTransactions(limit) {
         return request.perform(this.config, {
             method: "GET",
-            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify(limit)) : "")
+            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify({limit: limit})) : "")
         });
     }
 
