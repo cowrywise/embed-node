@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": "503ea995-abab-492b-a71e-3b070218e0a8",
+            "class": "us_equity",
+            "exchange": "NASDAQ",
+            "symbol": "JMBA",
+            "name": "",
+            "status": "inactive",
+            "tradable": false,
+            "marginable": false,
+            "shortable": false,
+            "easy_to_borrow": false,
+            "fractionable": false
+        },
+        {
+            "id": "a3aba8b8-aaaa-481a-a43f-07bbfe6ea3de",
+            "class": "us_equity",
+            "exchange": "NASDAQ",
+            "symbol": "AEMD",
+            "name": "Aethlon Medical, Inc. Common Stock",
+            "status": "active",
+            "tradable": true,
+            "marginable": true,
+            "shortable": false,
+            "easy_to_borrow": false,
+            "fractionable": false
+        },
+        {
+            "id": "8d2d7604-bbbb-54bb-8934-e66169e8baad",
+            "class": "us_equity",
+            "exchange": "NASDAQ",
+            "symbol": "AEYE",
+            "name": "AudioEye, Inc. Common Stock",
+            "status": "active",
+            "tradable": true,
+            "marginable": true,
+            "shortable": true,
+            "easy_to_borrow": true,
+            "fractionable": false
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

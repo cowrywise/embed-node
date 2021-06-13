@@ -11,7 +11,7 @@ const api = new Client({client_id: '****', client_secret: '****'});
 const url = 'https://sandbox.cowrywise.com/api/v1'
 
 
-describe('Price functions work properly', function () {
+describe('Savings functions work properly', function () {
 
 
     it('test_can_create_savings', async function() {
