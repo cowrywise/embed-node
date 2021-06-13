@@ -1,0 +1,68 @@
+{
+    "pagination": {
+        "next": "http://sandbox.cowrywise.com/api/v1/transfers?limit=20&offset=20",
+        "previous": null,
+        "count": 30
+    },
+    "data": [
+        {
+            "id": "246d10bf-aaaa-bbb-ad50-a25806944fa1",
+            "amount": {
+                "value": 20000.0,
+                "currency_code": "NGN"
+            },
+            "reference": "TRFC593B109EA7A9E2E",
+            "description": null,
+            "source_asset": {
+                "id": "9de2be89-7c24-45f1-97a2-2ccd89bd46c6",
+                "account_id": "46f4c4c7605142e498cc51a34d25fa1f",
+                "account_name": "User One",
+                "account_email": "sample1@gmail.com",
+                "product_code": "PRCDE778788777",
+                "asset_type": "wallet"
+            },
+            "destination_asset": {
+                "id": "6e622370-bbab-4a71-baab-39244ab40c30",
+                "account_id": "46f4c4c7605142e498cc51a34d25fa1f",
+                "account_name": "User Two",
+                "account_email": "sample2@gmail.com",
+                "product_code": "PRCDE1583007311",
+                "asset_type": "mutual-fund"
+            },
+            "status": "Processed",
+            "fee": 0.0,
+            "transaction_date": "2019-05-11T02:11:47.908482+00:00"
+        },
+        {
+            "id": "24a9ef4a-baab-aaba-abbb-a95728a9c2fc",
+            "amount": {
+                "value": 2000000.0,
+                "currency_code": "NGN"
+            },
+            "reference": "TRF37821066243F0DD2",
+            "description": null,
+            "source_asset": {
+                "id": "84ce4eac-1935-4fce-be20-0db288e0eb0a",
+                "account_id": "87081b38627246f58a9c604e4f3ef097",
+                "account_name": "User Three",
+                "account_email": "sample3@gmail.com",
+                "product_code": "PRCDE1829646732",
+                "asset_type": "wallet"
+            },
+            "destination_asset": {
+                "id": "c923a37f-aaaa-bbbb-baaa-130f14a37af6",
+                "account_id": "87081b38627246f58a9c604e4f3ef097",
+                "account_name": "Sam Jones",
+                "account_email": "sample4@gmail.com",
+                "product_code": "PRCDE386747628",
+                "asset_type": "tbills"
+            },
+            "status": "Processed",
+            "fee": 0.0,
+            "transaction_date": "2019-05-22T17:37:13.569752+00:00"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}
