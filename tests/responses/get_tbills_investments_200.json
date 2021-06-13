@@ -1,0 +1,28 @@
+{
+    "pagination": {
+        "next": null,
+        "previous": null,
+        "count": 2
+    },
+    "data": [
+        {
+            "investment_id": "bbbbaaaa-abba-baba-abab-83b8bbe0abaab",
+            "account_id": "83b8bbe0abaab77f86683b8bbe0abaab",
+            "product_code": "PRCDE000000000",
+            "asset_type": "tbills",
+            "asset_in_index": false,
+            "index_id": null,
+            "current_units": "966.1945",
+            "currency": "NGN",
+            "current_value": "9076139.9511",
+            "investment_returns": "0.021754030500000000325488969110665493644773960113525390625",
+            "change_today": "0.0",
+            "created_on": "2021-05-31T13:32:10.189894+00:00",
+            "pending_deposits": [],
+            "pending_sales": []
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

@@ -5,7 +5,6 @@ const getAssetsResponse = require('../responses/get_assets_200.json')
 const mutualFundAssetResponse = require('../responses/mutual_fund_assets.json')
 const getIndicesResponse = require('../responses/get_indexes_200.json')
 const getIndicedAssetResponse = require('../responses/get_indexed_asset_200.json')
-const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
