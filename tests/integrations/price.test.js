@@ -21,10 +21,11 @@ describe('Price functions work properly', function () {
       expect(await api.prices.getPriceHistory('bbaabbba-bbba-aaab-82f1-bbaaa1aef575', '2020-01-10', '2021-03-29')).to.eql(getPriceHistoryResponse)
     })
 
+
     it('test_get_price_history_with_zero_parameters_returns_error_response', async function() {
         nock(url)
           .get('/prices?asset_id=&from_date=&to_date=')
-          .reply(200, errorResponse);
+          .reply(400, errorResponse);
   
         expect(await api.prices.getPriceHistory()).to.eql(errorResponse)
       })

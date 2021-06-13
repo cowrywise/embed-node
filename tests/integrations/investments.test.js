@@ -46,7 +46,7 @@ describe('Investment functions work properly', function () {
     it('test_create_investment_with_zero_parameters_returns_error_response', async function() {
         nock(url)
           .post('/investments')
-          .reply(200, errorResponse);
+          .reply(400, errorResponse);
   
         expect(await api.investments.createInvestment()).to.eql(errorResponse)
     })
