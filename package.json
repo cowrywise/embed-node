@@ -5,16 +5,25 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test-unit && npm run test-integration",
+    "test-unit": "mocha tests/unit/*.test.js",
+    "test-integration": "mocha tests/integrations/*.js"
   },
   "keywords": [],
   "author": "Taslim Oseni",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
     "express": "^4.17.1",
     "express-validator": "^6.10.0",
     "form-data": "^4.0.0",
+    "got": "^11.8.2",
+    "mocha": "^9.0.0",
+    "ngrok": "^3.0.0",
+    "nock": "^13.1.0",
     "node-fetch": "^2.6.1",
     "qs": "^6.10.1",
     "querystring": "^0.2.1"

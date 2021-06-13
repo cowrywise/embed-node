@@ -1,0 +1,21 @@
+{
+    "pagination": {
+        "next": null,
+        "previous": null,
+        "count": 1
+    },
+    "data": [
+        {
+            "asset_id": "bbaabbba-bbba-aaab-82f1-bbaaa1aef575",
+            "buy_price": 10000.0,
+            "sell_price": 10000.0,
+            "current_price": 0.0,
+            "current_yield": 0.0,
+            "ytd": 0.0,
+            "date": "2019-05-11"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

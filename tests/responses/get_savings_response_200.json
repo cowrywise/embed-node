@@ -1,0 +1,27 @@
+{
+    "pagination": {
+        "next": "http://sandbox.cowrywise.com/api/v1/savings?limit=20&offset=20",
+        "previous": null,
+        "count": 28
+    },
+    "data": [
+        {
+            "savings_id": "bbbbaaaac6bbbbbb9531ddbbabbababa",
+            "account_id": "000baaaac6bbbbbb9531ddbbabbababa",
+            "product_code": "PRCDE451230511",
+            "currency": "NGN",
+            "principal": "0.0",
+            "returns": "0.0",
+            "balance": "0.0",
+            "interest_enabled": true,
+            "interest_rate": 0.03,
+            "maturity_date": "2022-04-09",
+            "created_on": "2021-06-13T12:12:56.560360+00:00"
+
+            
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

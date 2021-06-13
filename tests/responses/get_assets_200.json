@@ -1,0 +1,44 @@
+{
+    "pagination": {
+        "next": "https://sandbox.cowrywise.com/api/v1/assets?limit=20&offset=20",
+        "previous": null,
+        "count": 73
+    },
+    "data": [
+        {
+            "asset_id": "d96c50f4-0o12-4fcc-bfc3-880057cmk521",
+            "asset_code": "BKD-FUND-174511468",
+            "name": "United Capital Equity Fund",
+            "country": "NG",
+            "is_indexable": true,
+            "description": "United Capital Equity Fund",
+            "asset_type": "mutual-fund",
+            "asset_class": "fixed-income",
+            "buy_price": 1.15,
+            "sell_price": 112.0,
+            "current_price": 0.0,
+            "current_yield": 0.0,
+            "price_at": "2019-05-11",
+            "maturity_date": "Not Applicable"
+        },
+        {
+            "asset_id": "l3ac7af2-4fcc-4824-bfc3-96fd960d029b",
+            "asset_code": "AST-FUND-1001978418",
+            "name": "ARM Money Market Funds",
+            "country": "NG",
+            "is_indexable": true,
+            "description": "ARM Money Market Funds",
+            "asset_type": "mutual-fund",
+            "asset_class": "fixed-income",
+            "buy_price": 10.0,
+            "sell_price": 1000.0,
+            "current_price": 0.0,
+            "current_yield": 0.0,
+            "price_at": "2019-05-11",
+            "maturity_date": "Not Applicable"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

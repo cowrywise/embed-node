@@ -1,0 +1,40 @@
+{
+    "pagination": {
+        "next": "http://sandbox.cowrywise.com/api/v1/wallets?limit=20&offset=20",
+        "previous": null,
+        "count": 41
+    },
+    "data": [
+        {
+            "wallet_id": "bb5ac0ebbbb04aaaaa885d8984babfbb",
+            "account_id": "033f5d3d00354d28961031efe9ae2938",
+            "product_code": "PRCDE1203073566",
+            "currency": "USD",
+            "principal": "49999800.0000",
+            "returns": "0.0000",
+            "lifetime_returns": 0.0,
+            "balance": "49999800.000",
+            "account_number": "",
+            "account_name": "",
+            "bank_name": "",
+            "created_on": "2019-05-31T14:05:27.289926+00:00"
+        },
+        {
+            "wallet_id": "d13d6b9428e8495b82ac86f958453c8e",
+            "account_id": "ba8f9d8bbba6477f866b20161e003e48",
+            "product_code": "PRCDE1385752170",
+            "currency": "USD",
+            "principal": "49998000.0000",
+            "returns": "0.0000",
+            "lifetime_returns": 0.0,
+            "balance": "49998000.000",
+            "account_number": "",
+            "account_name": "",
+            "bank_name": "",
+            "created_on": "2019-05-31T14:39:51.388819+00:00"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

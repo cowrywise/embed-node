@@ -1,0 +1,46 @@
+{
+    "pagination": {
+        "next": "http://sandbox.cowrywise.com/api/v1/accounts?limit=20&offset=20",
+        "previous": null,
+        "count": 38
+    },
+    "data": [
+        {
+            "account_id": "033ed7ddb248434c8c6723a1956d9202",
+            "account_number": 17330012,
+            "first_name": "Sample",
+            "last_name": "User",
+            "email": "tester@abc.com",
+            "risk_appetite": 0,
+            "is_proprietary": false,
+            "account_status": "ACTIVE",
+            "verification_status": "UNVERIFIED",
+            "is_verified": false,
+            "account_type": "Individual",
+            "phone_number": null,
+            "date_of_birth": null,
+            "gender": null,
+            "identifications": [],
+            "address": {
+                "street": "",
+                "lga": "",
+                "area_code": "",
+                "city": "",
+                "state": "",
+                "country": null
+            },
+            "next_of_kin": {
+                "first_name": "",
+                "last_name": "",
+                "email": "",
+                "phone_number": "",
+                "relationship": "",
+                "gender": null
+            },
+            "date_joined": "2021-06-08T18:47:16.194440+00:00"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

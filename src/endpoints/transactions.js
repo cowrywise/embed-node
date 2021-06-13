@@ -7,7 +7,7 @@ const request = require('../helper/request');
 const querystring = require("querystring");
 
 
-class transactions {
+class Transactions {
 
     constructor (config = {}) {
         this.config = config;
@@ -23,11 +23,11 @@ class transactions {
     getTransactions(limit) {
         return request.perform(this.config, {
             method: "GET",
-            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify(limit)) : "")
+            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify({limit: limit})) : "")
         });
     }
 
 }
 
 
-module.exports = transactions
+module.exports = Transactions

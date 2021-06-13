@@ -1,0 +1,39 @@
+{
+    "data": {
+        "account_id": "f2814d403efe4728a5c4f63e9dd7cf4c",
+        "account_number": 397100259,
+        "first_name": "User",
+        "last_name": "One",
+        "email": "tester@abc.com",
+        "risk_appetite": 0,
+        "is_proprietary": false,
+        "account_status": "ACTIVE",
+        "verification_status": "UNVERIFIED",
+        "is_verified": false,
+        "account_type": "Individual",
+        "phone_number": null,
+        "date_of_birth": null,
+        "gender": null,
+        "identifications": [],
+        "address": {
+            "street": "",
+            "lga": "",
+            "area_code": "",
+            "city": "",
+            "state": "",
+            "country": null
+        },
+        "next_of_kin": {
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "phone_number": "",
+            "relationship": "",
+            "gender": null
+        },
+        "date_joined": "2000-06-10T15:44:59.153436+00:00"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

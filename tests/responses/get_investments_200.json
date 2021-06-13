@@ -1,0 +1,28 @@
+{
+    "pagination": {
+        "next": null,
+        "previous": null,
+        "count": 8
+    },
+    "data": [
+        {
+            "investment_id": "aaab31bb-bbbb-aaaa-abab-aaaabbabbaa",
+            "account_id": "adbfbaea9fe440f9a7d08aaaabbabbaa",
+            "product_code": "PRCDE1732215572",
+            "asset_type": "mutual-fund",
+            "asset_in_index": false,
+            "index_id": null,
+            "current_units": "6.0000",
+            "currency": "NGN",
+            "current_value": "60000.0000",
+            "investment_returns": "0",
+            "change_today": "0.0",
+            "created_on": "2019-06-04T09:47:19.091684+00:00",
+            "pending_deposits": [],
+            "pending_sales": []
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

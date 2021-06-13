@@ -36,7 +36,7 @@ const perform = async function(config = Object, options = Object) {
   },
   async function (error) {
     // console.log(error);
-    if (error.response.status === 401 && _retry) {
+    if (error.response && (error.response.status === 401 && _retry)) {
       _retry = false;
       const access_token = (await perform(config, {
         method: "POST",
@@ -68,7 +68,12 @@ const perform = async function(config = Object, options = Object) {
   // Return the result of the executed request
   return axios(axios_configuration)
     .then(function (response) {
-      return response.data;
+      if(response) {
+        return response.data
+      }
+      else {
+        return response;
+      }
       
     })
     .catch(function (error) {

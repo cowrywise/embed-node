@@ -7,7 +7,7 @@ const request = require('../helper/request');
 const querystring = require('querystring');
 
 
-class investments {
+class Investments {
 
     constructor (config = {}) {
         this.config = config;
@@ -22,7 +22,7 @@ class investments {
     getInvestments(asset_type) {
         return request.perform(this.config, {
           method: "GET",
-          endpoint: "/investments" + (asset_type ? "?" + querystring.stringify(asset_type) : "")
+          endpoint: "/investments" + (asset_type ? "?" + querystring.stringify({asset_type: asset_type}) : "")
         });
     }
 
@@ -69,4 +69,4 @@ class investments {
 }
 
 
-module.exports = investments
+module.exports = Investments
