@@ -47,7 +47,7 @@ const api = new Client({
     city: 'Lekki',
     state: 'Lagos',
     country: 'NG',
-    idempotency_key: 'This is the keyyyyyy'}
+    idempotency_key: 'random_idempotency_key'}
     )
   .then(result => console.log(result));
 
