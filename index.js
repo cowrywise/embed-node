@@ -154,8 +154,11 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    // api.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
-    //   .then(result => console.log(result));
+    api.investments.createInvestment({
+      account_id: '6a8f9d8aef16477f866b20161e003e48',
+      asset_code: 'AST-TBILL-1741042763'
+      })
+      .then(result => console.log(result));
 
 
     // api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")

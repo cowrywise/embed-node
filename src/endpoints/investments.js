@@ -31,19 +31,14 @@ class Investments {
     * Create Investment
     * 
     * Description: Create investment
-    * @param {String} account_id Account ID of user
-    * @param {String} asset_code Asset code of the asset to invest in
-    * @param {String} amount Amount to invest
+    * @param {String} data.account_id Account ID of user
+    * @param {String} data.asset_code Asset code of the asset to invest in
     */
-    createInvestment(account_id, asset_code, amount) {
+    createInvestment(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/investments",
-          data: {
-            account_id: account_id,
-            asset_code: asset_code,
-            amount: amount
-          }
+          data: data
         });
     }
 

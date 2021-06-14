@@ -36,10 +36,10 @@ describe('Investment functions work properly', function () {
 
     it('test_can_create_investment', async function() {
         nock(url)
-          .post('/investments', {account_id: 'bbaaaaaabbb6477f866b20161e003ebb', asset_code: 'AST-TBILL-0001000000', amount: '2000'})
+          .post('/investments', {account_id: 'bbaaaaaabbb6477f866b20161e003ebb', asset_code: 'AST-TBILL-0001000000'})
           .reply(200, createInvestmentsResponse);
   
-        expect(await api.investments.createInvestment("bbaaaaaabbb6477f866b20161e003ebb", "AST-TBILL-0001000000", "2000")).to.eql(createInvestmentsResponse)
+        expect(await api.investments.createInvestment({account_id: 'bbaaaaaabbb6477f866b20161e003ebb', asset_code: 'AST-TBILL-0001000000'})).to.eql(createInvestmentsResponse)
     })
 
 
