@@ -40,15 +40,16 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
-  //   street: 'Broadway',
-  //   lga: 'Eti-Osa',
-  //   area_code: '231',
-  //   city: 'Lekki',
-  //   state: 'Lagos',
-  //   country: 'NG'}
-  //   )
-  // .then(result => console.log(result));
+  api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
+    street: 'Broadway',
+    lga: 'Eti-Osa',
+    area_code: '231',
+    city: 'Lekki',
+    state: 'Lagos',
+    country: 'NG',
+    idempotency_key: 'This is the keyyyyyy'}
+    )
+  .then(result => console.log(result));
 
 
   // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938", {

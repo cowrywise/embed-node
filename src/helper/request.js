@@ -18,6 +18,7 @@ const perform = async function(config = Object, options = Object) {
   let headers = {};
   headers["Content-Type"] = "application/x-www-form-urlencoded"
   if(!options['endpoint'].includes("/o/token")) { headers['Authorization'] = 'Bearer '+ config['api_key'] }
+  if(options['method'] === "POST" && options['data']['idempotency_key']) {headers['Embed-Idempotency-Key'] = options['data']['idempotency_key']}
 
   
   // Set up config
