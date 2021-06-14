@@ -17,19 +17,15 @@ class Accounts {
     * Create Account
     * 
     * Description: Create investment account
-    * @param {String} first_name First name of the user
-    * @param {String} last_name Last name of the user
-    * @param {String} email Email address of the user
+    * @param {String} data.first_name First name of the user
+    * @param {String} data.last_name Last name of the user
+    * @param {String} data.email Email address of the user
     */
-    createAccount(first_name, last_name, email) {
+    createAccount(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts",
-          data: {
-            first_name: first_name,
-            last_name: last_name,
-            email: email
-          },
+          data: data
         })
     }
     
@@ -80,20 +76,18 @@ class Accounts {
     *
     * Update the address details for an investment account
     * @param {String} uid The UID of the investment account
-    * @param {Object} data Address details of the owner of the investment account
+    * @param {String} street Name of street
+    * @param {String} lga Local Government Area
+    * @param {String} area_code Area code
+    * @param {String} city Name of city
+    * @param {String} state Name of state
+    * @param {String} country Two-digit country abbreviation
     */
-    updateAddress(uid, street, lga, area_code, city, state, country = "NG") {
+    updateAddress(uid, data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts/" +uid +"/address",
-          data: {
-            street: street,
-            lga: lga,
-            area_code: area_code,
-            city: city,
-            state: state,
-            country: country
-          }
+          data: data
         });
     }
     
@@ -103,21 +97,19 @@ class Accounts {
     *
     * Update the next-of-kin for an investment account
     * @param {String} uid The UID of the investment account
-    * @param {Object} data Details of the next of kin
+    * @param {String} data.first_name First name
+    * @param {String} data.last_name Last name
+    * @param {String} data.email Email address
+    * @param {String} data.gender Gender
+    * @param {String} data.relationship The user's relationship with this person
+    * @param {String} data.phone_number Phone number
+    * @param {String} data.date_of_birth DOB
     */
-    updateNextOfKin(uid, first_name, last_name, email, gender, relationship, date_of_birth, phone_number) {
+    updateNextOfKin(uid, data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts/" +uid +"/nok",
-          data: {
-            first_name: first_name,
-            last_name: last_name,
-            email: email,
-            gender: gender,
-            relationship: relationship,
-            date_of_birth: date_of_birth,
-            phone_number: phone_number
-          }
+          data: data
         });
     }
     
@@ -127,20 +119,18 @@ class Accounts {
     *
     * Update the profile of an investment account
     * @param {String} uid The UID of the investment account
-    * @param {Object} data
+    * @param {String} data.first_name First name of the user
+    * @param {String} data.last_name Last name of the user
+    * @param {String} data.email Email address of the user
+    * @param {String} data.gender Gender of the user
+    * @param {String} data.phone_number Phone number of the user
+    * @param {String} data.date_of_birth DOB of the user
     */
-    updateProfile(uid, first_name, last_name, email, gender, phone_number, date_of_birth) {
+    updateProfile(uid, data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts/" +uid +"/profile",
-          data: {
-            first_name: first_name,
-            last_name: last_name,
-            email: email,
-            gender: gender,
-            phone_number: phone_number,
-            date_of_birth: date_of_birth
-          }
+          data: data
         });
     }
     
@@ -150,17 +140,14 @@ class Accounts {
     *
     * Update the identity of an investment account
     * @param {String} uid The UID of the investment account
-    * @param {String} identity_type The identity type of the user [bvn, etc]
-    * @param {String} identity_value The identity value of the user
+    * @param {String} data.identity_type The identity type of the user [bvn, etc]
+    * @param {String} data.identity_value The identity value of the user
     */
-    updateIdentity(uid, identity_type, identity_value) {
+    updateIdentity(uid, data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/accounts/" +uid +"/identity",
-          data: {
-            identity_type: identity_type,
-            identity_value: identity_value
-        }
+          data: data
         });
     }
 

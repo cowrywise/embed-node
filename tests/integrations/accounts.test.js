@@ -19,7 +19,7 @@ describe('Account functions work properly', function () {
         .post('/accounts', {first_name: "test", last_name: "tester", email: "tester@abc.com"})
         .reply(200, createAccountsResponse);
 
-      expect(await api.accounts.createAccount("test", "tester", "tester@abc.com")).to.eql(createAccountsResponse)
+      expect(await api.accounts.createAccount({first_name: "test", last_name: "tester", email: "tester@abc.com"})).to.eql(createAccountsResponse)
     })
 
 
@@ -34,7 +34,7 @@ describe('Account functions work properly', function () {
 
     it('test_create_account_with_zero_params_returns_error_response', async function() {
       nock(url)
-        .post('/accounts', {first_name: undefined, last_name: undefined, email: undefined})
+        .post('/accounts')
         .reply(400, errorResponse);
 
       expect(await api.accounts.createAccount()).to.eql(errorResponse)
