@@ -57,7 +57,7 @@ describe('Investment functions work properly', function () {
           .post('/investments/bbbcaaa4-aabb-bbaa-aabb-880057c64f21/liquidate', {units: '2'})
           .reply(200, liquidateInvestmentResponse);
   
-        expect(await api.investments.liquidateInvestment('bbbcaaa4-aabb-bbaa-aabb-880057c64f21', '2')).to.eql(liquidateInvestmentResponse)
+        expect(await api.investments.liquidateInvestment({index: 'bbbcaaa4-aabb-bbaa-aabb-880057c64f21', units: '2'})).to.eql(liquidateInvestmentResponse)
     })
 
 

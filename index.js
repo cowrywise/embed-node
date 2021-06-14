@@ -161,8 +161,11 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    // api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
-      // .then(result => console.log(result));
+    api.investments.liquidateInvestment({
+      index: '98683194-8584-4bbb-8739-f76ba5c0fe0e',
+      units: '2'
+      })
+      .then(result => console.log(result));
 
 
 
