@@ -18,18 +18,14 @@ class Prices {
     * Price History
     * 
     * Description: Fetch price history
-    * @param {String} asset_id ID of the asset
-    * @param {String} from_date Start date
-    * @param {String} to_date End date
+    * @param {String} data.asset_id ID of the asset
+    * @param {String} data.from_date Start date
+    * @param {String} data.to_date End date
     */
-    getPriceHistory(asset_id, from_date, to_date) {
+    getPriceHistory(data) {
         return request.perform(this.config, {
             method: "GET",
-            endpoint: "/prices" + '?' + querystring.stringify({
-                asset_id: asset_id,
-                from_date: from_date,
-                to_date: to_date
-            })
+            endpoint: "/prices" + '?' + querystring.stringify(data)
         });
     }
 

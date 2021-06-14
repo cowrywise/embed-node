@@ -31,19 +31,14 @@ class Investments {
     * Create Investment
     * 
     * Description: Create investment
-    * @param {String} account_id Account ID of user
-    * @param {String} asset_code Asset code of the asset to invest in
-    * @param {String} amount Amount to invest
+    * @param {String} data.account_id Account ID of user
+    * @param {String} data.asset_code Asset code of the asset to invest in
     */
-    createInvestment(account_id, asset_code, amount) {
+    createInvestment(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/investments",
-          data: {
-            account_id: account_id,
-            asset_code: asset_code,
-            amount: amount
-          }
+          data: data
         });
     }
 
@@ -52,15 +47,15 @@ class Investments {
     * Liquidate Investment
     * 
     * Description: Liquidate investment
-    * @param {String} index Index of the asset
-    * @param {String} units Units to liquidate
+    * @param {String} data.index Index of the asset
+    * @param {String} data.units Units to liquidate
     */
-   liquidateInvestment(index, units) {
+   liquidateInvestment(data) {
     return request.perform(this.config, {
       method: "POST",
-      endpoint: "/investments/" + index + "/liquidate",
+      endpoint: "/investments/" + data.index + "/liquidate",
       data: {
-        units: units
+        units: data.units
       }
     });
 }

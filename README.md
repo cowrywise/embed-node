@@ -56,7 +56,10 @@ api.accounts.getAccount()
 #### Create Investments
 ```js
 // Create an investment with a given asset code
-client.investments.createInvestment("6a8f9d8aef16477f866b20161e003e48", "AST-TBILL-1741042763", "2000")
+client.investments.createInvestment({
+    account_id: '6a8f9d8aef16477f866b20161e003e48',
+    asset_code: 'AST-TBILL-1741042763'
+  })
   .then(result => console.log(result));
 ```
 

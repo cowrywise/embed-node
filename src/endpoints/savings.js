@@ -17,21 +17,16 @@ class Savings {
     * Create Savings
     * 
     * Description: Create investment account
-    * @param {String} account_id Account ID of the user
-    * @param {String} currency_code Currency code (e.g NGN)
-    * @param {String} days Duration in days
-    * @param {Boolean} interest_enabled Interest enabled
+    * @param {String} data.account_id Account ID of the user
+    * @param {String} data.currency_code Currency code (e.g NGN)
+    * @param {String} data.days Duration in days
+    * @param {String} data.interest_enabled Interest enabled: (1 === true)
     */
-    createSavings(account_id, currency_code, days, interest_enabled) {
+    createSavings(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/savings",
-          data: {
-            account_id: account_id,
-            currency_code: currency_code,
-            days: days,
-            interest_enabled: (interest_enabled) ? 1 : 0
-          }
+          data: data
         });
     }
     
