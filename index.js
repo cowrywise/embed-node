@@ -104,8 +104,13 @@ const api = new Client({
 
 
 
-  // api.savings.createSavings("6a8f9d8aef16477f866b20161e003e48", "NGN", "30", "1")
-  //   .then(result => console.log(result));
+  api.savings.createSavings({
+    account_id: '6a8f9d8aef16477f866b20161e003e48',
+    currency_code: 'NGN',
+    days: '30',
+    interest_enabled: '1'
+    })
+    .then(result => console.log(result));
 
 
   // api.savings.getSavings()
@@ -161,11 +166,11 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    api.investments.liquidateInvestment({
-      index: '98683194-8584-4bbb-8739-f76ba5c0fe0e',
-      units: '2'
-      })
-      .then(result => console.log(result));
+    // api.investments.liquidateInvestment({
+    //   index: '98683194-8584-4bbb-8739-f76ba5c0fe0e',
+    //   units: '2'
+    //   })
+    //   .then(result => console.log(result));
 
 
 

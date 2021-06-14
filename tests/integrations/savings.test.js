@@ -19,7 +19,7 @@ describe('Savings functions work properly', function () {
         .post('/savings', {account_id: '000baaaac6bbbbbb9531ddbbabbababa', currency_code: 'NGN', days: '30', interest_enabled: '1'})
         .reply(200, createSavingsResponse);
 
-      expect(await api.savings.createSavings('000baaaac6bbbbbb9531ddbbabbababa', 'NGN', '30', '1')).to.eql(createSavingsResponse)
+      expect(await api.savings.createSavings({account_id: '000baaaac6bbbbbb9531ddbbabbababa', currency_code: 'NGN', days: '30', interest_enabled: '1'})).to.eql(createSavingsResponse)
     })
 
 

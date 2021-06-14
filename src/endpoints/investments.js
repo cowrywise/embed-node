@@ -47,15 +47,15 @@ class Investments {
     * Liquidate Investment
     * 
     * Description: Liquidate investment
-    * @param {String} index Index of the asset
-    * @param {String} units Units to liquidate
+    * @param {String} data.index Index of the asset
+    * @param {String} data.units Units to liquidate
     */
-   liquidateInvestment(index, units) {
+   liquidateInvestment(data) {
     return request.perform(this.config, {
       method: "POST",
-      endpoint: "/investments/" + index + "/liquidate",
+      endpoint: "/investments/" + data.index + "/liquidate",
       data: {
-        units: units
+        units: data.units
       }
     });
 }
