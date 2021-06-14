@@ -24,7 +24,7 @@ const api = new Client({
 // // ACCOUNTS
 
 
-  // api.accounts.createAccount({first_name: 'Taslim', last_name: 'Oseni', email: 'tasleemsocseni@gmail.com'})
+  // api.accounts.createAccount({first_name: 'Taslim', last_name: 'Oseni', email: 'tasleemsghochseni@gmail.com'})
     // .then(result => console.log(result));
 
 
@@ -40,16 +40,16 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
-    street: 'Broadway',
-    lga: 'Eti-Osa',
-    area_code: '231',
-    city: 'Lekki',
-    state: 'Lagos',
-    country: 'NG',
-    idempotency_key: 'random_idempotency_key'}
-    )
-  .then(result => console.log(result));
+  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
+  //   street: 'Broadway',
+  //   lga: 'Eti-Osa',
+  //   area_code: '231',
+  //   city: 'Lekki',
+  //   state: 'Lagos',
+  //   country: 'NG',
+  //   idempotency_key: 'random_idempotency_key'}
+  //   )
+  // .then(result => console.log(result));
 
 
   // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938", {
