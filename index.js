@@ -154,11 +154,11 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    api.investments.createInvestment({
-      account_id: '6a8f9d8aef16477f866b20161e003e48',
-      asset_code: 'AST-TBILL-1741042763'
-      })
-      .then(result => console.log(result));
+    // api.investments.createInvestment({
+    //   account_id: '6a8f9d8aef16477f866b20161e003e48',
+    //   asset_code: 'AST-TBILL-1741042763'
+    //   })
+    //   .then(result => console.log(result));
 
 
     // api.investments.liquidateInvestment("98683194-8584-4bbb-8739-f76ba5c0fe0e", "2")
@@ -185,8 +185,12 @@ const api = new Client({
 
 
 
-    // api.prices.getPriceHistory("0db0dd04-832e-4068-82f1-156ad1aef575", "2020-01-10", "2021-03-29")
-      // .then(result => console.log(result));
+    // api.prices.getPriceHistory({
+    //   asset_id: '0db0dd04-832e-4068-82f1-156ad1aef575',
+    //   from_date: '2020-01-10',
+    //   to_date: '2021-05-29'
+    //   })
+    //   .then(result => console.log(result));
 
 
 
