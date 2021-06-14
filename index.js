@@ -89,7 +89,10 @@ const api = new Client({
 
 
 
-  // api.wallets.createWallet("033f5d3d00354d28961031efe9ae2938", "USD")
+  // api.wallets.createWallet({
+  //   account_id: '033f5d3d00354d28961031efe9ae2938',
+  //   currency_code: 'NGN'
+  //   })
   //   .then(result => console.log(result));
 
 
@@ -104,13 +107,13 @@ const api = new Client({
 
 
 
-  api.savings.createSavings({
-    account_id: '6a8f9d8aef16477f866b20161e003e48',
-    currency_code: 'NGN',
-    days: '30',
-    interest_enabled: '1'
-    })
-    .then(result => console.log(result));
+  // api.savings.createSavings({
+  //   account_id: '6a8f9d8aef16477f866b20161e003e48',
+  //   currency_code: 'NGN',
+  //   days: '30',
+  //   interest_enabled: '1'
+  //   })
+  //   .then(result => console.log(result));
 
 
   // api.savings.getSavings()

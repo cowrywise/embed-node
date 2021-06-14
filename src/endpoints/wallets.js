@@ -18,18 +18,14 @@ class Wallets {
     * Create Wallet
     *
     * Create a wallet
-    * @param {String} first_name First name of the user
-    * @param {String} last_name Last name of the user
-    * @param {String} email Email address of the user
+    * @param {String} data.account_id First name of the user
+    * @param {String} data.currency_code Last name of the user
     */
-    createWallet(account_id, currency_code) {
+    createWallet(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/wallets",
-          data: {
-            account_id: account_id,
-            currency_code: currency_code
-          }
+          data: data
         });
     }
     

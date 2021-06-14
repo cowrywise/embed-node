@@ -28,7 +28,7 @@ describe('Wallet functions work properly', function () {
           .post('/wallets', {account_id: '033f5d3d00354d28961031efe9ae2938', currency_code: 'USD'})
           .reply(200, createWalletResponse);
   
-        expect(await api.wallets.createWallet('033f5d3d00354d28961031efe9ae2938', 'USD')).to.eql(createWalletResponse)
+        expect(await api.wallets.createWallet({account_id: '033f5d3d00354d28961031efe9ae2938', currency_code: 'USD'})).to.eql(createWalletResponse)
     })
 
 
