@@ -1,0 +1,40 @@
+{
+    "data": {
+        "account_id": "0bbbb7daaaa8434c8c674ba1956d9202",
+        "account_number": 17337812,
+        "first_name": "Tas",
+        "last_name": "Lim",
+        "email": "sample_user@gmail.com",
+        "risk_appetite": 0,
+        "is_proprietary": false,
+        "account_status": "ACTIVE",
+        "verification_status": "UNVERIFIED",
+        "is_verified": false,
+        "account_type": "Individual",
+        "phone_number": null,
+        "date_of_birth": null,
+        "gender": null,
+        "identifications": [],
+        "address": {
+            "address_id": "9aaf895ba25546bd98a963ff148049de",
+            "street": "10, Edidi Lane",
+            "lga": "Idumota",
+            "area_code": "100034",
+            "city": "Lagos",
+            "state": "Lagos",
+            "country": "NG"
+        },
+        "next_of_kin": {
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "phone_number": "",
+            "relationship": "",
+            "gender": null
+        },
+        "date_joined": "2021-06-08T18:47:16.194440+00:00"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

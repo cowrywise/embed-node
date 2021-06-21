@@ -1,0 +1,11 @@
+{
+    "data": {
+        "id": "e1ac9be4-a2f6-4135-8a18-e0317495e19b",
+        "type": "BVN",
+        "value": "122342325252",
+        "verification_status": "PENDING"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

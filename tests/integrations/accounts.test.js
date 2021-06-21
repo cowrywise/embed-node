@@ -5,6 +5,10 @@ const createAccountsResponse = require('../responses/create_account_200.json')
 const getAccountsResponse = require('../responses/get_account_200.json')
 const getSingleAccountsResponse = require('../responses/get_single_account_200.json')
 const getPortfolioResponse = require('../responses/get_portfolio_200.json')
+const updateAddressResponse = require('../responses/update_address_200.json')
+const updateNokResponse = require('../responses/update_nok_200.json')
+const updateProfileResponse = require('../responses/update_profile_200.json')
+const updateIdentityResponse = require('../responses/update_identity_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
@@ -59,4 +63,39 @@ describe('Account functions work properly', function () {
     })
 
 
-  })
+    it('test_can_update_address', async function() {
+      nock(url)
+        .post('/accounts/uid/address', {street: 'Broadway', lga: 'Eti-Osa', area_code: '231', city: 'Lekki', state: 'Lagos', country: 'NG'})
+        .reply(200, updateAddressResponse);
+
+      expect(await api.accounts.updateAddress("uid", {street: 'Broadway', lga: 'Eti-Osa', area_code: '231', city: 'Lekki', state: 'Lagos', country: 'NG'})).to.eql(updateAddressResponse)
+    })
+
+
+    it('test_can_update_next_of_kin', async function() {
+      nock(url)
+        .post('/accounts/uid/nok', { first_name: 'John', last_name: 'Doe', email: 'jd@gmail.com', gender: 'M', relationship: 'Friend', date_of_birth: '1990-10-10', phone_number: '+2348034031863'})
+        .reply(200, updateNokResponse);
+
+      expect(await api.accounts.updateNextOfKin("uid", { first_name: 'John', last_name: 'Doe', email: 'jd@gmail.com', gender: 'M', relationship: 'Friend', date_of_birth: '1990-10-10', phone_number: '+2348034031863'})).to.eql(updateNokResponse)
+    })
+
+
+    it('test_can_update_profile', async function() {
+      nock(url)
+        .post('/accounts/uid/profile', { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@gmail.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10' })
+        .reply(200, updateProfileResponse);
+
+      expect(await api.accounts.updateProfile("uid", { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@gmail.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10'})).to.eql(updateProfileResponse)
+    })
+
+
+    it('test_can_update_identity', async function() {
+      nock(url)
+        .post('/accounts/uid/identity', { identity_type: 'bvn', identity_value: '0123456789' })
+        .reply(200, updateIdentityResponse);
+
+      expect(await api.accounts.updateIdentity("uid", { identity_type: 'bvn', identity_value: '0123456789' })).to.eql(updateIdentityResponse)
+    })
+
+})
