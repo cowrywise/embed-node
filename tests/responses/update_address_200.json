@@ -1,7 +1,7 @@
 {
     "data": {
-        "account_id": "test_account_id",
-        "account_number": 12345678,
+        "account_id": "0bbbb7daaaa8434c8c674ba1956d9202",
+        "account_number": 17337812,
         "first_name": "Sample",
         "last_name": "User",
         "email": "tester@abc.com",
@@ -16,12 +16,13 @@
         "gender": null,
         "identifications": [],
         "address": {
-            "street": "",
-            "lga": "",
-            "area_code": "",
-            "city": "",
-            "state": "",
-            "country": null
+            "address_id": "9aaf895ba25546bd98a963ff148049de",
+            "street": "Broadway",
+            "lga": "Eti-Osa",
+            "area_code": "100034",
+            "city": "Lagos",
+            "state": "Lagos",
+            "country": "NG"
         },
         "next_of_kin": {
             "first_name": "",
@@ -31,7 +32,7 @@
             "relationship": "",
             "gender": null
         },
-        "date_joined": "2000-06-10T15:44:59.153436+00:00"
+        "date_joined": "2021-06-08T18:47:16.194440+00:00"
     },
     "errors": null,
     "message": "Request successful",

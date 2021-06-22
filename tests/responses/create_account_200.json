@@ -1,9 +1,9 @@
 {
     "data": {
-        "account_id": "f2814d403efe4728a5c4f63e9dd7cf4c",
-        "account_number": 397100259,
-        "first_name": "User",
-        "last_name": "One",
+        "account_id": "test_account_id",
+        "account_number": 123456789,
+        "first_name": "Sample",
+        "last_name": "User",
         "email": "tester@abc.com",
         "risk_appetite": 0,
         "is_proprietary": false,
