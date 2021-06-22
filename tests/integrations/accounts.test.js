@@ -65,10 +65,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_update_address', async function() {
       nock(url)
-        .post('/accounts/uid/address', {street: 'Broadway', lga: 'Eti-Osa', area_code: '231', city: 'Lekki', state: 'Lagos', country: 'NG'})
+        .post('/accounts/uid/address', {street: 'Broadway', lga: 'Eti-Osa', area_code: '100034', city: 'Lagos', state: 'Lagos', country: 'NG'})
         .reply(200, updateAddressResponse);
 
-      expect(await api.accounts.updateAddress("uid", {street: 'Broadway', lga: 'Eti-Osa', area_code: '231', city: 'Lekki', state: 'Lagos', country: 'NG'})).to.eql(updateAddressResponse)
+      expect(await api.accounts.updateAddress("uid", {street: 'Broadway', lga: 'Eti-Osa', area_code: '100034', city: 'Lagos', state: 'Lagos', country: 'NG'})).to.eql(updateAddressResponse)
     })
 
 
@@ -83,10 +83,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_update_profile', async function() {
       nock(url)
-        .post('/accounts/uid/profile', { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@gmail.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10' })
+        .post('/accounts/uid/profile', { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@abc.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10' })
         .reply(200, updateProfileResponse);
 
-      expect(await api.accounts.updateProfile("uid", { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@gmail.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10'})).to.eql(updateProfileResponse)
+      expect(await api.accounts.updateProfile("uid", { first_name: 'Taslim', last_name: 'Oseni', email: 'tas@abc.com', gender: 'M', phone_number: '+2347061979046', date_of_birth: '1989-10-10'})).to.eql(updateProfileResponse)
     })
 
 

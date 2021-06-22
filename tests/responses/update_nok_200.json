@@ -2,9 +2,9 @@
     "data": {
         "account_id": "022ed7ddb248434c8c674ba1956d9202",
         "account_number": 17337812,
-        "first_name": "Tas",
-        "last_name": "Lim",
-        "email": "fignhajhgssap@gmail.com",
+        "first_name": "Sample",
+        "last_name": "User",
+        "email": "tester@abc.com",
         "risk_appetite": 0,
         "is_proprietary": false,
         "account_status": "ACTIVE",
@@ -17,8 +17,8 @@
         "identifications": [],
         "address": {
             "address_id": "9aaf895ba25546bd98a963ff148049de",
-            "street": "10, Edidi Lane",
-            "lga": "Idumota",
+            "street": "Broadway",
+            "lga": "Eti-Osa",
             "area_code": "100034",
             "city": "Lagos",
             "state": "Lagos",
