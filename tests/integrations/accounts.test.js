@@ -20,10 +20,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_create_account', async function() {
       nock(url)
-        .post('/accounts', {first_name: "test", last_name: "tester", email: "tester@abc.com"})
+        .post('/accounts', {first_name: "Sample", last_name: "User", email: "tester@abc.com"})
         .reply(200, createAccountsResponse);
 
-      expect(await api.accounts.createAccount({first_name: "test", last_name: "tester", email: "tester@abc.com"})).to.eql(createAccountsResponse)
+      expect(await api.accounts.createAccount({first_name: "Sample", last_name: "User", email: "tester@abc.com"})).to.eql(createAccountsResponse)
     })
 
 
@@ -47,10 +47,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_get_single_account', async function() {
       nock(url)
-        .get('/accounts/account_id')
+        .get('/accounts/test_account_id')
         .reply(200, getSingleAccountsResponse);
 
-      expect(await api.accounts.getSingleAccount("account_id")).to.eql(getSingleAccountsResponse)
+      expect(await api.accounts.getSingleAccount("test_account_id")).to.eql(getSingleAccountsResponse)
     })
 
 

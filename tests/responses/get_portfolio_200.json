@@ -5,9 +5,9 @@
         "assets": {
             "wallets": [
                 {
-                    "wallet_id": "d13d6b9428e8495b82ac86f958453c8e",
-                    "account_id": "6a8f9d8aef16477f866b20161e003e48",
-                    "product_code": "PRCDE1385752170",
+                    "wallet_id": "sample_wallet_id_one",
+                    "account_id": "sample_account_id_one",
+                    "product_code": "PRCDE0123456789",
                     "currency": "USD",
                     "principal": "49998000.0000",
                     "returns": "0.0000",
@@ -16,10 +16,10 @@
                     "account_number": "",
                     "account_name": "",
                     "bank_name": "",
-                    "created_on": "2021-05-31T14:39:51.388819+00:00"
+                    "created_on": "2000-06-10T15:44:59.153436+00:00"
                 },
                 {
-                    "wallet_id": "a6b5597c79014e74b2d9e91438564770",
+                    "wallet_id": "sample_wallet_id_two",
                     "account_id": "6a8f9d8aef16477f866b20161e003e48",
                     "product_code": "PRCDE1737641344",
                     "currency": "NGN",
