@@ -8,7 +8,7 @@ const getIndicedAssetResponse = require('../responses/get_indexed_asset_200.json
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const url = 'https://sandbox.cowrywise.com/api/v1'
+const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
 describe('Asset functions work properly', function () {

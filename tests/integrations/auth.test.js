@@ -6,7 +6,7 @@ const failedRefreshTokenResponse = require('../responses/refresh_token_401.json'
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const url = 'https://sandbox.cowrywise.com'
+const url = 'https://sandbox.embed.cowrywise.com'
 
 
 describe('Authentication works properly', function () {

@@ -7,7 +7,7 @@ const getTransferResponse = require('../responses/get_transfers_response_200.jso
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const url = 'https://sandbox.cowrywise.com/api/v1'
+const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
 describe('Transfer functions work properly', function () {

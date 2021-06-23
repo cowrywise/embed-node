@@ -8,7 +8,7 @@ const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const url = 'https://sandbox.cowrywise.com/api/v1'
+const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
 describe('Wallet functions work properly', function () {

@@ -6,7 +6,7 @@ const getStocksResponse = require('../responses/get_stocks_response_200.json')
 
 const Client = require('../../src/client')
 const api = new Client({client_id: '****', client_secret: '****'});
-const url = 'https://sandbox.cowrywise.com/api/v1'
+const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
 describe('Stocks functions work properly', function () {
