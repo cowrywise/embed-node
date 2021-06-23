@@ -71,7 +71,7 @@ Kindly check out all methods as well as their request and response structure on 
 
 
 
-## Contributing
+## Contributions
 
 Before submitting a pull request, kindly ensure:
 - [ ] Necessary tests for the code changes requested are added
