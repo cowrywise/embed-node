@@ -4,7 +4,7 @@ const Client = require("./src/client");
 
 // Library initialization
 const api = new Client({
-  api_key: '9bGUCNkINDjIaKdML0RlHqiEf4A64v',
+  api_key: 'ewg6KbCM7qt2a4GgUCFYf15gNahG8G',
   client_id: 'CWRY-I72XeWWXjWx3bIU4xuN17QSxLVATD1GiAbLQWPQD',
   client_secret: 'CWRY-SECRET-fQ2BbCDdWAcioMsxsNuLDNUTRiGvwKW7WmrClNwYkRe2vY85ceQEgogSnFK5VP9HB79G9NfQD6eC1KacX2UGOTfYLI5CKQ2Fy7M0iFnxjIPyMb86lvB0YJrs4Gv4LYwX'
 });
