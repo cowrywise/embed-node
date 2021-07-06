@@ -1,4 +1,4 @@
-const base_url = "https://sandbox.embed.cowrywise.com";
+const base_url = "https://sandbox.embed.cowrywise.com/";
 
 
 module.exports = {

@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const querystring = require('querystring');
 
 
 class Transfers {
@@ -17,7 +16,7 @@ class Transfers {
     /**
     * Get Transfers
     * 
-    * Description: Get transfers
+    * Description: Get all transfers
     */
     getTransfers() {
         return request.perform(this.config, {
@@ -25,6 +24,32 @@ class Transfers {
           endpoint: "/transfers"
         });
     }
+
+
+    /**
+    * Get Deposits
+    * 
+    * Description: Get all deposits
+    */
+    getDeposits() {
+        return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/deposits"
+        });
+    }
+
+
+    /**
+    * Get Withdrawals
+    * 
+    * Description: Get all withdrawals
+    */
+   getWithdrawals() {
+    return request.perform(this.config, {
+    method: "GET",
+    endpoint: "/withdrawals"
+    });
+}
 
 
 }
