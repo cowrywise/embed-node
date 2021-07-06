@@ -13,7 +13,7 @@ See the [Embed API docs](developer.cowrywise.com).
 ## Installation
 Use npm:
 ```
-npm i embed-node
+npm i @cowrywise/embed-node
 ```
 
 ### Usage

@@ -1,5 +1,5 @@
 {
-  "name": "embed-node",
+  "name": "@cowrywise/embed-node",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
