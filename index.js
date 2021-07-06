@@ -227,13 +227,13 @@ const api = new Client({
 // TRANSFERS
 
 
-    api.transfers.getTransfers()
-      .then(result => console.log(result));
+    // api.transfers.getTransfers()
+      // .then(result => console.log(result));
 
 
-    api.transfers.getDeposits()
-      .then(result => console.log(result));
+    // api.transfers.getDeposits()
+    //   .then(result => console.log(result));
 
 
-    api.transfers.getWithdrawals()
-      .then(result => console.log(result));
+    // api.transfers.getWithdrawals()
+    //   .then(result => console.log(result));
