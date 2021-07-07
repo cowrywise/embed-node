@@ -157,7 +157,7 @@ api.assets.getIndices()
   .then(result => console.log(result));
 
 // Get indexed asset
-api.assets.getIndexesAsset('ASSET_INDEX')
+api.assets.getIndexesAsset('INDEX_ID')
   .then(result => console.log(result));
 ```
 
@@ -180,7 +180,7 @@ api.investments.createInvestment({
 
 // Liquidate Investment
 api.investments.liquidateInvestment({
-    index: 'ASSET_INDEX',
+    index: 'INDEX_ID',
     units: '2'
     })
   .then(result => console.log(result));

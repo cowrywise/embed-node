@@ -48,10 +48,10 @@ class Assets {
     * 
     * @param {String} index index of asset
     */
-    getIndexesAsset(index) {
+    getIndexesAsset(index_id) {
       return request.perform(this.config, {
         method: "GET",
-        endpoint: "/indexes/" + index + "/assets"
+        endpoint: "/indexes/" + index_id + "/assets"
       });
   }
 
