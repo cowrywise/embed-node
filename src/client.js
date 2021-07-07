@@ -51,7 +51,7 @@ class Client {
     /**
     * Refresh token
     *
-    * Refresh the api_token being used by the OpenInvest object
+    * Refresh the api_token being used to make all requests
     */
     refreshToken() {
         return new Auth().getAuthToken(this.config)

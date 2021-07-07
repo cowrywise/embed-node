@@ -42,26 +42,189 @@ api.wallets.getWallets()
 ## API
 
 All methods return a `<Promise>`, hence you can use `.then` or `await`.
-All calls are done by Axios, so for the response structure check [Axios documentation](https://axios-http.com/docs/intro).
+All calls are done by Axios.
 
+## Methods
 
-
-#### Get Accounts
+#### AUTHENTICATION
 ```js
+// Refresh the api_token being used to make all requests
+api.refreshToken()
+  .then(data => console.log(data));
+```
+
+#### Accounts
+```js
+// Create investment account
+api.accounts.createAccount({
+    first_name: 'John', 
+    last_name: 'Doe', 
+    email: 'simple@gmail.com'})
+  .then(result => console.log(result));
+
 // Get account details
 api.accounts.getAccount()
   .then(result => console.log(result));
+
+// Get a specific account by account_id
+api.accounts.getSingleAccount('ACCOUNT_ID')
+  .then(result => console.log(result));
+
+// Get the portfolio owned by an investment account
+api.accounts.getPortfolio('ACCOUNT_ID')
+  .then(result => console.log(result));
+
+// Update the address details for an investment account
+api.accounts.updateAddress('ACCOUNT_ID', {
+    street: 'Broadway', 
+    lga: 'Eti-Osa', 
+    area_code: '231', 
+    city: 'Lekki', 
+    state: 'Lagos', 
+    country: 'NG'})
+  .then(result => console.log(result));
+
+// Update the next-of-kin for an investment account
+api.accounts.updateNextOfKin('ACCOUNT_ID', {
+    first_name: 'Jane',
+    last_name: 'Obi',
+    email: 'friend@gmail.com',
+    gender: 'M',
+    relationship: 'Friend',
+    date_of_birth: '1990-10-10',
+    phone_number: '+2347000000000'})
+  .then(result => console.log(result));
+
+// Update the profile of an investment account
+api.accounts.updateProfile('ACCOUNT_ID', {
+    first_name: 'Rahman',
+    last_name: 'Taiwo',
+    email: 'rt@gmail.com',
+    gender: 'M',
+    phone_number: '+2348000000000',
+    date_of_birth: '1989-10-10'})
+  .then(result => console.log(result));
+
+// Update the identity of an investment account
+api.accounts.updateIdentity('ACCOUNT_ID', {
+    identity_type: 'bvn',
+    identity_value: '0123456789'})
+    .then(result => console.log(result));
 ```
 
-#### Create Investments
+#### WALLETS
 ```js
-// Create an investment with a given asset code
-client.investments.createInvestment({
-    account_id: '6a8f9d8aef16477f866b20161e003e48',
-    asset_code: 'AST-TBILL-1741042763'
-  })
+// Create a wallet
+api.wallets.createWallet({
+    account_id: 'ACCOUNT_ID',
+    currency_code: 'NGN'
+    })
+  .then(result => console.log(result));
+
+// Get Wallet information
+api.wallets.getWallets()
   .then(result => console.log(result));
 ```
+
+#### SAVINGS
+```js
+// Create Savings
+api.savings.createSavings({
+    account_id: 'ACCOUNT_ID',
+    currency_code: 'NGN',
+    days: '30',
+    interest_enabled: '1'
+    })
+  .then(result => console.log(result));
+
+// Get Savings
+api.savings.getSavings()
+  .then(result => console.log(result));
+```
+
+#### ASSETS
+```js
+// Get Assets
+api.assets.getAssets()
+  .then(result => console.log(result));
+
+// Get assets of a specific type
+api.assets.getAssets('mutual-fund')
+  .then(result => console.log(result));
+
+// Get indices
+api.assets.getIndices()
+  .then(result => console.log(result));
+
+// Get indexed asset
+api.assets.getIndexesAsset('ASSET_INDEX')
+  .then(result => console.log(result));
+```
+
+#### Investments
+```js
+// Get all investments performed by the user
+api.investments.getInvestments()
+  .then(result => console.log(result));
+
+// Create Investment of a speific type
+api.investments.getInvestments("tbills")
+  .then(result => console.log(result));
+
+// Create Investment
+api.investments.createInvestment({
+    account_id: 'ACCOUNT_ID',
+    asset_code: 'AST-TBILL-1741042763'
+    })
+  .then(result => console.log(result));
+
+// Liquidate Investment
+api.investments.liquidateInvestment({
+    index: 'ASSET_INDEX',
+    units: '2'
+    })
+  .then(result => console.log(result));
+```
+
+#### TRADE
+```js
+// List all stocks
+api.trade.getStocks()
+  .then(result => console.log(result));
+```
+
+#### PRICES
+```js
+// Fetch price history
+api.prices.getPriceHistory({
+    asset_id: 'ASSET_ID',
+    from_date: '2020-01-10',
+    to_date: '2021-05-29'})
+  .then(result => console.log(result));
+```
+
+#### TRANSACTIONS
+```js
+// Get all transactions
+api.transactions.getTransactions('10')
+  .then(result => console.log(result));
+```
+
+#### TRANSFERS
+```js
+// Get all transfers
+api.transfers.getTransfers()
+  .then(result => console.log(result));
+
+// Get all deposits
+api.transfers.getDeposits()
+  .then(result => console.log(result));
+
+// Get all withdrawals
+api.transfers.getWithdrawals()
+  .then(result => console.log(result));
+```
+
 
 Check the [API reference](https://developer.cowrywise.com) document for more examples.
 

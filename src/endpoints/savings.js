@@ -16,7 +16,7 @@ class Savings {
     /**
     * Create Savings
     * 
-    * Description: Create investment account
+    * Description: Create Savings
     * @param {String} data.account_id Account ID of the user
     * @param {String} data.currency_code Currency code (e.g NGN)
     * @param {String} data.days Duration in days

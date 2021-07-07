@@ -46,7 +46,7 @@ class Accounts {
     /**
     * Get portfolio
     *
-    * Get/List the portfolio owned by an investment account
+    * Get the portfolio owned by an investment account
     * @param {String} uid The UID of the investment account
     */
     getPortfolio(uid) {

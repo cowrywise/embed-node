@@ -16,7 +16,7 @@ const api = new Client({
 // // AUTH
 
 // api.refreshToken()
-//   .then(data => console.log(data));
+  // .then(data => console.log(data));
 
 
 
@@ -139,7 +139,7 @@ const api = new Client({
 
 
   // api.assets.getAssets("mutual-fund")
-    // .then(result => console.log(result));
+  //   .then(result => console.log(result));
 
 
   // api.assets.getIndices()
@@ -191,7 +191,7 @@ const api = new Client({
 
 
     // api.trade.getStocks()
-      // .then(result => console.log(result));
+    //   .then(result => console.log(result));
 
 
 
@@ -228,7 +228,7 @@ const api = new Client({
 
 
     // api.transfers.getTransfers()
-      // .then(result => console.log(result));
+    //   .then(result => console.log(result));
 
 
     // api.transfers.getDeposits()
