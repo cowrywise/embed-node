@@ -110,6 +110,12 @@ api.accounts.updateIdentity('ACCOUNT_ID', {
     identity_type: 'bvn',
     identity_value: '0123456789'})
     .then(result => console.log(result));
+
+// Add a bank account
+api.accounts.addBank('ACCOUNT_ID', {
+    bank_code: '058',
+    account_number: '0149541957'})
+    .then(result => console.log(result));
 ```
 
 #### WALLETS

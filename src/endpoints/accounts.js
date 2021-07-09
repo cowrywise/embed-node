@@ -151,6 +151,23 @@ class Accounts {
         });
     }
 
+
+    /**
+    * Add Bank
+    *
+    * Add a bank account connected to an account
+    * @param {String} uid The UID of the investment account
+    * @param {String} data.bank_code The bank code of the bank
+    * @param {String} data.account_number The account number
+    */
+   addBank(uid, data) {
+    return request.perform(this.config, {
+      method: "POST",
+      endpoint: "/accounts/" +uid +"/bank",
+      data: data
+    });
+}
+
     
 }
 

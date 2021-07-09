@@ -9,6 +9,7 @@ const updateAddressResponse = require('../responses/update_address_200.json')
 const updateNokResponse = require('../responses/update_nok_200.json')
 const updateProfileResponse = require('../responses/update_profile_200.json')
 const updateIdentityResponse = require('../responses/update_identity_200.json')
+const addBankResponse = require('../responses/add_bank_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
@@ -96,6 +97,15 @@ describe('Account functions work properly', function () {
         .reply(200, updateIdentityResponse);
 
       expect(await api.accounts.updateIdentity("uid", { identity_type: 'bvn', identity_value: '0123456789' })).to.eql(updateIdentityResponse)
+    })
+
+
+    it('test_can_add_bank', async function() {
+      nock(url)
+        .post('/accounts/uid/bank', { bank_code: '058', account_number: '0149541957' })
+        .reply(200, addBankResponse);
+
+      expect(await api.accounts.addBank("uid", { bank_code: '058', account_number: '0149541957' })).to.eql(addBankResponse)
     })
 
 })

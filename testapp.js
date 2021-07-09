@@ -44,7 +44,7 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.accounts.updateAddress("033f5d3d00354d28961031efe9ae2938", {
+  // api.accounts.updateAddress('033f5d3d00354d28961031efe9ae2938', {
   //   street: 'Broadway',
   //   lga: 'Eti-Osa',
   //   area_code: '231',
@@ -56,7 +56,7 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateNextOfKin("033f5d3d00354d28961031efe9ae2938", {
+  // api.accounts.updateNextOfKin('033f5d3d00354d28961031efe9ae2938', {
   //   first_name: 'John',
   //   last_name: 'Doe',
   //   email: 'jd@gmail.com',
@@ -67,7 +67,7 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateProfile("033f5d3d00354d28961031efe9ae2938", {
+  // api.accounts.updateProfile('033f5d3d00354d28961031efe9ae2938', {
   //   first_name: 'Taslim',
   //   last_name: 'Oseni',
   //   email: 'tas@gmail.com',
@@ -78,12 +78,18 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateIdentity("033f5d3d00354d28961031efe9ae2938", {
+  // api.accounts.updateIdentity('033f5d3d00354d28961031efe9ae2938', {
   //   identity_type: 'bvn',
   //   identity_value: '0123456789'
   // })
   // .then(result => console.log(result));
 
+
+  // api.accounts.addBank('033f5d3d00354d28961031efe9ae2938', {
+  //   bank_code: '058',
+  //   account_number: '0149541957'
+  // })
+  // .then(result => console.log(result));
 
 
 
