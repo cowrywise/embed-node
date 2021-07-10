@@ -31,12 +31,12 @@ describe('Asset functions work properly', function () {
       })
 
 
-    it('test_can_get_indices', async function() {
+    it('test_can_get_indexes', async function() {
       nock(url)
         .get('/indexes')
         .reply(200, getIndicesResponse);
 
-      expect(await api.assets.getIndices()).to.eql(getIndicesResponse)
+      expect(await api.assets.getIndexes()).to.eql(getIndicesResponse)
     })
 
 
