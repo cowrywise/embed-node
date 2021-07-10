@@ -148,7 +148,7 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.assets.getIndices()
+  // api.assets.getIndexes()
   //   .then(result => console.log(result));
 
 
@@ -232,6 +232,13 @@ const api = new Client({
 
 // TRANSFERS
 
+
+    api.transfers.initiateTransfer({
+      source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
+      destination_product_code: 'PRCDE531952369', 
+      currency: 'USD', 
+      value: '20000'})
+      .then(result => console.log(result));
 
     // api.transfers.getTransfers()
     //   .then(result => console.log(result));

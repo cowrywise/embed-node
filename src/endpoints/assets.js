@@ -33,7 +33,7 @@ class Assets {
     * 
     * Description: Get investment indices
     */
-    getIndices() {
+    getIndexes() {
         return request.perform(this.config, {
           method: "GET",
           endpoint: "/indexes"
@@ -53,7 +53,7 @@ class Assets {
         method: "GET",
         endpoint: "/indexes/" + index_id + "/assets"
       });
-  }
+    }
 
     
 }

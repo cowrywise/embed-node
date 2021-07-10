@@ -27,9 +27,14 @@ const perform = async function(config = Object, options = Object) {
     url: url,
     data: options['data'],
     headers: headers,
-    withCredentials: true,
-    transformRequest: getQueryString
+    withCredentials: true
   };
+
+  // Selectively transform request
+  if(!(options['endpoint'] === "POST") && !(options['endpoint'] === "/transfers")) {
+    axios_configuration['transformRequest'] = getQueryString
+  }
+
 
   // Response interceptor
   axios.interceptors.response.use((response) => {
@@ -83,9 +88,11 @@ const perform = async function(config = Object, options = Object) {
 }
 
 function getQueryString(data = {}) {
-  return Object.entries(data)
-    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-    .join('&');
+  return Object.keys(data).map(key => {
+    let val = data[key]
+    if (val !== null && typeof val === 'object') val = getQueryString(val)
+    return `${key}=${encodeURIComponent(`${val}`.replace(/\s/g, '_'))}`
+  }).join('&')
 }
 
 module.exports = {
