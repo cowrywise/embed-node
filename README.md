@@ -123,12 +123,17 @@ api.accounts.addBank('ACCOUNT_ID', {
 // Create a wallet
 api.wallets.createWallet({
     account_id: 'ACCOUNT_ID',
-    currency_code: 'NGN'
-    })
+    currency_code: 'NGN'})
   .then(result => console.log(result));
 
 // Get Wallet information
 api.wallets.getWallets()
+  .then(result => console.log(result));
+
+// Transfer from Wallet
+api.wallets.transferFromWallet('60919da39e644ef8a4e2ceeabbc97130', {
+  product_code: 'PRCDE1203073566',
+  amount: '2000'})
   .then(result => console.log(result));
 ```
 

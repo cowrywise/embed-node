@@ -18,8 +18,8 @@ class Wallets {
     * Create Wallet
     *
     * Create a wallet
-    * @param {String} data.account_id First name of the user
-    * @param {String} data.currency_code Last name of the user
+    * @param {String} data.account_id Account ID of the investment account
+    * @param {String} data.currency_code Currency code
     */
     createWallet(data) {
         return request.perform(this.config, {
@@ -41,6 +41,23 @@ class Wallets {
           endpoint: "/wallets"
         });
     }
+
+
+    /**
+    * Transfer from Wallet
+    *
+    * Transfer from wallet
+    * @param {String} wallet_id The UID of the investment account
+    * @param {String} data.product_code Destination product code 
+    * @param {String} data.amount Amount is in lowest currency (e.g kobo)
+    */
+     transferFromWallet(uid, data) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/wallets/" +uid +"/transfer",
+        data: data
+      });
+  }
     
     
 }

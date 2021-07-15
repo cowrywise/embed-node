@@ -3,6 +3,7 @@ const nock = require('nock')
 
 const getWalletsResponse = require('../responses/get_wallets_response_200.json')
 const createWalletResponse = require('../responses/create_wallet_response_200.json')
+const transferFromWalletResponse = require('../responses/transfer_from_wallet_response_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
 
@@ -38,6 +39,15 @@ describe('Wallet functions work properly', function () {
           .reply(400, errorResponse);
   
         expect(await api.wallets.createWallet()).to.eql(errorResponse)
+      })
+
+
+    it('test_can_transfer_from_wallet', async function() {
+        nock(url)
+          .post('/wallets/60919da39e644ef8a4e2ceeabbc97130/transfer', {product_code: 'PRCDE1203073566', amount: '2000'})
+          .reply(400, transferFromWalletResponse);
+  
+        expect(await api.wallets.transferFromWallet('60919da39e644ef8a4e2ceeabbc97130', {product_code: 'PRCDE1203073566', amount: '2000'})).to.eql(transferFromWalletResponse)
       })
 
   })
