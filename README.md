@@ -151,6 +151,14 @@ api.savings.createSavings({
 // Get Savings
 api.savings.getSavings()
   .then(result => console.log(result));
+
+// Get Savings Rates
+api.savings.getSavingsRates('10')
+  .then(result => console.log(result));
+
+// Withdraw From Savings
+api.savings.withdrawFromSavings('ACCOUNT_ID', '20000')
+  .then(result => console.log(result));
 ```
 
 #### ASSETS
