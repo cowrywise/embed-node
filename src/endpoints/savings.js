@@ -42,6 +42,37 @@ class Savings {
           endpoint: "/savings"
         });
     }
+
+
+    /**
+    * Get savings rates
+    *
+    * Get/List all savings rates
+    * @param {String} days The number of days
+    */
+     getSavingsRates(days) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/savings/rates",
+        data: {days: days}
+      });
+    }
+
+
+    /**
+    * Withdraw from Savings
+    *
+    * Get/List all savings rates
+    * @param {String} uid The number of days
+    * @param {String} amount The amount in kobo
+    */
+     withdrawFromSavings(uid, amount) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/savings/" +uid +"/withdraw",
+        data: {amount: amount}
+      });
+    }
     
 }
 
