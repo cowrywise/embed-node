@@ -234,9 +234,8 @@ api.transactions.getTransactions('10')
 // Initiate transfers
 api.transfers.initiateTransfer({
     source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
-    destination_product_code: 'PRCDE531952369', 
-    currency: 'USD', 
-    value: '20000'})
+    destination_product_code: 'PRCDE531952369',
+    amount: '20000'})
   .then(result => console.log(result));
 
 // Get all transfers
