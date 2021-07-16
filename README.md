@@ -62,7 +62,7 @@ api.accounts.createAccount({
     email: 'simple@gmail.com'})
   .then(result => console.log(result));
 
-// Get account details
+// Get all investment accounts
 api.accounts.getAccount()
   .then(result => console.log(result));
 
@@ -157,7 +157,7 @@ api.savings.getSavingsRates('10')
   .then(result => console.log(result));
 
 // Withdraw From Savings
-api.savings.withdrawFromSavings('ACCOUNT_ID', '20000')
+api.savings.withdrawFromSavings('SAVINGS_ID', '20000')
   .then(result => console.log(result));
 ```
 
@@ -171,11 +171,11 @@ api.assets.getAssets()
 api.assets.getAssets('mutual-fund')
   .then(result => console.log(result));
 
-// Get indices
+// Get indexes
 api.assets.getIndexes()
   .then(result => console.log(result));
 
-// Get indexed asset
+// Get assets of a particular index
 api.assets.getIndexesAsset('INDEX_ID')
   .then(result => console.log(result));
 ```
@@ -187,7 +187,7 @@ api.investments.getInvestments()
   .then(result => console.log(result));
 
 // Create Investment of a speific type
-api.investments.getInvestments("tbills")
+api.investments.getInvestments('tbills')
   .then(result => console.log(result));
 
 // Create Investment

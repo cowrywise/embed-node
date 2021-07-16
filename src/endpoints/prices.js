@@ -28,7 +28,6 @@ class Prices {
             endpoint: "/prices" + '?' + querystring.stringify(data)
         });
     }
-
 }
 
 

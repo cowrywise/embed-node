@@ -33,7 +33,7 @@ class Accounts {
     /**
     * Get Account
     *
-    * Get/List all investment accounts created with this API-Key
+    * Get all investment accounts created
     */
     getAccount() {
         return request.perform(this.config, {

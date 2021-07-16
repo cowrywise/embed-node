@@ -45,10 +45,10 @@ class Transfers {
     * 
     * Description: Get all withdrawals
     */
-   getWithdrawals() {
-    return request.perform(this.config, {
-    method: "GET",
-    endpoint: "/withdrawals"
+    getWithdrawals() {
+     return request.perform(this.config, {
+     method: "GET",
+     endpoint: "/withdrawals"
     });
 }
 

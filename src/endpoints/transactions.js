@@ -26,7 +26,6 @@ class Transactions {
             endpoint: "/transactions" + (limit ? ("?" + querystring.stringify({limit: limit})) : "")
         });
     }
-
 }
 
 

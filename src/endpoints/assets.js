@@ -46,7 +46,7 @@ class Assets {
     * 
     * Description: Get assets based on index
     * 
-    * @param {String} index index of asset
+    * @param {String} index_id index of asset
     */
     getIndexesAsset(index_id) {
       return request.perform(this.config, {

@@ -63,17 +63,17 @@ class Savings {
     * Withdraw from Savings
     *
     * Get/List all savings rates
-    * @param {String} uid The number of days
+    * @param {String} savings_id The savings ID of days
     * @param {String} amount The amount in kobo
     */
-    withdrawFromSavings(uid, amount) {
+    withdrawFromSavings(savings_id, amount) {
       return request.perform(this.config, {
         method: "POST",
-        endpoint: "/savings/" +uid +"/withdraw",
+        endpoint: "/savings/" +savings_id +"/withdraw",
         data: {amount: amount}
       });
     }
-    
+  
 }
 
 

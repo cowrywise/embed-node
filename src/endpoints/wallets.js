@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const FormData = require('form-data');
 
 
 class Wallets {
@@ -47,19 +46,17 @@ class Wallets {
     * Transfer from Wallet
     *
     * Transfer from wallet
-    * @param {String} wallet_id The UID of the investment account
+    * @param {String} wallet_id The wallet_id of the investment account
     * @param {String} data.product_code Destination product code 
     * @param {String} data.amount Amount is in lowest currency (e.g kobo)
     */
-     transferFromWallet(uid, data) {
+     transferFromWallet(wallet_id, data) {
       return request.perform(this.config, {
         method: "POST",
-        endpoint: "/wallets/" +uid +"/transfer",
+        endpoint: "/wallets/" +wallet_id +"/transfer",
         data: data
       });
-  }
-    
-    
+  }    
 }
 
 

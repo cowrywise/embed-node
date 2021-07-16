@@ -12,6 +12,13 @@ class auth {
         
     }
 
+    /**
+    * Get Auth Token
+    * 
+    * Description: This function returns an API token which can be used to make API requests
+    * 
+    */
+
     getAuthToken(config) {
       return request.perform("", {
         method: "POST",

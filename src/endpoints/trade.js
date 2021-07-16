@@ -24,7 +24,6 @@ class Trade {
             endpoint: "/stocks/assets"
         });
     }
-
     
 }
 

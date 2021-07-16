@@ -58,8 +58,7 @@ class Investments {
         units: data.units
       }
     });
-}
-
+  }
     
 }
 
