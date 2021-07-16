@@ -245,7 +245,7 @@ api.transfers.getWithdrawals()
 ```
 
 
-Check the [API reference](https://developers.cowrywise.com) document for more examples.
+Check the [API reference](https://developers.cowrywise.com/reference) document for more examples.
 
 
 ### Methods
