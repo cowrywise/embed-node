@@ -13,26 +13,6 @@ class Transfers {
     }
 
     
-    /**
-    * Initiate Transfer
-    * * 
-    * Description: Create investment
-    * @param {String} data.source_wallet_id Source Wallet ID
-    * @param {String} data.destination_product_code Destination Product Code
-    * @param {String} data.amount Amount to be transferred
-    */
-   initiateTransfer(data) {
-       var newData = {
-        source_wallet_id: data.source_wallet_id,
-        destination_product_code: data.destination_product_code,
-        amount: data.amount
-       }
-        return request.perform(this.config, {
-          method: "POST",
-          data: newData,
-          endpoint: "/transfers"
-        });
-}
 
     /**
     * Get Transfers

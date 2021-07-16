@@ -50,7 +50,7 @@ class Savings {
     * Get/List all savings rates
     * @param {String} days The number of days
     */
-     getSavingsRates(days) {
+    getSavingsRates(days) {
       return request.perform(this.config, {
         method: "POST",
         endpoint: "/savings/rates",
@@ -66,7 +66,7 @@ class Savings {
     * @param {String} uid The number of days
     * @param {String} amount The amount in kobo
     */
-     withdrawFromSavings(uid, amount) {
+    withdrawFromSavings(uid, amount) {
       return request.perform(this.config, {
         method: "POST",
         endpoint: "/savings/" +uid +"/withdraw",
