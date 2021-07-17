@@ -211,11 +211,11 @@ await api.transfers.getWithdrawals();
 ```
 
 
-Check the [API reference](https://developer.cowrywise.com) document for more examples.
+Check the [API reference](https://developers.cowrywise.com/reference) document for more examples.
 
 
 ### Methods
-Kindly check out all methods as well as their request and response structure on the [API documentation](https://developer.cowrywise.com)
+Kindly check out all methods as well as their request and response structure on the [API documentation](https://developers.cowrywise.com)
 
 
 
