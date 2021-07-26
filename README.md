@@ -30,7 +30,7 @@ You need the following before getting to use this library:
 ## Getting Started
 This library is extremely modular, meaning you can create more than one instance
 ````js
-const Client = require('embed-node')
+const Client = require('@cowrywise/embed-node')
 const api = new Client({ client_id: '****', client_secret: '****' })
 
 api.wallets.getWallets()
