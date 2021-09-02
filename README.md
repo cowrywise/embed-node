@@ -3,7 +3,7 @@ The Embed Node library provides an easy access to the Embed Investment API by Co
 
 
 ## Documentation
-See the [Embed API docs](developers.cowrywise.com).
+See the [Embed API docs](https://developers.cowrywise.com).
 
 
 ## Prerequisites
