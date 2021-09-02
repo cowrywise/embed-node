@@ -19,7 +19,7 @@ npm i @cowrywise/embed-node
 ### Usage
 
 
-To get started, signup for developer credentials on [app.cowrywise.com](https://app.cowrywise.com). Once you signup, you can retrieve
+To get started, signup for developer credentials on [app.cowrywise.com](https://cowrywise.com/embed). Once you signup, you can retrieve
 you `client_id` and `client_secret` keys from the developer dashboard. Set your credentials in environment variables. 
 
 
