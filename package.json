@@ -1,7 +1,7 @@
 {
   "name": "@cowrywise/embed-node",
   "version": "1.0.4",
-  "description": "",
+  "description": "The Embed Node library provides an easy access to the Embed Investment API by Cowrywise",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

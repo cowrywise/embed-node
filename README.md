@@ -1,5 +1,5 @@
 # Embed Node Library
-The Embed Node library provides an easy access to the Embed Investment API by Cowrywise. Embed is an investment-as-a-service API that allows you to integrate investment features in your products and offer financial services to your customers at scale. With Embed, developers can create investment accounts for their customers and expose them to a wide variety of investment products!
+The Embed Node library provides an easy access to the Embed Investment API by [Cowrywise](https://cowrywise.com). Embed is an investment-as-a-service API that allows you to integrate investment features in your products and offer financial services to your customers at scale. With Embed, developers can create investment accounts for their customers and expose them to a wide variety of investment products!
 
 
 ## Documentation
@@ -31,7 +31,11 @@ You need the following before getting to use this library:
 This library is extremely modular, meaning you can create more than one instance
 ````js
 const Client = require('@cowrywise/embed-node')
-const api = new Client({ client_id: '****', client_secret: '****' })
+const api = new Client(
+    { 
+        client_id: '****', 
+        client_secret: '****' 
+    })
 
 api.wallets.getWallets()
   .then((result) => { /* do something with result */ })
@@ -42,7 +46,7 @@ api.wallets.getWallets()
 ## API
 
 All methods return a `<Promise>`, hence you can use `.then` or `await`.
-All calls are done by Axios.
+All network calls are made with Axios.
 
 ## Methods
 
