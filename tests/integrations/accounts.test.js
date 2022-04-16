@@ -57,10 +57,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_get_portfolio', async function() {
       nock(url)
-        .get('/accounts/uid/portfolio')
+        .get('/accounts/account_id/portfolio')
         .reply(200, getPortfolioResponse);
 
-      expect(await api.accounts.getPortfolio("uid")).to.eql(getPortfolioResponse)
+      expect(await api.accounts.getPortfolio("account_id")).to.eql(getPortfolioResponse)
     })
 
 

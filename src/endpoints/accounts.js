@@ -47,12 +47,12 @@ class Accounts {
     * Get portfolio
     *
     * Get the portfolio owned by an investment account
-    * @param {String} uid The UID of the investment account
+    * @param {String} account_id The account ID of the investment account
     */
-    getPortfolio(uid) {
+    getPortfolio(account_id) {
         return request.perform(this.config, {
           method: "GET",
-          endpoint: "/accounts/" +uid +"/portfolio"
+          endpoint: "/accounts/" +account_id +"/portfolio"
         })
     }
 
