@@ -4,9 +4,9 @@ const Client = require("./src/client");
 
 // Library initialization
 const api = new Client({
-  api_key: 'ewg6KbCM7qt2a4GgUCFYf15gNahG8G',
-  client_id: 'CWRY-I72XeWWXjWx3bIU4xuN17QSxLVATD1GiAbLQWPQD',
-  client_secret: 'CWRY-SECRET-fQ2BbCDdWAcioMsxsNuLDNUTRiGvwKW7WmrClNwYkRe2vY85ceQEgogSnFK5VP9HB79G9NfQD6eC1KacX2UGOTfYLI5CKQ2Fy7M0iFnxjIPyMb86lvB0YJrs4Gv4LYwX'
+  api_key: '2ghBvAA6VH2uEgFlzQc9xMcFSxwpkP',
+  client_id: 'CWRY-0yQMr7UazEzocrKCp9Dktr5Y8JGVVNwS10gCpttN',
+  client_secret: 'CWRY-SECRET-gCXcOzEF79bKIyGOctU75X1yslLEnC0xIraNy5QyzY6mYojh6LNYxDkoghCgaEApaNc31nqhjxKZCKnKApfogPOBhGcHrarSGZBuIB8RJgXmQ0OS8QmTE4IgMqAsKpE7'
 });
 
 
@@ -16,7 +16,7 @@ const api = new Client({
 // // AUTH
 
 // api.refreshToken()
-  // .then(data => console.log(data));
+//   .then(data => console.log(data));
 
 
 
@@ -32,8 +32,8 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.accounts.getAccount()
-  //   .then(result => console.log(result));
+  api.accounts.getAccount()
+    .then(result => console.log(result));
 
 
   // api.accounts.getSingleAccount('022ed7ddb248434c8c674ba1956d9202')
@@ -233,12 +233,12 @@ const api = new Client({
 // TRANSFERS
 
 
-    api.transfers.initiateTransfer({
-      source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
-      destination_product_code: 'PRCDE531952369', 
-      currency: 'USD', 
-      value: '20000'})
-      .then(result => console.log(result));
+    // api.transfers.initiateTransfer({
+    //   source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
+    //   destination_product_code: 'PRCDE531952369', 
+    //   currency: 'USD', 
+    //   value: '20000'})
+    //   .then(result => console.log(result));
 
     // api.transfers.getTransfers()
     //   .then(result => console.log(result));
