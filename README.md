@@ -110,6 +110,23 @@ await api.accounts.updateIdentity('ACCOUNT_ID', {
 await api.accounts.addBank('ACCOUNT_ID', {
     bank_code: '058',
     account_number: '0149541957'});
+
+// Get Risk Assessment Questions
+await api.accounts.getRiskAssessmentQuestions();
+
+// Get user's risk profile
+await api.accounts.getRiskProfile('ACCOUNT_ID');
+
+// Update Risk Profile
+await api.accounts.updateRiskProfile('ACCOUNT_ID', {
+    1: 'answer1',
+    2: 'answer2',
+    3: 'answer3',
+    ...
+});
+
+// Get Portfolio Performance
+await api.accounts.getPortfolioPerformance('ACCOUNT_ID', 'NGN');
 ```
 
 #### WALLETS
