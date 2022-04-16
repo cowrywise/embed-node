@@ -10,6 +10,7 @@ const updateNokResponse = require('../responses/update_nok_200.json')
 const updateProfileResponse = require('../responses/update_profile_200.json')
 const updateIdentityResponse = require('../responses/update_identity_200.json')
 const addBankResponse = require('../responses/add_bank_200.json')
+const getPortfolioPerformanceResponse = require('../responses/get_portfolio_performance_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
 const Client = require('../../src/client')
@@ -57,10 +58,10 @@ describe('Account functions work properly', function () {
 
     it('test_can_get_portfolio', async function() {
       nock(url)
-        .get('/accounts/uid/portfolio')
+        .get('/accounts/account_id/portfolio')
         .reply(200, getPortfolioResponse);
 
-      expect(await api.accounts.getPortfolio("uid")).to.eql(getPortfolioResponse)
+      expect(await api.accounts.getPortfolio("account_id")).to.eql(getPortfolioResponse)
     })
 
 
@@ -106,6 +107,42 @@ describe('Account functions work properly', function () {
         .reply(200, addBankResponse);
 
       expect(await api.accounts.addBank("uid", { bank_code: '058', account_number: '0149541957' })).to.eql(addBankResponse)
+    })
+
+
+    it('test_can_add_get_portfolio_performance', async function() {
+      nock(url)
+        .get('/accounts/uid/portfolio/performance?currency=NGN')
+        .reply(200, getPortfolioPerformanceResponse);
+
+      expect(await api.accounts.getPortfolioPerformance("uid", "NGN")).to.eql(getPortfolioPerformanceResponse)
+    })
+
+
+    it('test_get_risk_assessment_questions', async function() {
+      nock(url)
+        .get('/accounts/risk-profile-questions')
+        .reply(200, getPortfolioPerformanceResponse);
+
+      expect(await api.accounts.getRiskAssessmentQuestions()).to.eql(getPortfolioPerformanceResponse)
+    })
+
+
+    it('test_can_get_risk_profile', async function() {
+      nock(url)
+        .get('/accounts/uid/risk-profile')
+        .reply(200, getPortfolioPerformanceResponse);
+
+      expect(await api.accounts.getRiskProfile("uid")).to.eql(getPortfolioPerformanceResponse)
+    })
+
+
+    it('test_can_update_risk_profile', async function() {
+      nock(url)
+        .post('/accounts/uid/risk-profile')
+        .reply(200, getPortfolioPerformanceResponse);
+
+      expect(await api.accounts.updateRiskProfile("uid", {1: '24', 2: 'Full time employee'})).to.eql(getPortfolioPerformanceResponse)
     })
 
 })

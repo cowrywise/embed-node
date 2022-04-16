@@ -4,6 +4,7 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
+const querystring = require('querystring');
 
 
 class Accounts {
@@ -47,12 +48,12 @@ class Accounts {
     * Get portfolio
     *
     * Get the portfolio owned by an investment account
-    * @param {String} uid The UID of the investment account
+    * @param {String} account_id The account ID of the investment account
     */
-    getPortfolio(uid) {
+    getPortfolio(account_id) {
         return request.perform(this.config, {
           method: "GET",
-          endpoint: "/accounts/" +uid +"/portfolio"
+          endpoint: "/accounts/" +account_id +"/portfolio"
         })
     }
 
@@ -160,13 +161,70 @@ class Accounts {
     * @param {String} data.bank_code The bank code of the bank
     * @param {String} data.account_number The account number
     */
-   addBank(uid, data) {
-    return request.perform(this.config, {
-      method: "POST",
-      endpoint: "/accounts/" +uid +"/bank",
-      data: data
-    });
-}
+    addBank(uid, data) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/accounts/" +uid +"/bank",
+        data: data
+      });
+    }
+
+    /**
+    * Get Portfolio Performance
+    *
+    * Get the performance of a portfolio
+    * @param {String} uid The UID of the investment account
+    * @param {String} currency The currency
+    */
+     getPortfolioPerformance(uid, currency) {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/accounts/" + uid + "/portfolio/performance" + (currency ? "?" + querystring.stringify({currency: currency}) : "")
+      });
+    }
+
+
+    /**
+    * Get Risk Assessment Questions
+    *
+    * Get list of risk assessment questions
+    */
+    getRiskAssessmentQuestions() {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/accounts/risk-profile-questions"
+      });
+    }
+
+
+    /**
+    * Get User Risk Profile
+    *
+    * Get the risk profile of a user
+    * @param {String} uid The UID of the investment account
+    */
+    getRiskProfile(uid) {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/accounts/" +uid + "/risk-profile"
+      });
+    }
+
+
+    /**
+    * Update Risk Profile
+    *
+    * Update a user's risk profile
+    * @param {String} uid The UID of the investment account
+    * @param {Map} data A map containing the question indexes and answers
+    */
+    updateRiskProfile(uid, data) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/accounts/" +uid +"/risk-profile",
+        data: data
+      });
+    }
 
     
 }

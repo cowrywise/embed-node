@@ -1,12 +1,12 @@
 // import/require library
-const Client = require("./src/client");
+const Client = require('./src/client');
 
 
 // Library initialization
 const api = new Client({
-  api_key: 'ewg6KbCM7qt2a4GgUCFYf15gNahG8G',
-  client_id: 'CWRY-I72XeWWXjWx3bIU4xuN17QSxLVATD1GiAbLQWPQD',
-  client_secret: 'CWRY-SECRET-fQ2BbCDdWAcioMsxsNuLDNUTRiGvwKW7WmrClNwYkRe2vY85ceQEgogSnFK5VP9HB79G9NfQD6eC1KacX2UGOTfYLI5CKQ2Fy7M0iFnxjIPyMb86lvB0YJrs4Gv4LYwX'
+  api_key: 'p7FxbDubcnI43OoUELJbBVZWXRuaMn',
+  client_id: 'CWRY-0yQMr7UazEzocrKCp9Dktr5Y8JGVVNwS10gCpttN',
+  client_secret: 'CWRY-SECRET-gCXcOzEF79bKIyGOctU75X1yslLEnC0xIraNy5QyzY6mYojh6LNYxDkoghCgaEApaNc31nqhjxKZCKnKApfogPOBhGcHrarSGZBuIB8RJgXmQ0OS8QmTE4IgMqAsKpE7'
 });
 
 
@@ -16,7 +16,7 @@ const api = new Client({
 // // AUTH
 
 // api.refreshToken()
-  // .then(data => console.log(data));
+//   .then(data => console.log(data));
 
 
 
@@ -44,7 +44,7 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.accounts.updateAddress('033f5d3d00354d28961031efe9ae2938', {
+  // api.accounts.updateAddress('1eea9ac12da14bb9bf9ec38b963b4097', {
   //   street: 'Broadway',
   //   lga: 'Eti-Osa',
   //   area_code: '231',
@@ -56,7 +56,7 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateNextOfKin('033f5d3d00354d28961031efe9ae2938', {
+  // api.accounts.updateNextOfKin('1eea9ac12da14bb9bf9ec38b963b4097', {
   //   first_name: 'John',
   //   last_name: 'Doe',
   //   email: 'jd@gmail.com',
@@ -67,7 +67,7 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateProfile('033f5d3d00354d28961031efe9ae2938', {
+  // api.accounts.updateProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
   //   first_name: 'Taslim',
   //   last_name: 'Oseni',
   //   email: 'tas@gmail.com',
@@ -78,17 +78,40 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  // api.accounts.updateIdentity('033f5d3d00354d28961031efe9ae2938', {
+  // api.accounts.updateIdentity('1eea9ac12da14bb9bf9ec38b963b4097', {
   //   identity_type: 'bvn',
   //   identity_value: '0123456789'
   // })
   // .then(result => console.log(result));
 
 
-  // api.accounts.addBank('033f5d3d00354d28961031efe9ae2938', {
+  // api.accounts.addBank('1eea9ac12da14bb9bf9ec38b963b4097', {
   //   bank_code: '058',
   //   account_number: '0149541957'
   // })
+  // .then(result => console.log(result));
+
+
+  // api.accounts.getRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097')
+  // .then(result => console.log(result));
+
+
+  // api.accounts.getRiskAssessmentQuestions()
+  // .then(result => console.log(result));
+
+
+  api.accounts.updateRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
+    1: '24',
+    2: 'Full time employee',
+    3: '5 - 20 million',
+    4: 'single',
+    5: '1-2 dependents',
+    6: 'N700,000 gain best case; N360,000 loss worst case'
+  })
+  .then(result => console.log(result));
+
+
+  // api.accounts.getPortfolioPerformance('1eea9ac12da14bb9bf9ec38b963b4097', 'NGN')
   // .then(result => console.log(result));
 
 
@@ -101,7 +124,7 @@ const api = new Client({
 
 
   // api.wallets.createWallet({
-  //   account_id: '033f5d3d00354d28961031efe9ae2938',
+  //   account_id: '1eea9ac12da14bb9bf9ec38b963b4097',
   //   currency_code: 'NGN'
   //   })
   //   .then(result => console.log(result));
@@ -144,7 +167,7 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.assets.getAssets("mutual-fund")
+  // api.assets.getAssets('mutual-fund')
   //   .then(result => console.log(result));
 
 
@@ -152,7 +175,7 @@ const api = new Client({
   //   .then(result => console.log(result));
 
 
-  // api.assets.getIndexesAsset("ffd13aa3-24c1-40d6-ac1e-ebe71a9aa37f")
+  // api.assets.getIndexesAsset('ffd13aa3-24c1-40d6-ac1e-ebe71a9aa37f')
   //   .then(result => console.log(result));
 
 
@@ -169,7 +192,7 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    // api.investments.getInvestments("tbills")
+    // api.investments.getInvestments('tbills')
     //   .then(result => console.log(result));
 
 
@@ -224,7 +247,7 @@ const api = new Client({
 
 
 
-    // api.transactions.getTransactions("10")
+    // api.transactions.getTransactions('10')
     //   .then(result => console.log(result));
 
 
@@ -233,12 +256,12 @@ const api = new Client({
 // TRANSFERS
 
 
-    api.transfers.initiateTransfer({
-      source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
-      destination_product_code: 'PRCDE531952369', 
-      currency: 'USD', 
-      value: '20000'})
-      .then(result => console.log(result));
+    // api.transfers.initiateTransfer({
+    //   source_wallet_id: 'de1ea415e7b847ce84592b183cf17cc2', 
+    //   destination_product_code: 'PRCDE531952369', 
+    //   currency: 'USD', 
+    //   value: '20000'})
+    //   .then(result => console.log(result));
 
     // api.transfers.getTransfers()
     //   .then(result => console.log(result));
