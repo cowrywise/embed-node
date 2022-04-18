@@ -239,20 +239,6 @@ const api = new Client({
 
 
 
-
-
-
-
-// TRANSACTIONS
-
-
-
-    api.transactions.getTransactions('10')
-      .then(result => console.log(result));
-
-
-
-
 // TRANSFERS
 
 
@@ -267,8 +253,8 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    // api.transfers.getDeposits()
-    //   .then(result => console.log(result));
+    api.transfers.getDeposits()
+      .then(result => console.log(result));
 
 
     // api.transfers.getWithdrawals()

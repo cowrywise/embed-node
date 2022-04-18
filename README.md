@@ -213,12 +213,6 @@ await api.prices.getPriceHistory({
     to_date: '2021-05-29'});
 ```
 
-#### TRANSACTIONS
-```js
-// Get all transactions
-await api.transactions.getTransactions('10');
-```
-
 #### TRANSFERS
 ```js
 // Get all transfers
