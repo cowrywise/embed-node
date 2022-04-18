@@ -253,8 +253,8 @@ const api = new Client({
     //   .then(result => console.log(result));
 
 
-    api.transfers.getDeposits()
-      .then(result => console.log(result));
+    // api.transfers.getDeposits()
+    //   .then(result => console.log(result));
 
 
     // api.transfers.getWithdrawals()
