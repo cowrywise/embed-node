@@ -100,15 +100,15 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  api.accounts.updateRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
-    1: '24',
-    2: 'Full time employee',
-    3: '5 - 20 million',
-    4: 'single',
-    5: '1-2 dependents',
-    6: 'N700,000 gain best case; N360,000 loss worst case'
-  })
-  .then(result => console.log(result));
+  // api.accounts.updateRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
+  //   1: '24',
+  //   2: 'Full time employee',
+  //   3: '5 - 20 million',
+  //   4: 'single',
+  //   5: '1-2 dependents',
+  //   6: 'N700,000 gain best case; N360,000 loss worst case'
+  // })
+  // .then(result => console.log(result));
 
 
   // api.accounts.getPortfolioPerformance('1eea9ac12da14bb9bf9ec38b963b4097', 'NGN')
