@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const querystring = require("querystring");
 
 
 class Transactions {
@@ -23,7 +22,7 @@ class Transactions {
     getTransactions(limit) {
         return request.perform(this.config, {
             method: "GET",
-            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify({limit: limit})) : "")
+            endpoint: "/transactions" + (limit ? ("?limit=" + limit) : "")
         });
     }
 }

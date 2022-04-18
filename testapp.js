@@ -4,7 +4,7 @@ const Client = require('./src/client');
 
 // Library initialization
 const api = new Client({
-  api_key: 'p7FxbDubcnI43OoUELJbBVZWXRuaMn',
+  api_key: '9mghj1kAqM8Co1FYWSBYdqQR5RvBge',
   client_id: 'CWRY-0yQMr7UazEzocrKCp9Dktr5Y8JGVVNwS10gCpttN',
   client_secret: 'CWRY-SECRET-gCXcOzEF79bKIyGOctU75X1yslLEnC0xIraNy5QyzY6mYojh6LNYxDkoghCgaEApaNc31nqhjxKZCKnKApfogPOBhGcHrarSGZBuIB8RJgXmQ0OS8QmTE4IgMqAsKpE7'
 });
@@ -231,7 +231,7 @@ const api = new Client({
 
 
     // api.prices.getPriceHistory({
-    //   asset_id: '0db0dd04-832e-4068-82f1-156ad1aef575',
+    //   asset_id: '9dd332d3229d4b7087a8414afba3598f',
     //   from_date: '2020-01-10',
     //   to_date: '2021-05-29'
     //   })
@@ -247,8 +247,8 @@ const api = new Client({
 
 
 
-    // api.transactions.getTransactions('10')
-    //   .then(result => console.log(result));
+    api.transactions.getTransactions('10')
+      .then(result => console.log(result));
 
 
 
