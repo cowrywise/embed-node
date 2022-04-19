@@ -1,0 +1,36 @@
+{
+    "data": {
+        "id": "a8e99f617b9a43a2b97ae27b143acd26",
+        "fee": {
+            "value": "2500.00000",
+            "currency_code": "NGN"
+        },
+        "amount": {
+            "value": "10000.00000",
+            "currency_code": "NGN"
+        },
+        "reference": "WTH9F716567505C7C5D",
+        "description": "Test withdrawal",
+        "source": {
+            "id": "f8f740c7-30eb-4d62-8f46-be059614a3bb",
+            "name": "NGN-Wallet",
+            "account_id": "04fc88aca5394e14be16551a6111a048",
+            "account_name": "Abdulrahman Solanke",
+            "account_email": "solankerahman@gmail.com",
+            "product_code": "PRCDE1117845064",
+            "asset_type": "wallet",
+            "current_value": "51977500.0000"
+        },
+        "destination": {
+            "asset_type": "Bank",
+            "bank": "GTBank",
+            "account_number": "0149541957",
+            "account_name": "SOLANKE ABDULRAHMAN KAYODE"
+        },
+        "status": "Pending",
+        "transaction_date": "2021-10-12T14:21:42.952124+00:00"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}
