@@ -249,21 +249,21 @@ const api = new Client({
     //   value: '20000'})
     //   .then(result => console.log(result));
 
-    // api.transfers.getTransfers()
+    // api.transactions.getTransfers()
     //   .then(result => console.log(result));
 
-    // api.transfers.getSingleTransfer('4034e73b34f64d84aa0e3f2f6080abab')
+    // api.transactions.getSingleTransfer('4034e73b34f64d84aa0e3f2f6080abab')
     //   .then(result => console.log(result));
 
-    // api.transfers.getDeposits()
+    // api.transactions.getDeposits()
     //   .then(result => console.log(result));
 
-    // api.transfers.getSingleDeposit('45bcc4d7fbb24e99aeb7417de86838d7')
+    // api.transactions.getSingleDeposit('45bcc4d7fbb24e99aeb7417de86838d7')
     //   .then(result => console.log(result));
 
 
-    // api.transfers.getWithdrawals()
+    // api.transactions.getWithdrawals()
     //   .then(result => console.log(result));
 
-    // api.transfers.getSingleWithdrawal('c3d8cc891c914d658eae557f925617b3')
+    // api.transactions.getSingleWithdrawal('c3d8cc891c914d658eae557f925617b3')
     //   .then(result => console.log(result));
