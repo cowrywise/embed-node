@@ -6,7 +6,7 @@
 const request = require('../helper/request');
 
 
-class Transfers {
+class Transactions {
 
     constructor (config = {}) {
         this.config = config;
@@ -97,4 +97,4 @@ class Transfers {
 }
 
 
-module.exports = Transfers
+module.exports = Transactions

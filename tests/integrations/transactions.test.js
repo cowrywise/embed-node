@@ -15,7 +15,7 @@ const api = new Client({client_id: '****', client_secret: '****'});
 const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
-describe('Transfer functions work properly', function () {
+describe('Transaction functions work properly', function () {
 
 
     it('test_can_get_transfers', async function() {
@@ -23,7 +23,7 @@ describe('Transfer functions work properly', function () {
         .get('/transfers')
         .reply(200, getTransferResponse);
 
-      expect(await api.transfers.getTransfers()).to.eql(getTransferResponse)
+      expect(await api.transactions.getTransfers()).to.eql(getTransferResponse)
     })
 
     it('test_can_get_single_transfer', async function() {
@@ -31,7 +31,7 @@ describe('Transfer functions work properly', function () {
         .get('/transfers/7ce20bbdbb8748909185833cddc18e3d')
         .reply(200, getSingleTransferResponse);
 
-      expect(await api.transfers.getSingleTransfer('7ce20bbdbb8748909185833cddc18e3d')).to.eql(getSingleTransferResponse)
+      expect(await api.transactions.getSingleTransfer('7ce20bbdbb8748909185833cddc18e3d')).to.eql(getSingleTransferResponse)
     })
 
 
@@ -40,7 +40,7 @@ describe('Transfer functions work properly', function () {
         .get('/deposits')
         .reply(200, getDepositsResponse);
 
-      expect(await api.transfers.getDeposits()).to.eql(getDepositsResponse)
+      expect(await api.transactions.getDeposits()).to.eql(getDepositsResponse)
     })
 
 
@@ -49,7 +49,7 @@ describe('Transfer functions work properly', function () {
         .get('/deposits/30420e27788f465caff439822bbe121c')
         .reply(200, getSingleDepositResponse);
 
-      expect(await api.transfers.getSingleDeposit('30420e27788f465caff439822bbe121c')).to.eql(getSingleDepositResponse)
+      expect(await api.transactions.getSingleDeposit('30420e27788f465caff439822bbe121c')).to.eql(getSingleDepositResponse)
     })
 
 
@@ -58,7 +58,7 @@ describe('Transfer functions work properly', function () {
         .get('/withdrawals')
         .reply(200, getWithdrawalResponse);
 
-      expect(await api.transfers.getWithdrawals()).to.eql(getWithdrawalResponse)
+      expect(await api.transactions.getWithdrawals()).to.eql(getWithdrawalResponse)
     })
 
 
@@ -67,7 +67,7 @@ describe('Transfer functions work properly', function () {
         .get('/withdrawals/a8e99f617b9a43a2b97ae27b143acd26')
         .reply(200, getSingleWithdrawalResponse);
 
-      expect(await api.transfers.getSingleWithdrawal('a8e99f617b9a43a2b97ae27b143acd26')).to.eql(getSingleWithdrawalResponse)
+      expect(await api.transactions.getSingleWithdrawal('a8e99f617b9a43a2b97ae27b143acd26')).to.eql(getSingleWithdrawalResponse)
     })
 
 

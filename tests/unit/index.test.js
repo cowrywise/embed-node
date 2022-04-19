@@ -13,7 +13,7 @@ describe('All module objects are callable', function () {
     instance.prices,
     instance.savings,
     instance.trade,
-    instance.transfers,
+    instance.transactions,
     instance.wallets ].map(f => {
     it(f.constructor.name, function () {
       expect(typeof f).to.be('object')
