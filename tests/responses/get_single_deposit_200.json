@@ -1,0 +1,36 @@
+{
+    "data": {
+        "id": "30420e27788f465caff439822bbe121c",
+        "amount": {
+            "value": "1000000.0000",
+            "currency_code": "NGN"
+        },
+        "confirmed_amount": 1000000.0,
+        "fee": {
+            "value": "0.00000",
+            "currency_code": "NGN"
+        },
+        "reference": "TRFXiaChniU",
+        "description": "Test tranfer",
+        "source": {
+            "asset_type": "Bank",
+            "account_number": "0123456789",
+            "bank_name": "Test Bank"
+        },
+        "destination": {
+            "id": "f8f740c7-30eb-4d62-8f46-be059614a3bb",
+            "name": "NGN-Wallet",
+            "account_id": "04fc88aca5394e14be16551a6111a048",
+            "account_name": "Abdulrahman Solanke",
+            "account_email": "solankerahman@gmail.com",
+            "product_code": "PRCDE1117845064",
+            "asset_type": "wallet",
+            "current_value": "51977500.0000"
+        },
+        "status": "success",
+        "transaction_date": "2021-12-01T12:51:19.056423+00:00"
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

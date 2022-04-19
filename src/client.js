@@ -7,7 +7,6 @@ const Investments = require('./endpoints/investments');
 const Trade = require('./endpoints/trade');
 const Prices = require('./endpoints/prices');
 const Transactions = require('./endpoints/transactions');
-const Transfers = require('./endpoints/transfers');
 var api_key = "";
 
 
@@ -45,7 +44,6 @@ class Client {
         this.trade = new Trade(config)
         this.prices = new Prices(config)
         this.transactions = new Transactions(config)
-        this.transfers = new Transfers(config)
     }
 
     /**

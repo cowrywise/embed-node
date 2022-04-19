@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const querystring = require('querystring');
 
 
 class Investments {
@@ -22,7 +21,7 @@ class Investments {
     getInvestments(asset_type) {
         return request.perform(this.config, {
           method: "GET",
-          endpoint: "/investments" + (asset_type ? "?" + querystring.stringify({asset_type: asset_type}) : "")
+          endpoint: "/investments" + (asset_type ? ("?asset_type=" + asset_type) : "")
         });
     }
 

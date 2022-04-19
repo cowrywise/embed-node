@@ -1,10 +1,9 @@
 /**
- *  Transactions
+ *  Assets
  *
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const querystring = require("querystring");
 
 
 class Transactions {
@@ -13,19 +12,88 @@ class Transactions {
         this.config = config;
     }
 
+    
 
     /**
-    * Get Transactions
+    * Get Transfers
     * 
-    * Description: Get all transactions
-    * @param {String} [limit] Optional: limit fetch result
+    * Description: Get all transfers
     */
-    getTransactions(limit) {
+    getTransfers() {
         return request.perform(this.config, {
-            method: "GET",
-            endpoint: "/transactions" + (limit ? ("?" + querystring.stringify({limit: limit})) : "")
+          method: "GET",
+          endpoint: "/transfers"
         });
     }
+
+
+    /**
+    * Get Single Transfer
+    * 
+    * Description: Get a single transfer by ID
+    * @param {String} id ID of the requested transfer
+    */
+    getSingleTransfer(id) {
+        return request.perform(this.config, {
+          method: "GET",
+          endpoint: "/transfers/" + id
+        });
+    }
+
+
+    /**
+    * Get Deposits
+    * 
+    * Description: Get all deposits
+    */
+    getDeposits() {
+        return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/deposits"
+        });
+    }
+
+
+    /**
+    * Get Single Deposit
+    * 
+    * Description: Get single deposit by ID
+    * @param {String} id ID of the requested deposit
+    */
+    getSingleDeposit(id) {
+        return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/deposits/" + id
+        });
+    }
+
+
+    /**
+    * Get Withdrawals
+    * 
+    * Description: Get all withdrawals
+    */
+    getWithdrawals() {
+        return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/withdrawals"
+        });
+    }
+
+
+    /**
+    * Get Single Withdrawal
+    * 
+    * Description: Get single withdrawal by ID
+    * @param {String} id ID of the requested withdrawal
+    */
+    getSingleWithdrawal(id) {
+        return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/withdrawals/"+ id
+       });
+    }
+
 }
 
 

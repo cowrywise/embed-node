@@ -215,20 +215,24 @@ await api.prices.getPriceHistory({
 
 #### TRANSACTIONS
 ```js
-// Get all transactions
-await api.transactions.getTransactions('10');
-```
-
-#### TRANSFERS
-```js
 // Get all transfers
-await api.transfers.getTransfers();
+await api.transactions.getTransfers();
+
+// Get transfer by ID
+await api.transactions.getTransfers('TRANSACTION_ID');
 
 // Get all deposits
-await api.transfers.getDeposits();
+await api.transactions.getDeposits();
+
+// Get deposit by ID
+await api.transactions.getDeposit('TRANSACTION_ID');
 
 // Get all withdrawals
-await api.transfers.getWithdrawals();
+await api.transactions.getWithdrawals();
+
+// Get withdrawal by ID
+await api.transactions.getWithdrawal('TRANSACTION_ID');
+
 ```
 
 

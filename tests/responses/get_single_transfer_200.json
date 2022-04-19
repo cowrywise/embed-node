@@ -1,0 +1,42 @@
+{
+    "data": {
+        "id": "7ce20bbdbb8748909185833cddc18e3d",
+        "amount": {
+            "value": "10000.00000",
+            "currency_code": "USD"
+        },
+        "fee": {
+            "value": "0.00000",
+            "currency_code": "USD"
+        },
+        "reference": "TRF4271A372E80AB78F",
+        "description": "",
+        "source_asset": {
+            "id": "551cd98a-0038-49f0-906a-fef0b153d151",
+            "name": "USD Index LOW-RISK",
+            "account_id": "e99c733a3acc4b3c8744ce1b3d02d888",
+            "account_name": "Grace Ashama",
+            "account_email": "g.yarmirama@gmail.com",
+            "product_code": "PRCDE6108320530",
+            "asset_type": "index",
+            "current_value": "2466471.908690200187265872955322265625"
+        },
+        "destination_asset": {
+            "id": "536c1f63-9671-4900-9fbe-9921750aac81",
+            "name": "USD-Wallet",
+            "account_id": "e99c733a3acc4b3c8744ce1b3d02d888",
+            "account_name": "Grace Ashama",
+            "account_email": "g.yarmirama@gmail.com",
+            "product_code": "PRCDE4520416773",
+            "asset_type": "wallet",
+            "current_value": "47553375.0000"
+        },
+        "transfer_type": "asset-liquidation",
+        "status": "Pending",
+        "transaction_date": "2022-03-30T11:28:36.408008+00:00",
+        "meta": {}
+    },
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

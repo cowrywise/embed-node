@@ -4,7 +4,7 @@ const Client = require('./src/client');
 
 // Library initialization
 const api = new Client({
-  api_key: 'p7FxbDubcnI43OoUELJbBVZWXRuaMn',
+  api_key: 'OFEuB9pbmmOE1yLkH1eMExUINPTRfO',
   client_id: 'CWRY-0yQMr7UazEzocrKCp9Dktr5Y8JGVVNwS10gCpttN',
   client_secret: 'CWRY-SECRET-gCXcOzEF79bKIyGOctU75X1yslLEnC0xIraNy5QyzY6mYojh6LNYxDkoghCgaEApaNc31nqhjxKZCKnKApfogPOBhGcHrarSGZBuIB8RJgXmQ0OS8QmTE4IgMqAsKpE7'
 });
@@ -100,15 +100,15 @@ const api = new Client({
   // .then(result => console.log(result));
 
 
-  api.accounts.updateRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
-    1: '24',
-    2: 'Full time employee',
-    3: '5 - 20 million',
-    4: 'single',
-    5: '1-2 dependents',
-    6: 'N700,000 gain best case; N360,000 loss worst case'
-  })
-  .then(result => console.log(result));
+  // api.accounts.updateRiskProfile('1eea9ac12da14bb9bf9ec38b963b4097', {
+  //   1: '24',
+  //   2: 'Full time employee',
+  //   3: '5 - 20 million',
+  //   4: 'single',
+  //   5: '1-2 dependents',
+  //   6: 'N700,000 gain best case; N360,000 loss worst case'
+  // })
+  // .then(result => console.log(result));
 
 
   // api.accounts.getPortfolioPerformance('1eea9ac12da14bb9bf9ec38b963b4097', 'NGN')
@@ -231,25 +231,11 @@ const api = new Client({
 
 
     // api.prices.getPriceHistory({
-    //   asset_id: '0db0dd04-832e-4068-82f1-156ad1aef575',
+    //   asset_id: '9dd332d3229d4b7087a8414afba3598f',
     //   from_date: '2020-01-10',
     //   to_date: '2021-05-29'
     //   })
     //   .then(result => console.log(result));
-
-
-
-
-
-
-
-// TRANSACTIONS
-
-
-
-    // api.transactions.getTransactions('10')
-    //   .then(result => console.log(result));
-
 
 
 
@@ -263,13 +249,21 @@ const api = new Client({
     //   value: '20000'})
     //   .then(result => console.log(result));
 
-    // api.transfers.getTransfers()
+    // api.transactions.getTransfers()
+    //   .then(result => console.log(result));
+
+    // api.transactions.getSingleTransfer('4034e73b34f64d84aa0e3f2f6080abab')
+    //   .then(result => console.log(result));
+
+    // api.transactions.getDeposits()
+    //   .then(result => console.log(result));
+
+    // api.transactions.getSingleDeposit('45bcc4d7fbb24e99aeb7417de86838d7')
     //   .then(result => console.log(result));
 
 
-    // api.transfers.getDeposits()
+    // api.transactions.getWithdrawals()
     //   .then(result => console.log(result));
 
-
-    // api.transfers.getWithdrawals()
+    // api.transactions.getSingleWithdrawal('c3d8cc891c914d658eae557f925617b3')
     //   .then(result => console.log(result));

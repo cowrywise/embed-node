@@ -4,7 +4,6 @@
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
-const querystring = require('querystring');
 
 
 class Accounts {
@@ -176,10 +175,10 @@ class Accounts {
     * @param {String} uid The UID of the investment account
     * @param {String} currency The currency
     */
-     getPortfolioPerformance(uid, currency) {
+    getPortfolioPerformance(uid, currency) {
       return request.perform(this.config, {
         method: "GET",
-        endpoint: "/accounts/" + uid + "/portfolio/performance" + (currency ? "?" + querystring.stringify({currency: currency}) : "")
+        endpoint: "/accounts/" + uid + "/portfolio/performance" + (currency ? ("?currency=" + currency) : "")
       });
     }
 
