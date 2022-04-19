@@ -4,7 +4,7 @@ const Client = require('./src/client');
 
 // Library initialization
 const api = new Client({
-  api_key: '9mghj1kAqM8Co1FYWSBYdqQR5RvBge',
+  api_key: 'OFEuB9pbmmOE1yLkH1eMExUINPTRfO',
   client_id: 'CWRY-0yQMr7UazEzocrKCp9Dktr5Y8JGVVNwS10gCpttN',
   client_secret: 'CWRY-SECRET-gCXcOzEF79bKIyGOctU75X1yslLEnC0xIraNy5QyzY6mYojh6LNYxDkoghCgaEApaNc31nqhjxKZCKnKApfogPOBhGcHrarSGZBuIB8RJgXmQ0OS8QmTE4IgMqAsKpE7'
 });
@@ -252,10 +252,18 @@ const api = new Client({
     // api.transfers.getTransfers()
     //   .then(result => console.log(result));
 
+    // api.transfers.getSingleTransfer('4034e73b34f64d84aa0e3f2f6080abab')
+    //   .then(result => console.log(result));
 
     // api.transfers.getDeposits()
     //   .then(result => console.log(result));
 
+    // api.transfers.getSingleDeposit('45bcc4d7fbb24e99aeb7417de86838d7')
+    //   .then(result => console.log(result));
+
 
     // api.transfers.getWithdrawals()
+    //   .then(result => console.log(result));
+
+    // api.transfers.getSingleWithdrawal('c3d8cc891c914d658eae557f925617b3')
     //   .then(result => console.log(result));
