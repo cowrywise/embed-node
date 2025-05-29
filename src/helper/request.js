@@ -1,7 +1,6 @@
+require('dotenv').config();
+
 const axios = require('axios');
-const constants = require('./constants');
-
-
 
 const perform = async function(config = Object, options = Object) {
 
@@ -10,7 +9,7 @@ const perform = async function(config = Object, options = Object) {
   let _retry = true
 
   // URL
-  let url = constants.base_url;
+  let url = process.env.BASE_URL;
   if(options['endpoint'].includes("/o/token")) { url += options['endpoint'] } else { url += "/api/v1" + options['endpoint'] }
 
 
