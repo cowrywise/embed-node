@@ -13,7 +13,8 @@
   "author": "Taslim Oseni",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
