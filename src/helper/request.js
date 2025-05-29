@@ -9,7 +9,7 @@ const perform = async function(config = Object, options = Object) {
   let _retry = true
 
   // URL
-  let url = process.env.BASE_URL;
+  let url = process.env.EMBED_API_BASE_URL;
   if(options['endpoint'].includes("/o/token")) { url += options['endpoint'] } else { url += "/api/v1" + options['endpoint'] }
 
 
