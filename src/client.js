@@ -33,6 +33,7 @@ class Client {
         
         if (!config.client_id) throw new Error('Client ID is Missing');
         if (!config.client_secret) throw new Error('Client Secret is Missing');
+        if (!config.embed_api_base_url) throw new Error('Base URL is Missing');
 
         this.config = config;
 
