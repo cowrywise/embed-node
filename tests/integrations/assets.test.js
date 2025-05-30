@@ -7,7 +7,7 @@ const getIndicesResponse = require('../responses/get_indexes_200.json')
 const getIndicedAssetResponse = require('../responses/get_indexed_asset_200.json')
 
 const Client = require('../../src/client')
-const api = new Client({client_id: '****', client_secret: '****'});
+const api = new Client({client_id: '****', client_secret: '****', embed_api_base_url: 'https://sandbox.embed.cowrywise.com/api/v1'});
 const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
