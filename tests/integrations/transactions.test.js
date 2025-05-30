@@ -11,7 +11,7 @@ const getSingleWithdrawalResponse = require('../responses/get_single_withdrawal_
 
 
 const Client = require('../../src/client')
-const api = new Client({client_id: '****', client_secret: '****'});
+const api = new Client({client_id: '****', client_secret: '****', embed_api_base_url: 'https://sandbox.embed.cowrywise.com/api/v1'});
 const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 

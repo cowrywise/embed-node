@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const axios = require('axios');
 
 const perform = async function(config = Object, options = Object) {
@@ -9,7 +7,7 @@ const perform = async function(config = Object, options = Object) {
   let _retry = true
 
   // URL
-  let url = process.env.EMBED_API_BASE_URL;
+  let url = config['embed_api_base_url'];
   if(options['endpoint'].includes("/o/token")) { url += options['endpoint'] } else { url += "/api/v1" + options['endpoint'] }
 
 

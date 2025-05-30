@@ -26,14 +26,14 @@ you `client_id` and `client_secret` keys from the developer dashboard. Set your 
 You need the following before getting to use this library:
 1. Client ID
 2. Client Secret
-3. BASE_URL (add the base_url to your .env file using the `EMBED_API_BASE_URL` key)
+3. BASE_URL (more details in the next section)
 
 ## Base URL
 
 There are two main base URLs depending on your usecase.
 
  - Sandbox BASE URL: https://sandbox.embed.cowrywise.com/api/v1
- - Live URL: https://production.embed.cowrywise.com/api/v1
+ - Live BASE URL: https://production.embed.cowrywise.com/api/v1
 
 ## Getting Started
 This library is extremely modular, meaning you can create more than one instance
@@ -42,7 +42,8 @@ const Client = require('@cowrywise/embed-node')
 const api = new Client(
     { 
         client_id: '****', 
-        client_secret: '****' 
+        client_secret: '****',
+        embed_api_base_url: "url"
     })
 
 api.wallets.getWallets()
