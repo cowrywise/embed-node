@@ -16,8 +16,8 @@ class Assets {
     /**
     * Get Assets
     * 
-    * Description: Get investment assets
-    * @param {String} [asset_type] Optional: asset_type query field [e.g tbills]
+    * Description: Get available investment assets. You can filter by asset type.
+    * @param {String} [asset_type] Optional: asset_type query field [e.g. 'mutual_fund', 'tbills']
     */
     getAssets(asset_type) {
         return request.perform(this.config, {
@@ -28,9 +28,9 @@ class Assets {
 
 
     /**
-    * Get Indices
+    * Get Indexes
     * 
-    * Description: Get investment indices
+    * Description: Get available investment indexes.
     */
     getIndexes() {
         return request.perform(this.config, {
@@ -41,11 +41,11 @@ class Assets {
 
 
     /**
-    * Get Indices asset
+    * Get Index Assets
     * 
-    * Description: Get assets based on index
+    * Description: Get assets that belong to a specific index.
     * 
-    * @param {String} index_id index of asset
+    * @param {String} index_id The ID of the index
     */
     getIndexesAsset(index_id) {
       return request.perform(this.config, {

@@ -1,19 +1,41 @@
 const axios = require('axios');
 
-const perform = async function(config = Object, options = Object) {
+const instance = axios.create();
+
+const perform = async function(config = {}, options = {}) {
 
   
   // Boolean flag for retrying unauthenticated requests
   let _retry = true
 
   // URL
-  let url = config['embed_api_base_url'];
-  if(options['endpoint'].includes("/o/token")) { url += options['endpoint'] } else { url += "/api/v1" + options['endpoint'] }
+  let baseUrl = config['embed_api_base_url'] || '';
+  if (baseUrl.endsWith('/')) {
+    baseUrl = baseUrl.slice(0, -1);
+  }
+  
+  let url = baseUrl;
+  if (options['endpoint'].includes("/o/token")) {
+    if (url.includes("/api/v1")) {
+      url = url.replace("/api/v1", "");
+    }
+    url += options['endpoint'];
+  } else {
+    if (!url.includes("/api/v1")) {
+      url += "/api/v1";
+    }
+    url += options['endpoint'];
+  }
 
 
   // HEADERS
   let headers = {};
-  headers["Content-Type"] = "application/x-www-form-urlencoded"
+  if (options['endpoint'].includes("/o/token")) {
+    headers["Content-Type"] = "application/x-www-form-urlencoded";
+  } else {
+    headers["Content-Type"] = "application/json";
+  }
+  
   if(!options['endpoint'].includes("/o/token")) { headers['Authorization'] = 'Bearer '+ config['api_key'] }
   if((options['method'] === "POST") && (options['data']) && (options['data']['idempotency_key'])) {headers['Embed-Idempotency-Key'] = options['data']['idempotency_key']}
 
@@ -27,67 +49,53 @@ const perform = async function(config = Object, options = Object) {
     withCredentials: true
   };
 
-  // Selectively transform request
-  if(!(options['endpoint'] === "POST") && !(options['endpoint'] === "/transfers")) {
-    axios_configuration['transformRequest'] = getQueryString
+  // Selectively transform request for token only
+  if(options['endpoint'].includes("/o/token")) {
+    axios_configuration['transformRequest'] = [getQueryString]
   }
 
-
-  // Response interceptor
-  axios.interceptors.response.use((response) => {
-    return response
-  },
-  async function (error) {
-    // console.log(error);
-    if (error.response && (error.response.status === 401 && _retry)) {
-      _retry = false;
-      const access_token = (await perform(config, {
-        method: "POST",
-        endpoint: "/o/token/",
-        data: {
-          grant_type: 'client_credentials',
-          client_id: config.client_id,
-          client_secret: config.client_secret
-        }
-      })).access_token;
-      console.log('New access token: ' +access_token);
-      delete headers['Authorization'];
-      headers['Authorization'] = 'Bearer ' + access_token;
-      return axios({
-        method: options['method'],
-        url: url,
-        data: options['data'],
-        headers: headers,
-        withCredentials: true,
-        transformRequest: getQueryString
-      });
-    }
-    else {
-      return error.response;
-    }
-  });
-
-
   // Return the result of the executed request
-  return axios(axios_configuration)
+  return instance(axios_configuration)
     .then(function (response) {
       if(response) {
         return response.data
       }
-      else {
-        return response;
-      }
-      
+      return response;
     })
-    .catch(function (error) {
-        console.log(error);
+    .catch(async function (error) {
+        if (error.response && (error.response.status === 401 && _retry && !options['endpoint'].includes("/o/token"))) {
+          _retry = false;
+          const authData = await perform(config, {
+            method: "POST",
+            endpoint: "/o/token/",
+            data: {
+              grant_type: 'client_credentials',
+              client_id: config.client_id,
+              client_secret: config.client_secret
+            }
+          });
+          
+          if (authData && authData.access_token) {
+            const access_token = authData.access_token;
+            config['api_key'] = access_token; // Update config for future requests
+            headers['Authorization'] = 'Bearer ' + access_token;
+            
+            const retry_config = {
+              ...axios_configuration,
+              headers: headers
+            };
+            return instance(retry_config).then(res => res.data);
+          }
+        }
+        return error.response ? error.response.data : undefined;
     });
 }
 
 function getQueryString(data = {}) {
+  if (typeof data === 'string') return data;
   return Object.keys(data).map(key => {
     let val = data[key]
-    if (val !== null && typeof val === 'object') val = getQueryString(val)
+    if (val !== null && typeof val === 'object') val = JSON.stringify(val)
     return `${key}=${encodeURIComponent(`${val}`)}`
   }).join('&')
 }

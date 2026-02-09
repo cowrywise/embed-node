@@ -10,6 +10,11 @@ const updateNokResponse = require('../responses/update_nok_200.json')
 const updateProfileResponse = require('../responses/update_profile_200.json')
 const updateIdentityResponse = require('../responses/update_identity_200.json')
 const addBankResponse = require('../responses/add_bank_200.json')
+const retrieveTermsResponse = require('../responses/retrieve_terms_200.json')
+const acceptTermsResponse = require('../responses/accept_terms_200.json')
+const initiateBusinessVerificationResponse = require('../responses/initiate_business_verification_200.json')
+const submitEDDResponse = require('../responses/submit_edd_200.json')
+const getIndustriesResponse = require('../responses/get_industries_200.json')
 const getPortfolioPerformanceResponse = require('../responses/get_portfolio_performance_200.json')
 const errorResponse = require('../responses/error_response_400_401.json')
 
@@ -21,11 +26,18 @@ const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 describe('Account functions work properly', function () {
 
     it('test_can_create_account', async function() {
+      const accountData = {
+        first_name: "Sample",
+        last_name: "User",
+        email: "tester@abc.com",
+        phone_number: "+2348034031863",
+        terms_of_use_accepted: true
+      };
       nock(url)
-        .post('/accounts', {first_name: "Sample", last_name: "User", email: "tester@abc.com"})
+        .post('/accounts', accountData)
         .reply(200, createAccountsResponse);
 
-      expect(await api.accounts.createAccount({first_name: "Sample", last_name: "User", email: "tester@abc.com"})).to.eql(createAccountsResponse)
+      expect(await api.accounts.createAccount(accountData)).to.eql(createAccountsResponse)
     })
 
 
@@ -143,6 +155,82 @@ describe('Account functions work properly', function () {
         .reply(200, getPortfolioPerformanceResponse);
 
       expect(await api.accounts.updateRiskProfile("uid", {1: '24', 2: 'Full time employee'})).to.eql(getPortfolioPerformanceResponse)
+    })
+
+
+    it('test_can_retrieve_terms', async function() {
+      nock(url)
+        .get('/accounts/retrieve-terms')
+        .reply(200, retrieveTermsResponse);
+
+      expect(await api.accounts.retrieveTerms()).to.eql(retrieveTermsResponse)
+    })
+
+
+    it('test_can_accept_terms', async function() {
+      nock(url)
+        .post('/accounts/uid/accept-terms', { terms_of_use_accepted: "true" })
+        .reply(200, acceptTermsResponse);
+
+      expect(await api.accounts.acceptTerms("uid")).to.eql(acceptTermsResponse)
+    })
+
+
+    it('test_can_initiate_business_verification', async function() {
+      const busData = {
+        registration_type: "RC",
+        registration_number: "0000008",
+        business_legal_name: "Test Business Ltd",
+        business_address_line_1: "123 Street",
+        business_address_state: "Lagos",
+        industry_id: "ind_1",
+        directors_info: [{ name: "John Doe", bvn: "22222222281" }]
+      };
+      nock(url)
+        .post('/accounts/uid/businesses/verifications', busData)
+        .reply(200, initiateBusinessVerificationResponse);
+
+      expect(await api.accounts.initiateBusinessVerification("uid", busData)).to.eql(initiateBusinessVerificationResponse)
+    })
+
+
+    it('test_can_resubmit_business_verification', async function() {
+      const busData = { registration_number: "0000008" };
+      nock(url)
+        .patch('/accounts/uid/businesses/verifications', busData)
+        .reply(200, initiateBusinessVerificationResponse);
+
+      expect(await api.accounts.resubmitBusinessVerification("uid", busData)).to.eql(initiateBusinessVerificationResponse)
+    })
+
+
+    it('test_can_submit_edd', async function() {
+      const eddData = {
+        edd_submissions: [{ edd_id: "edd_123", address: "Director Address", occupation: "CEO", source_of_funds: "Salary" }]
+      };
+      nock(url)
+        .post('/accounts/uid/businesses/verifications/edd', eddData)
+        .reply(200, submitEDDResponse);
+
+      expect(await api.accounts.submitEDD("uid", eddData)).to.eql(submitEDDResponse)
+    })
+
+
+    it('test_can_get_business_verification', async function() {
+      nock(url)
+        .get('/accounts/uid/businesses/verifications')
+        .reply(200, initiateBusinessVerificationResponse);
+
+      expect(await api.accounts.getBusinessVerification("uid")).to.eql(initiateBusinessVerificationResponse)
+    })
+
+
+    it('test_can_get_industries', async function() {
+      nock(url)
+        .get('/industries')
+        .reply(200, getIndustriesResponse);
+
+      expect(await api.accounts.getIndustries()).to.eql(getIndustriesResponse)
     })
 
 })

@@ -1,0 +1,10 @@
+{
+    "data": {
+        "id": "flex_123",
+        "amount": "5000",
+        "status": "success"
+    },
+    "errors": null,
+    "message": "Withdrawal successful",
+    "status": "success"
+}

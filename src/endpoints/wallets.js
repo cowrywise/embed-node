@@ -16,9 +16,10 @@ class Wallets {
     /**
     * Create Wallet
     *
-    * Create a wallet
+    * Description: Create a wallet for an investment account.
+    * @param {Object} data Wallet details
     * @param {String} data.account_id Account ID of the investment account
-    * @param {String} data.currency_code Currency code
+    * @param {String} data.currency_code Currency code (e.g., 'NGN', 'USD')
     */
     createWallet(data) {
         return request.perform(this.config, {
@@ -27,12 +28,12 @@ class Wallets {
           data: data
         });
     }
-    
-    
+
+
     /**
-    * Get Wallet
+    * Get Wallets
     *
-    * Get/List all wallets
+    * Description: Get all wallets.
     */
     getWallets() {
         return request.perform(this.config, {
@@ -45,15 +46,16 @@ class Wallets {
     /**
     * Transfer from Wallet
     *
-    * Transfer from wallet
-    * @param {String} wallet_id The wallet_id of the investment account
+    * Description: Transfer funds from a wallet to another product (e.g., funding an investment).
+    * @param {String} wallet_id The ID of the source wallet
+    * @param {Object} data Transfer details
     * @param {String} data.product_code Destination product code 
-    * @param {String} data.amount Amount is in lowest currency (e.g kobo)
+    * @param {String} data.amount The amount to transfer
     */
      transferFromWallet(wallet_id, data) {
       return request.perform(this.config, {
         method: "POST",
-        endpoint: "/wallets/" +wallet_id +"/transfer",
+        endpoint: "/wallets/" + wallet_id + "/transfer",
         data: data
       });
   }    

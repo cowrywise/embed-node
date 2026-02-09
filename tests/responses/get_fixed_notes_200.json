@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "fixed_note_id": "3755d89109c9143adde34a79af9e5db2",
+            "account_id": "2932df67444fe82db83f6ed5c979c58",
+            "name": "FN260624WWX",
+            "product_code": "PRCDE3458088658",
+            "currency": "NGN",
+            "principal": "0.00000",
+            "returns": "0.00000",
+            "balance": "0.00000",
+            "maturity_date": "2024-09-24",
+            "is_matured": false,
+            "auto_reinvest": false,
+            "created_on": "2024-06-26T13:13:05.203742+00:00",
+            "start_date": "2024-06-26"
+        }
+    ],
+    "errors": null,
+    "message": "Request successful",
+    "status": "success"
+}

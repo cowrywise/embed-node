@@ -1,0 +1,14 @@
+{
+    "data": {
+        "status": "pending",
+        "edd_submissions": [
+            {
+                "edd_id": "edd_123",
+                "status": "submitted"
+            }
+        ]
+    },
+    "errors": null,
+    "message": "EDD submitted successfully",
+    "status": "success"
+}

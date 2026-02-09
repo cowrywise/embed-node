@@ -6,7 +6,7 @@
 const request = require('../helper/request');
 
 
-class auth {
+class Auth {
 
     constructor () {
         
@@ -15,12 +15,12 @@ class auth {
     /**
     * Get Auth Token
     * 
-    * Description: This function returns an API token which can be used to make API requests
-    * 
+    * Description: Returns an API access token using client credentials.
+    * @param {Object} config The client configuration
     */
 
     getAuthToken(config) {
-      return request.perform("", {
+      return request.perform(config, {
         method: "POST",
         endpoint: "/o/token/",
         data: {
@@ -34,4 +34,4 @@ class auth {
 }
 
 
-module.exports = auth
+module.exports = Auth

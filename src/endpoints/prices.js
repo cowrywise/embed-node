@@ -14,21 +14,34 @@ class Prices {
 
 
     /**
-    * Price History
+    * Get Price History
     * 
-    * Description: Fetch price history
-    * @param {String} data.asset_id ID of the asset
-    * @param {String} data.from_date Start date
-    * @param {String} data.to_date End date
+    * Description: Fetch price history for a specific asset within a date range.
+    * @param {Object} data Query parameters
+    * @param {String} data.asset_id The ID of the asset
+    * @param {String} [data.from_date] Optional: Start date (YYYY-MM-DD)
+    * @param {String} [data.to_date] Optional: End date (YYYY-MM-DD)
     */
     getPriceHistory(data) {
-        var asset_id = data ? data.asset_id : null;
-        var from_date = data ? data.from_date : null;
-        var to_date = data ? data.to_date : null;
+        const asset_id = data ? data.asset_id : null;
+        const from_date = data ? data.from_date : null;
+        const to_date = data ? data.to_date : null;
+
+        let endpoint = "/prices";
+        if (asset_id) {
+          endpoint += "?asset_id=" + asset_id;
+          if (from_date) endpoint += "&from_date=" + from_date;
+          if (to_date) endpoint += "&to_date=" + to_date;
+        } else if (from_date) {
+          endpoint += "?from_date=" + from_date;
+          if (to_date) endpoint += "&to_date=" + to_date;
+        } else if (to_date) {
+          endpoint += "?to_date=" + to_date;
+        }
 
         return request.perform(this.config, {
             method: "GET",
-            endpoint: "/prices" + (asset_id ? ("?asset_id=" + asset_id) : "") + (from_date ? ("&from_date=" + from_date) : "") + (to_date ? ("&to_date=" + to_date) : "")
+            endpoint: endpoint
         });
     }
 }

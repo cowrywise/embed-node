@@ -1,0 +1,15 @@
+{
+    "data": {
+        "id": "intent_123",
+        "account_id": "acc_123",
+        "bank_id": "bank_123",
+        "amount": "5000",
+        "currency": "NGN",
+        "status": "initiated",
+        "reference": "REF123",
+        "target_fulfillment_timestamp": "2023-01-01T00:00:00Z"
+    },
+    "errors": null,
+    "message": "Withdrawal intent initiated",
+    "status": "success"
+}

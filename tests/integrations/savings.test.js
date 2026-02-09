@@ -45,7 +45,7 @@ describe('Savings functions work properly', function () {
 
       it('test_can_get_savings_rates', async function() {
         nock(url)
-          .post('/savings/rates', {days: '10'})
+          .get('/savings/rates?days=10')
           .reply(200, getSavingsRateResponse);
   
         expect(await api.savings.getSavingsRates('10')).to.eql(getSavingsRateResponse)

@@ -1,0 +1,9 @@
+{
+    "data": {
+        "account_id": "test_account_id",
+        "terms_of_use_accepted": true
+    },
+    "errors": null,
+    "message": "Terms accepted successfully",
+    "status": "success"
+}
