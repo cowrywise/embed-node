@@ -1,0 +1,18 @@
+{
+    "data": {
+        "verification_id": "bus_ver_123",
+        "status": "pending",
+        "registration_type": "RC",
+        "registration_number": "0000008",
+        "business_legal_name": "Test Business Ltd",
+        "directors_info": [
+            {
+                "name": "John Doe",
+                "bvn": "22222222281"
+            }
+        ]
+    },
+    "errors": null,
+    "message": "Business verification initiated",
+    "status": "success"
+}

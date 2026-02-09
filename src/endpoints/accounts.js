@@ -17,9 +17,12 @@ class Accounts {
     * Create Account
     * 
     * Description: Create investment account
+    * @param {Object} data Account details
     * @param {String} data.first_name First name of the user
     * @param {String} data.last_name Last name of the user
     * @param {String} data.email Email address of the user
+    * @param {String} data.phone_number Phone number of the user
+    * @param {Boolean} data.terms_of_use_accepted Whether the user has accepted terms of use
     */
     createAccount(data) {
         return request.perform(this.config, {
@@ -138,10 +141,12 @@ class Accounts {
     /**
     * Update Identity
     *
-    * Update the identity of an investment account
+    * Update the identity of an investment account. For individual accounts, 
+    * use this to provide BVN for verification.
     * @param {String} uid The UID of the investment account
-    * @param {String} data.identity_type The identity type of the user [bvn, etc]
-    * @param {String} data.identity_value The identity value of the user
+    * @param {Object} data Identity details
+    * @param {String} data.identity_type The identity type (e.g., 'bvn')
+    * @param {String} data.identity_value The identity value (e.g., BVN number)
     */
     updateIdentity(uid, data) {
         return request.perform(this.config, {
@@ -222,6 +227,109 @@ class Accounts {
         method: "POST",
         endpoint: "/accounts/" +uid +"/risk-profile",
         data: data
+      });
+    }
+
+
+    /**
+    * Retrieve Terms and Conditions
+    *
+    * Retrieve the terms and conditions link
+    */
+    retrieveTerms() {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/accounts/retrieve-terms"
+      });
+    }
+
+
+    /**
+    * Accept Terms and Conditions
+    *
+    * Accept the terms and conditions for an account
+    * @param {String} account_id The account ID of the investment account
+    */
+    acceptTerms(account_id) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/accounts/" + account_id + "/accept-terms",
+        data: { terms_of_use_accepted: "true" }
+      });
+    }
+
+
+    /**
+    * Initiate Business Verification
+    *
+    * Initiate the business verification process
+    * @param {String} account_id The account ID of the investment account
+    * @param {Object} data Business verification details
+    */
+    initiateBusinessVerification(account_id, data) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/accounts/" + account_id + "/businesses/verifications",
+        data: data
+      });
+    }
+
+
+    /**
+    * Resubmit Business Verification
+    *
+    * Resubmit business details after a failed verification
+    * @param {String} account_id The account ID of the investment account
+    * @param {Object} data Updated business verification details
+    */
+    resubmitBusinessVerification(account_id, data) {
+      return request.perform(this.config, {
+        method: "PATCH",
+        endpoint: "/accounts/" + account_id + "/businesses/verifications",
+        data: data
+      });
+    }
+
+
+    /**
+    * Submit EDD
+    *
+    * Submit the EDD form for directors
+    * @param {String} account_id The account ID of the investment account
+    * @param {Object} data EDD submission details
+    */
+    submitEDD(account_id, data) {
+      return request.perform(this.config, {
+        method: "POST",
+        endpoint: "/accounts/" + account_id + "/businesses/verifications/edd",
+        data: data
+      });
+    }
+
+
+    /**
+    * Get Business Verification
+    *
+    * Get the business verification details
+    * @param {String} account_id The account ID of the investment account
+    */
+    getBusinessVerification(account_id) {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/accounts/" + account_id + "/businesses/verifications"
+      });
+    }
+
+
+    /**
+    * Get Industries
+    *
+    * Get list of industries
+    */
+    getIndustries() {
+      return request.perform(this.config, {
+        method: "GET",
+        endpoint: "/industries"
       });
     }
 

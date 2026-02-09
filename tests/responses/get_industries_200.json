@@ -1,0 +1,15 @@
+{
+    "data": [
+        {
+            "industry_id": "ind_1",
+            "name": "Agriculture"
+        },
+        {
+            "industry_id": "ind_2",
+            "name": "Technology"
+        }
+    ],
+    "errors": null,
+    "message": "Industries retrieved successfully",
+    "status": "success"
+}
