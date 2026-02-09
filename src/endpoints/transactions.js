@@ -17,7 +17,7 @@ class Transactions {
     /**
     * Get Transfers
     * 
-    * Description: Get all transfers
+    * Description: Get all wallet transfers.
     */
     getTransfers() {
         return request.perform(this.config, {
@@ -30,8 +30,8 @@ class Transactions {
     /**
     * Get Single Transfer
     * 
-    * Description: Get a single transfer by ID
-    * @param {String} id ID of the requested transfer
+    * Description: Get a single transfer by ID.
+    * @param {String} id ID of the transfer
     */
     getSingleTransfer(id) {
         return request.perform(this.config, {
@@ -44,7 +44,7 @@ class Transactions {
     /**
     * Get Deposits
     * 
-    * Description: Get all deposits
+    * Description: Get all deposits.
     */
     getDeposits() {
         return request.perform(this.config, {
@@ -57,8 +57,8 @@ class Transactions {
     /**
     * Get Single Deposit
     * 
-    * Description: Get single deposit by ID
-    * @param {String} id ID of the requested deposit
+    * Description: Get a single deposit by ID.
+    * @param {String} id ID of the deposit
     */
     getSingleDeposit(id) {
         return request.perform(this.config, {
@@ -71,7 +71,7 @@ class Transactions {
     /**
     * Get Withdrawals
     * 
-    * Description: Get all withdrawals
+    * Description: Get all successful withdrawals.
     */
     getWithdrawals() {
         return request.perform(this.config, {
@@ -84,8 +84,8 @@ class Transactions {
     /**
     * Get Single Withdrawal
     * 
-    * Description: Get single withdrawal by ID
-    * @param {String} id ID of the requested withdrawal
+    * Description: Get a single withdrawal by ID.
+    * @param {String} id ID of the withdrawal
     */
     getSingleWithdrawal(id) {
         return request.perform(this.config, {
