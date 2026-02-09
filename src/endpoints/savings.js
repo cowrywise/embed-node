@@ -16,11 +16,12 @@ class Savings {
     /**
     * Create Savings
     * 
-    * Description: Create Savings
-    * @param {String} data.account_id Account ID of the user
-    * @param {String} data.currency_code Currency code (e.g NGN)
-    * @param {String} data.days Duration in days
-    * @param {String} data.interest_enabled Interest enabled: (1 === true)
+    * Description: Create a savings plan for an account.
+    * @param {Object} data Savings plan details
+    * @param {String} data.account_id Unique identifier of the account
+    * @param {String} data.currency_code Currency code (e.g., 'NGN')
+    * @param {String} data.days Number of days till maturity
+    * @param {String} data.interest_enabled Whether interest is enabled ('0' or '1')
     */
     createSavings(data) {
         return request.perform(this.config, {
@@ -29,12 +30,12 @@ class Savings {
           data: data
         });
     }
-    
-    
+
+
     /**
     * Get Savings
     *
-    * Get/List all savings plans
+    * Description: Get all savings plans.
     */
     getSavings() {
         return request.perform(this.config, {
@@ -45,16 +46,15 @@ class Savings {
 
 
     /**
-    * Get savings rates
+    * Get Savings Rates
     *
-    * Get/List all savings rates
+    * Description: Retrieve savings interest rate for a specific number of days.
     * @param {String} days The number of days
     */
     getSavingsRates(days) {
       return request.perform(this.config, {
-        method: "POST",
-        endpoint: "/savings/rates",
-        data: {days: days}
+        method: "GET",
+        endpoint: "/savings/rates?days=" + days
       });
     }
 
@@ -62,15 +62,15 @@ class Savings {
     /**
     * Withdraw from Savings
     *
-    * Get/List all savings rates
-    * @param {String} savings_id The savings ID of days
-    * @param {String} amount The amount in kobo
+    * Description: Withdraw from a locked savings plan to the user's wallet.
+    * @param {String} savings_id The ID of the savings plan
+    * @param {String} amount The amount to withdraw
     */
     withdrawFromSavings(savings_id, amount) {
       return request.perform(this.config, {
         method: "POST",
-        endpoint: "/savings/" +savings_id +"/withdraw",
-        data: {amount: amount}
+        endpoint: "/savings/" + savings_id + "/withdraw",
+        data: { amount: amount }
       });
     }
   
