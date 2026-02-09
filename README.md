@@ -1,260 +1,194 @@
 # Embed Node Library
-The Embed Node library provides an easy access to the Embed Investment API by [Cowrywise](https://cowrywise.com). Embed is an investment-as-a-service API that allows you to integrate investment features in your products and offer financial services to your customers at scale. With Embed, developers can create investment accounts for their customers and expose them to a wide variety of investment products!
 
+[![npm version](https://img.shields.io/npm/v/@cowrywise/embed-node.svg)](https://www.npmjs.com/package/@cowrywise/embed-node)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
+The Embed Node library provides easy access to the Embed Investment API by [Cowrywise](https://cowrywise.com). Embed is an investment-as-a-service API that allows you to integrate investment features into your products and offer financial services to your customers at scale.
 
 ## Documentation
-See the [Embed API docs](https://developers.cowrywise.com).
-
+See the full [Embed API Documentation](https://developers.cowrywise.com).
 
 ## Prerequisites
-1. Node v6+, 8+ recommended.
-2. NPM
+1. Node.js (v12+ recommended)
+2. npm or yarn
 
 ## Installation
-Use npm:
+```bash
+npm install @cowrywise/embed-node
 ```
-npm i @cowrywise/embed-node
+or
+```bash
+yarn add @cowrywise/embed-node
 ```
-
-### Usage
-
-
-To get started, [signup for developer credentials](https://cowrywise.com/embed). Once you signup, you can retrieve
-you `client_id` and `client_secret` keys from the developer dashboard. Set your credentials in environment variables. 
-
-
-You need the following before getting to use this library:
-1. Client ID
-2. Client Secret
-3. BASE_URL (more details in the next section)
-
-## Base URL
-
-There are two main base URLs depending on your usecase.
-
- - Sandbox BASE URL: https://sandbox.embed.cowrywise.com/api/v1
- - Live BASE URL: https://production.embed.cowrywise.com/api/v1
 
 ## Getting Started
-This library is extremely modular, meaning you can create more than one instance
-````js
-const Client = require('@cowrywise/embed-node')
-const api = new Client(
-    { 
-        client_id: '****', 
-        client_secret: '****',
-        embed_api_base_url: "url"
-    })
 
+To get started, [signup for developer credentials](https://cowrywise.com/embed). You will receive a `client_id` and `client_secret` from the developer dashboard.
+
+```javascript
+const Client = require('@cowrywise/embed-node');
+
+const api = new Client({ 
+    client_id: 'YOUR_CLIENT_ID', 
+    client_secret: 'YOUR_CLIENT_SECRET',
+    embed_api_base_url: 'https://sandbox.embed.cowrywise.com/api/v1' // Use sandbox for testing
+});
+
+// All methods return a Promise
 api.wallets.getWallets()
-  .then((result) => { /* do something with result */ })
-  .catch((err) => { /* retry or show error */})
-````
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
 
+## API Reference
 
-## API
-
-All methods return a `<Promise>`, hence you can use `.then` or `await`.
-All network calls are made with Axios.
-
-## Methods
-
-#### AUTHENTICATION
-```js
-// Refresh the api_token being used to make all requests
+### Authentication
+The library handles token management internally. If you need to manually refresh the token:
+```javascript
 await api.refreshToken();
 ```
 
-#### Accounts
-```js
-// Create investment account
+### Accounts
+Manage investment accounts for your users.
+
+```javascript
+// Create an investment account
 await api.accounts.createAccount({
     first_name: 'John', 
     last_name: 'Doe', 
-    email: 'simple@gmail.com'});
-
-// Get all investment accounts
-await api.accounts.getAccount();
-
-// Get a specific account by account_id
-await api.accounts.getSingleAccount('ACCOUNT_ID');
-
-// Get the portfolio owned by an investment account
-await api.accounts.getPortfolio('ACCOUNT_ID');
-
-// Update the address details for an investment account
-await api.accounts.updateAddress('ACCOUNT_ID', {
-    street: 'Broadway', 
-    lga: 'Eti-Osa', 
-    area_code: '231', 
-    city: 'Lekki', 
-    state: 'Lagos', 
-    country: 'NG'});
-
-// Update the next-of-kin for an investment account
-await api.accounts.updateNextOfKin('ACCOUNT_ID', {
-    first_name: 'Jane',
-    last_name: 'Obi',
-    email: 'friend@gmail.com',
-    gender: 'M',
-    relationship: 'Friend',
-    date_of_birth: '1990-10-10',
-    phone_number: '+2347000000000'});
-
-// Update the profile of an investment account
-await api.accounts.updateProfile('ACCOUNT_ID', {
-    first_name: 'Rahman',
-    last_name: 'Taiwo',
-    email: 'rt@gmail.com',
-    gender: 'M',
+    email: 'john.doe@example.com',
     phone_number: '+2348000000000',
-    date_of_birth: '1989-10-10'});
-
-// Update the identity of an investment account
-await api.accounts.updateIdentity('ACCOUNT_ID', {
-    identity_type: 'bvn',
-    identity_value: '0123456789'});
-
-// Add a bank account
-await api.accounts.addBank('ACCOUNT_ID', {
-    bank_code: '058',
-    account_number: '0149541957'});
-
-// Get Risk Assessment Questions
-await api.accounts.getRiskAssessmentQuestions();
-
-// Get user's risk profile
-await api.accounts.getRiskProfile('ACCOUNT_ID');
-
-// Update Risk Profile
-await api.accounts.updateRiskProfile('ACCOUNT_ID', {
-    1: 'answer1',
-    2: 'answer2',
-    3: 'answer3',
-    ...
+    terms_of_use_accepted: true // Accept T&C on creation
 });
 
-// Get Portfolio Performance
-await api.accounts.getPortfolioPerformance('ACCOUNT_ID', 'NGN');
+// Accept T&C for an existing account
+await api.accounts.acceptTerms('ACCOUNT_ID');
+
+// Identity Verification (BVN)
+await api.accounts.updateIdentity('ACCOUNT_ID', {
+    identity_type: 'bvn',
+    identity_value: '22222222281'
+});
+
+// Business Verification
+await api.accounts.initiateBusinessVerification('ACCOUNT_ID', {
+    registration_type: 'RC',
+    registration_number: '0000008',
+    business_legal_name: 'Test Business Ltd',
+    industry_id: 'ind_1',
+    directors_info: [{ name: 'John Doe', bvn: '22222222281' }]
+});
+
+// Get Risk Profile Questions
+const questions = await api.accounts.getRiskAssessmentQuestions();
 ```
 
-#### WALLETS
-```js
+### Withdrawals (Intents)
+Withdrawals follow an "Intent" flow. An intent is initiated and fulfilled after a 24-hour waiting period.
+
+```javascript
+// Initiate a withdrawal intent
+await api.withdrawals.initiateWithdrawalIntent({
+    account_id: 'ACCOUNT_ID',
+    bank_id: 'BANK_ID',
+    amount: '5000',
+    currency: 'NGN'
+});
+
+// Get withdrawal intents
+await api.withdrawals.getWithdrawalIntents('ACCOUNT_ID', 'NGN');
+
+// Cancel an intent
+await api.withdrawals.cancelWithdrawalIntent({
+    account_id: 'ACCOUNT_ID',
+    reference: 'REF123',
+    currency: 'NGN'
+});
+```
+
+### Investments
+```javascript
+// Create an investment
+await api.investments.createInvestment({
+    account_id: 'ACCOUNT_ID',
+    asset_code: 'AST-FUND-123',
+    auto_reinvest: true
+});
+
+// Liquidate an investment
+await api.investments.liquidateInvestment('INVESTMENT_ID', {
+    units: '10' // or amount: '5000'
+});
+```
+
+### Wallets
+```javascript
 // Create a wallet
 await api.wallets.createWallet({
     account_id: 'ACCOUNT_ID',
-    currency_code: 'NGN'});
+    currency_code: 'NGN'
+});
 
-// Get Wallet information
-await api.wallets.getWallets();
-
-// Transfer from Wallet
-await api.wallets.transferFromWallet('60919da39e644ef8a4e2ceeabbc97130', {
-  product_code: 'PRCDE1203073566',
-  amount: '2000'});
+// Fund an investment from a wallet
+await api.wallets.transferFromWallet('WALLET_ID', {
+    product_code: 'PRCDE_123',
+    amount: '2000'
+});
 ```
 
-#### SAVINGS
-```js
-// Create Savings
+### Savings
+```javascript
+// Create locked savings
 await api.savings.createSavings({
     account_id: 'ACCOUNT_ID',
     currency_code: 'NGN',
-    days: '30',
-    interest_enabled: '1'});
+    days: '90',
+    interest_enabled: '1'
+});
 
-// Get Savings
-await api.savings.getSavings();
-
-// Get Savings Rates
-await api.savings.getSavingsRates('10');
-
-// Withdraw From Savings
-await api.savings.withdrawFromSavings('SAVINGS_ID', '20000');
+// Get savings interest rates
+await api.savings.getSavingsRates('90');
 ```
 
-#### ASSETS
-```js
-// Get Assets
-await api.assets.getAssets();
-
-// Get assets of a specific type
-await api.assets.getAssets('mutual-fund');
-
-// Get indexes
-await api.assets.getIndexes();
-
-// Get assets of a particular index
-await api.assets.getIndexesAsset('INDEX_ID');
-```
-
-#### Investments
-```js
-// Get all investments performed by the user
-await api.investments.getInvestments();
-
-// Create Investment of a speific type
-await api.investments.getInvestments('tbills');
-
-// Create Investment
-await api.investments.createInvestment({
+### Fixed Notes & Flexible Savings
+```javascript
+// Create a Fixed Note
+await api.fixedNotes.createFixedNote({
     account_id: 'ACCOUNT_ID',
-    asset_code: 'AST-TBILL-1741042763'});
+    asset_code: 'FN_123',
+    tenor_in_months: '3',
+    amount_range: '10M-100M'
+});
 
-// Liquidate Investment
-await api.investments.liquidateInvestment({
-    index: 'INDEX_ID',
-    units: '2'});
+// Withdraw from Flexible Savings
+await api.flexibleSavings.withdraw('FLEX_ID', '5000');
 ```
 
-#### TRADE
-```js
-// List all stocks
-await api.trade.getStocks();
-```
+### Assets & Prices
+```javascript
+// List all investment assets
+await api.assets.getAssets('mutual_fund');
 
-#### PRICES
-```js
 // Fetch price history
 await api.prices.getPriceHistory({
     asset_id: 'ASSET_ID',
-    from_date: '2020-01-10',
-    to_date: '2021-05-29'});
+    from_date: '2023-01-01',
+    to_date: '2023-12-31'
+});
 ```
 
-#### TRANSACTIONS
-```js
-// Get all transfers
+### Transactions
+```javascript
 await api.transactions.getTransfers();
-
-// Get transfer by ID
-await api.transactions.getTransfers('TRANSACTION_ID');
-
-// Get all deposits
 await api.transactions.getDeposits();
-
-// Get deposit by ID
-await api.transactions.getDeposit('TRANSACTION_ID');
-
-// Get all withdrawals
 await api.transactions.getWithdrawals();
-
-// Get withdrawal by ID
-await api.transactions.getWithdrawal('TRANSACTION_ID');
-
 ```
-
-
-Check the [API reference](https://developers.cowrywise.com/reference) document for more examples.
-
-
-### Methods
-Kindly check out all methods as well as their request and response structure on the [API documentation](https://developers.cowrywise.com)
-
-
 
 ## Contributions
+Before submitting a pull request, please ensure:
+1. Tests are added for the new changes.
+2. Commit messages are clear and descriptive.
+3. The code follows existing conventions.
 
-Before submitting a pull request, kindly ensure:
-- [ ] Necessary tests for the code changes requested are added
-- [ ] There are clear commit messages
+## License
+This project is licensed under the ISC License.
