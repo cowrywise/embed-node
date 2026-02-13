@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "message": "Index created successfully",
+  "data": {
+    "index_id": "new-index-id",
+    "name": "Custom Index",
+    "description": "Custom index description",
+    "allocations": [
+      {
+        "asset_code": "ASSET1",
+        "weight": 50.0
+      },
+      {
+        "asset_code": "ASSET2",
+        "weight": 50.0
+      }
+    ]
+  }
+}

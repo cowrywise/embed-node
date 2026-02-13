@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "message": "Banks retrieved successfully",
+  "data": [
+    {
+      "bank_code": "044",
+      "bank_name": "Access Bank"
+    },
+    {
+      "bank_code": "058",
+      "bank_name": "GTBank"
+    }
+  ]
+}

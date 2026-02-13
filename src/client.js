@@ -10,6 +10,11 @@ const Transactions = require('./endpoints/transactions');
 const Withdrawals = require('./endpoints/withdrawals');
 const FixedNotes = require('./endpoints/fixed_notes');
 const FlexibleSavings = require('./endpoints/flexible_savings');
+const Indices = require('./endpoints/indexes');
+const Misc = require('./endpoints/misc');
+const Eurobonds = require('./endpoints/eurobonds');
+const FixedPlacements = require('./endpoints/fixed_placements');
+const Integrations = require('./endpoints/integrations');
 var api_key = "";
 
 
@@ -51,6 +56,11 @@ class Client {
         this.withdrawals = new Withdrawals(config)
         this.fixedNotes = new FixedNotes(config)
         this.flexibleSavings = new FlexibleSavings(config)
+        this.indices = new Indices(config)
+        this.misc = new Misc(config)
+        this.eurobonds = new Eurobonds(config)
+        this.fixedPlacements = new FixedPlacements(config)
+        this.integrations = new Integrations(config)
     }
 
     /**

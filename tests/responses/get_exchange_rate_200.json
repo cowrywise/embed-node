@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "message": "Exchange rate retrieved successfully",
+  "data": {
+    "currency": "USD",
+    "rate": "750.00"
+  }
+}
