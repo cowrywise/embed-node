@@ -12,7 +12,7 @@ const FixedNotes = require('./endpoints/fixed_notes');
 const FlexibleSavings = require('./endpoints/flexible_savings');
 const Indices = require('./endpoints/indexes');
 const Misc = require('./endpoints/misc');
-const Integrations = require('./endpoints/integrations');
+const CSCS = require('./endpoints/cscs');
 var api_key = "";
 
 
@@ -56,7 +56,7 @@ class Client {
         this.flexibleSavings = new FlexibleSavings(config)
         this.indices = new Indices(config)
         this.misc = new Misc(config)
-        this.integrations = new Integrations(config)
+        this.cscs = new CSCS(config)
     }
 
     /**
