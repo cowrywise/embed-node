@@ -8,7 +8,7 @@ const api = new Client({client_id: '****', client_secret: '****', embed_api_base
 const url = 'https://sandbox.embed.cowrywise.com/api/v1'
 
 
-describe('CSCS functions work properly', function () {
+describe('Integrations functions work properly', function () {
 
     it('test_can_onboard_cscs', async function() {
       const onboardData = {
@@ -19,7 +19,7 @@ describe('CSCS functions work properly', function () {
         .post('/integration/cscs/onboarding', onboardData)
         .reply(200, cscsResponse);
 
-      expect(await api.cscs.onboarding(onboardData)).to.eql(cscsResponse)
+      expect(await api.integrations.cscsOnboarding(onboardData)).to.eql(cscsResponse)
     })
 
 
@@ -28,7 +28,7 @@ describe('CSCS functions work properly', function () {
         .get('/integration/cscs/onboarding?account_id=acc_123')
         .reply(200, cscsResponse);
 
-      expect(await api.cscs.getProfile("acc_123")).to.eql(cscsResponse)
+      expect(await api.integrations.getCSCSProfile("acc_123")).to.eql(cscsResponse)
     })
 
 })

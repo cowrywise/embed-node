@@ -1,12 +1,12 @@
 /**
- *  CSCS
+ *  Integrations
  *
  *  Author: Taslim Oseni <taslim@cowrywise.com>
  **/
 const request = require('../helper/request');
 
 
-class CSCS {
+class Integrations {
 
     constructor (config = {}) {
         this.config = config;
@@ -18,7 +18,7 @@ class CSCS {
     *
     * @param {Object} data Onboarding details
     */
-    onboarding(data) {
+    cscsOnboarding(data) {
         return request.perform(this.config, {
           method: "POST",
           endpoint: "/integration/cscs/onboarding",
@@ -32,7 +32,7 @@ class CSCS {
     *
     * @param {String} account_id The account ID
     */
-    getProfile(account_id) {
+    getCSCSProfile(account_id) {
         return request.perform(this.config, {
           method: "GET",
           endpoint: "/integration/cscs/onboarding?account_id=" + account_id
@@ -42,4 +42,4 @@ class CSCS {
 }
 
 
-module.exports = CSCS
+module.exports = Integrations
