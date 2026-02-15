@@ -150,7 +150,7 @@ await api.savings.createSavings({
 await api.savings.getSavingsRates('90');
 ```
 
-### Fixed Notes, Flexible Savings, Eurobonds & Fixed Placements
+### Fixed Notes & Flexible Savings
 ```javascript
 // Create a Fixed Note
 await api.fixedNotes.createFixedNote({
@@ -160,19 +160,6 @@ await api.fixedNotes.createFixedNote({
     amount_range: '10M-100M'
 });
 
-// Eurobonds
-await api.eurobonds.createEurobond({
-    account_id: 'ACCOUNT_ID',
-    asset_code: 'EB_123',
-    amount: '5000'
-});
-
-// Fixed Placements
-await api.fixedPlacements.createFixedPlacement({
-    account_id: 'ACCOUNT_ID',
-    asset_code: 'FP_123',
-    amount: '10000'
-});
 
 // Withdraw from Flexible Savings
 await api.flexibleSavings.withdraw('FLEX_ID', '5000');
@@ -182,13 +169,6 @@ await api.flexibleSavings.withdraw('FLEX_ID', '5000');
 ```javascript
 // Get Indices
 await api.indices.getIndices();
-
-// External Integrations (Atomic/CSCS)
-await api.integrations.getAtomicConstants();
-await api.integrations.cscsOnboarding({
-    account_id: 'ACCOUNT_ID',
-    ...data
-});
 ```
 
 ### Assets & Prices

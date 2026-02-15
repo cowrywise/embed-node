@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "message": "CSCS profile retrieved successfully",
+  "data": {
+    "account_id": "acc_123",
+    "cscs_number": "1234567890",
+    "status": "active"
+  }
+}

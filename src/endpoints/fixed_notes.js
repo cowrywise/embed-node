@@ -45,6 +45,22 @@ class FixedNotes {
         });
     }
 
+
+    /**
+    * Partial Update
+    * 
+    * Description: Partially update a fixed note.
+    * @param {String} fixed_note_id The fixed note ID
+    * @param {Object} data Fields to update (e.g., auto_reinvest)
+    */
+    partialUpdate(fixed_note_id, data) {
+        return request.perform(this.config, {
+          method: "PATCH",
+          endpoint: "/fixed-notes/" + fixed_note_id,
+          data: data
+        });
+    }
+
 }
 
 

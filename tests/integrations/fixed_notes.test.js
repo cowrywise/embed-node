@@ -34,4 +34,16 @@ describe('Fixed Note functions work properly', function () {
       expect(await api.fixedNotes.getFixedNotes()).to.eql(getFixedNotesResponse)
     })
 
+
+    it('test_can_partial_update_fixed_note', async function() {
+      const updateData = {
+        auto_reinvest: true
+      };
+      nock(url)
+        .patch('/fixed-notes/fn_123', updateData)
+        .reply(200, createFixedNoteResponse);
+
+      expect(await api.fixedNotes.partialUpdate("fn_123", updateData)).to.eql(createFixedNoteResponse)
+    })
+
 })
